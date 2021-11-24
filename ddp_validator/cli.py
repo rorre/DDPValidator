@@ -36,6 +36,7 @@ def cli():
     os.chdir(test_dir)
     tests.run_tests()
     os.chdir(orig_cwd)
+    input("Press enter to exit.")
 
 
 if __name__ == "__main__":
