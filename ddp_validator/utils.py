@@ -2,7 +2,7 @@ import asyncio
 
 from asyncio.subprocess import PIPE
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from ddp_validator.types import Classification
 
@@ -71,3 +71,7 @@ def get_classifier(
         if c["identifier"] in program_content:
             return c
     return None
+
+
+def parse_version(ver: str) -> Tuple[int, ...]:
+    return tuple(map(int, ver.split(".")))

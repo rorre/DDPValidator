@@ -5,7 +5,7 @@ from typing import List, Tuple
 from ddp_validator import __version__
 from ddp_validator.tester import InputTester
 from ddp_validator.types import Classification
-from ddp_validator.utils import get_classifier, get_program
+from ddp_validator.utils import get_classifier, get_program, parse_version
 import json
 import requests
 import sys
@@ -51,8 +51,9 @@ def fetch_update():
         print("[WARN] An exception has occured during update fetching.")
         return
 
-    new_version: Tuple[int, int, int] = response["tag_name"].split(".")
-    if __version__ < new_version:
+    current_version = parse_version(__version__)
+    new_version: Tuple[int, int, int] = parse_version(response["tag_name"])
+    if current_version < new_version:
         print("[NOTICE] New version available. Please download here:")
         print("[NOTICE]", response["url"])
     else:
