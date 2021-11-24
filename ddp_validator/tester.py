@@ -65,6 +65,7 @@ class InputTester:
             self._loop = asyncio.get_event_loop()
 
     def run_tests(self):
+        test_passed = True
         for t in self._tests:
             print(f"{t['title']:<20} : ", end="")
             program_lines = self._loop.run_until_complete(
@@ -79,7 +80,8 @@ class InputTester:
             if not condition:
                 print("❌")
                 print("--------------------")
-                break
+                test_passed = False
+                continue
 
             if t["expected_file"] and t["output_file"]:
                 with open(t["expected_file"]) as f_expected, open(
@@ -95,12 +97,15 @@ class InputTester:
                     ]
 
                     if expected != output:
-                        print("❌")
-                        break
-
+                        print("❌ (Output file)")
+                        test_passed = False
+                        continue
             print("✔️")
+
+        if test_passed:
+            print("All checks passed!")
         else:
-            print("All good!")
+            print("Some check failed :(")
 
     @classmethod
     def from_str(cls, program_path: str, inputs: str):

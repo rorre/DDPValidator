@@ -5,8 +5,9 @@ description = ""
 authors = ["Rendy Arya Kemal <renrror@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.11"
 toml = "^0.10.2"
+requests = "^2.26.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -15,6 +16,8 @@ mypy = "^0.910"
 flake8 = "^4.0.1"
 black = "^21.11b1"
 isort = "^5.10.1"
+pyinstaller = "^4.7"
+types-requests = "^2.26.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
