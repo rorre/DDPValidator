@@ -1,0 +1,167 @@
+["Input 1"]
+input = """
+100 Jakarta 21 500000
+200 Jakarta 21 350000
+250 Jakarta 23 320000
+300 Jakarta 22 240000
+selesai
+INFO_TUJUAN
+TUJUAN_KELAS Jakarta Bisnis
+TUJUAN_JAM Jakarta 22
+TUJUAN_KELAS Bandung Bisnis
+TUJUAN_KELAS
+EXIT
+"""
+output = """
+Selamat datang! Silakan masukkan jadwal KA:
+100 Jakarta 21 500000
+200 Jakarta 21 350000
+250 Jakarta 23 320000
+300 Jakarta 22 240000
+selesai
+
+Perintah yang tersedia:
+1. INFO_TUJUAN
+2. TUJUAN_KELAS <tujuan_akhir> <kelas_kereta>
+3. TUJUAN_JAM <tujuan_akhir> <jam_keberangkatan>
+4. EXIT
+
+Masukkan perintah: INFO_TUJUAN
+KA di stasiun ini memiliki tujuan akhir:
+Jakarta
+
+Masukkan perintah: TUJUAN_KELAS Jakarta Bisnis
+KA 200 berangkat pukul 21 dengan harga tiket 350000
+KA 250 berangkat pukul 23 dengan harga tiket 320000
+
+Masukkan perintah: TUJUAN_JAM Jakarta 22
+KA 100 berangkat pukul 21 dengan harga tiket 500000
+KA 200 berangkat pukul 21 dengan harga tiket 350000
+KA 300 berangkat pukul 22 dengan harga tiket 240000
+
+Masukkan perintah: TUJUAN_KELAS Bandung Bisnis
+Tidak ada jadwal KA yang sesuai.
+
+Masukkan perintah: TUJUAN_KELAS
+Perintah yang dimasukkan tidak valid.
+
+Masukkan perintah: EXIT
+Terima kasih sudah menggunakan program ini!
+"""
+subset = false
+
+["Input 2"]
+input = """
+200 Yogyakarta 9 200000
+201 Yogyakarta 10 250000
+153 Yogyakarta 8 400000
+303 Yogyakarta 4 190000
+305 Yogyakarta 5 175000
+301 Jakarta 3 100000
+selesai
+INFO_TUJUAN
+TUJUAN_KELAS Yogyakarta Eksekutif
+TUJUAN_JAM Yogyakarta 9
+TUJUAN_KELAS Jakarta Bisnis
+TUJUAN_JAM Jakarta 2
+TUJUAN_WAKTU Jakarta 4
+naikkeretaapituttuttut
+EXIT
+"""
+output = """
+Selamat datang! Silakan masukkan jadwal KA:
+200 Yogyakarta 9 200000
+201 Yogyakarta 10 250000
+153 Yogyakarta 8 400000
+303 Yogyakarta 4 190000
+305 Yogyakarta 5 175000
+301 Jakarta 3 100000
+selesai
+
+Perintah yang tersedia:
+1. INFO_TUJUAN
+2. TUJUAN_KELAS <tujuan_akhir> <kelas_kereta>
+3. TUJUAN_JAM <tujuan_akhir> <jam_keberangkatan>
+4. EXIT
+
+Masukkan perintah: INFO_TUJUAN
+KA di stasiun ini memiliki tujuan akhir:
+Yogyakarta
+Jakarta
+
+Masukkan perintah: TUJUAN_KELAS Yogyakarta Eksekutif
+KA 153 berangkat pukul 8 dengan harga tiket 400000
+
+Masukkan perintah: TUJUAN_JAM Yogyakarta 9
+KA 200 berangkat pukul 9 dengan harga tiket 200000
+KA 153 berangkat pukul 8 dengan harga tiket 400000
+KA 303 berangkat pukul 4 dengan harga tiket 190000
+KA 305 berangkat pukul 5 dengan harga tiket 175000
+
+Masukkan perintah: TUJUAN_KELAS Jakarta Bisnis
+Tidak ada jadwal KA yang sesuai.
+
+Masukkan perintah: TUJUAN_JAM Jakarta 2
+Tidak ada jadwal KA yang sesuai.
+
+Masukkan perintah: TUJUAN_WAKTU Jakarta 4
+Perintah yang dimasukkan tidak valid.
+
+Masukkan perintah: naikkeretaapituttuttut
+Perintah yang dimasukkan tidak valid.
+
+Masukkan perintah: EXIT
+Terima kasih sudah menggunakan program ini!
+"""
+subset = false
+
+["Additional 1"]
+input = """
+100 Jakarta 21 500000
+200 Jakarta 21 350000
+250 Bandung 23 320000
+300 Jakarta 22 240000
+selesai
+INFO_TUJUAN
+TUJUAN_KELAS Jakarta Eksekutif
+TUJUAN_KELAS Jakarta Bisnis
+TUJUAN_KELAS Surabaya Eksekutif
+TUJUAN_KELAS Depok Ekonomi
+EXIT
+"""
+output = """
+Selamat datang! Silakan masukkan jadwal KA:
+100 Jakarta 21 500000
+200 Jakarta 21 350000
+250 Bandung 23 320000
+300 Jakarta 22 240000
+selesai
+
+Perintah yang tersedia:
+1. INFO_TUJUAN
+2. TUJUAN_KELAS <tujuan_akhir> <kelas_kereta>
+3. TUJUAN_JAM <tujuan_akhir> <jam_keberangkatan>
+4. EXIT
+
+Masukkan perintah: INFO_TUJUAN
+KA di stasiun ini memiliki tujuan akhir:
+Jakarta
+Bandung
+
+Masukkan perintah: TUJUAN_KELAS Jakarta Eksekutif
+KA 100 berangkat pukul 21 dengan harga tiket 500000
+
+Masukkan perintah: TUJUAN_KELAS Jakarta Bisnis
+KA 200 berangkat pukul 21 dengan harga tiket 350000
+
+Masukkan perintah: TUJUAN_KELAS Surabaya Eksekutif
+Tidak ada jadwal KA yang sesuai.
+
+Masukkan perintah: TUJUAN_KELAS Depok Ekonomi
+Tidak ada jadwal KA yang sesuai.
+
+Masukkan perintah: EXIT
+Terima kasih sudah menggunakan program ini!
+"""
+subset = false
+

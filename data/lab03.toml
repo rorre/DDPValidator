@@ -1,0 +1,63 @@
+["Input 1"]
+input = """
+1,2,3
+x,y,z
+"""
+output = """{(1,x), (1,y), (1,z), (2,x), (2,y), (2,z), (3,x), (3,y), (3,z)}"""
+subset = true
+
+["Input 2"]
+input = """
+7,8
+a,b,c
+"""
+output = """{(7,a), (7,b), (7,c), (8,a), (8,b), (8,c)}"""
+subset = true
+
+["Input 3"]
+input = """
+ab,cd,ef
+12,34,56
+"""
+output = """{(ab,12), (ab,34), (ab,56), (cd,12), (cd,34), (cd,56), (ef,12), (ef,34), (ef,56)}"""
+subset = true
+
+["Input 4"]
+input = """
+ab,c,de
+1,10,0
+"""
+output = """{(ab,1), (ab,10), (ab,0), (c,1), (c,10), (c,0), (de,1), (de,10), (de,0)}"""
+subset = true
+
+["Input 5"]
+input = """
+ayam,bebek,cacing
+17,1,100
+"""
+output = """{(ayam,17), (ayam,1), (ayam,100), (bebek,17), (bebek,1), (bebek,100), (cacing,17), (cacing,1), (cacing,100)}"""
+subset = true
+
+["Input 6"]
+input = """
+palos 1,yopaj 2,fbz 3,tims 4,skem 5
+iyd 1,alacrity 2,mizu 3,poloson 4,jhocam 5
+"""
+output = """{(palos 1,iyd 1), (palos 1,alacrity 2), (palos 1,mizu 3), (palos 1,poloson 4), (palos 1,jhocam 5), (yopaj 2,iyd 1), (yopaj 2,alacrity 2), (yopaj 2,mizu 3), (yopaj 2,poloson 4), (yopaj 2,jhocam 5), (fbz 3,iyd 1), (fbz 3,alacrity 2), (fbz 3,mizu 3), (fbz 3,poloson 4), (fbz 3,jhocam 5), (tims 4,iyd 1), (tims 4,alacrity 2), (tims 4,mizu 3), (tims 4,poloson 4), (tims 4,jhocam 5), (skem 5,iyd 1), (skem 5,alacrity 2), (skem 5,mizu 3), (skem 5,poloson 4), (skem 5,jhocam 5)}"""
+subset = true
+
+["Input 7"]
+input = """
+1,,2
+f
+"""
+output = """{(1,f), (,f), (2,f)}"""
+subset = true
+
+["Input 8"]
+input = """
+1, ,5
+s
+"""
+output = """{(1,s), ( ,s), (5,s)}"""
+subset = true

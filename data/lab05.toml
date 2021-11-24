@@ -1,0 +1,86 @@
+["Input 1"]
+input = """
+percakapan1.txt
+"""
+output = """
+Masukkan nama file input: percakapan1.txt
+
+Dek Depe: Selamat pagi Pak Chanek 😃 😃
+Pak Chanek: Selamat pagi Dek Depe 😃
+
+Mengukur suasana hati....
+
+##### Hasil Pengukuran #####
+Happiness = 59 | Sadness = 44 | Anger = 50
+
+##### Kesimpulan #####
+Pak Chanek sedang bahagia.
+"""
+subset = false
+
+["Input 2"]
+input = """
+percakapan2.txt
+"""
+output = """
+Masukkan nama file input: percakapan2.txt
+
+Dek Depe: Selamat siang Pak Chanek 😃
+Dek Depe: Saya mau meminta materi bapak tadi ya 😃
+Pak Chanek: Selamat pagi Dek Depe 😃
+Pak Chanek: Maaf ya saya belum sempat menyiapkan materi 😥 😥 😥
+Pak Chanek: Kucing saya tadi numpahin kopi ke laptop saya 😡
+Dek Depe: Wah baik pak, yang sabar yaa 😥
+
+Mengukur suasana hati....
+
+##### Hasil Pengukuran #####
+Happiness = 54 | Sadness = 74 | Anger = 39
+
+##### Kesimpulan #####
+Pak Chanek sedang sedih.
+"""
+subset = false
+
+["Input 3"]
+input = """
+percakapan3.txt
+out3.txt
+"""
+output = """
+Masukkan nama file input: percakapan3.txt
+
+Dek Depe: Selamat siang Pak Chanek 😃
+Pak Chanek: ...
+
+Mengukur suasana hati....
+
+##### Hasil Pengukuran #####
+Happiness = 50 | Sadness = 50 | Anger = 50
+
+##### Kesimpulan #####
+Kesimpulan tidak ditemukan.
+"""
+subset = false
+
+["Input 4"]
+input = """
+percakapan4.txt
+"""
+output = """
+Masukkan nama file input: percakapan4.txt
+
+Dek Depe: Selamat malam Pak Chanek, saya ingin bertanya 😃
+Pak Chanek: Malam Dek Depe 😃 😃 😃 😃 😃 😃
+Dek Depe: Maaf Pak Chanek, saya tidak jadi bertanya 😥
+Pak Chanek: 😥 😥 😥 😥 😥 😥 😥 😥 😥
+
+Mengukur suasana hati....
+
+##### Hasil Pengukuran #####
+Happiness = 100 | Sadness = 100 | Anger = 0
+
+##### Kesimpulan #####
+Pak Chanek sedang bahagia atau sedih.
+"""
+subset = false

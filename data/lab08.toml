@@ -1,0 +1,72 @@
+["Input 1"]
+input = """
+adam budi caca frans
+budi dodo
+caca elsa
+budi gerrad
+dodo
+elsa
+frans
+gerrad
+selesai
+RANTAI_PENYEBARAN adam
+CEK_STATUS budi dodo
+CEK_PENULARAN budi dodo
+CEK_PENULARAN dodo budi
+CEK_PENULARAN dodo irham
+RANTAI_PENYEBARAN budi
+CEK_PENULARAN elsa adam
+EXIT
+"""
+output = """
+Masukkan rantai penyebaran:
+adam budi caca frans
+budi dodo
+caca elsa
+budi gerrad
+dodo
+elsa
+frans
+gerrad
+selesai
+
+List perintah:
+1. RANTAI_PENYEBARAN
+2. CEK_PENULARAN
+3. EXIT
+
+Masukkan perintah: RANTAI_PENYEBARAN adam
+Rantai penyebaran adam:
+regex|- (?:budi)?(?:caca)?(?:frans)?(?:dodo)?(?:gerrad)?(?:elsa)?(?:adam)?
+regex|- (?:budi)?(?:caca)?(?:frans)?(?:dodo)?(?:gerrad)?(?:elsa)?(?:adam)?
+regex|- (?:budi)?(?:caca)?(?:frans)?(?:dodo)?(?:gerrad)?(?:elsa)?(?:adam)?
+regex|- (?:budi)?(?:caca)?(?:frans)?(?:dodo)?(?:gerrad)?(?:elsa)?(?:adam)?
+regex|- (?:budi)?(?:caca)?(?:frans)?(?:dodo)?(?:gerrad)?(?:elsa)?(?:adam)?
+regex|- (?:budi)?(?:caca)?(?:frans)?(?:dodo)?(?:gerrad)?(?:elsa)?(?:adam)?
+regex|- (?:budi)?(?:caca)?(?:frans)?(?:dodo)?(?:gerrad)?(?:elsa)?(?:adam)?
+
+Masukkan perintah: CEK_STATUS budi dodo
+Maaf perintah tidak dikenali. Masukkan perintah yang valid.
+
+Masukkan perintah: CEK_PENULARAN budi dodo
+TIDAK
+
+Masukkan perintah: CEK_PENULARAN dodo budi
+YA
+
+Masukkan perintah: CEK_PENULARAN dodo irham
+Maaf, nama irham tidak ada dalam rantai penyebaran.
+
+Masukkan perintah: RANTAI_PENYEBARAN budi
+Rantai penyebaran budi:
+regex|- (?:budi)?(?:dodo)?(?:gerrad)?
+regex|- (?:budi)?(?:dodo)?(?:gerrad)?
+regex|- (?:budi)?(?:dodo)?(?:gerrad)?
+
+Masukkan perintah: CEK_PENULARAN elsa adam
+YA
+
+Masukkan perintah: EXIT
+Goodbye~ Semoga virus KOPIT cepat berakhir.
+"""
+subset = false

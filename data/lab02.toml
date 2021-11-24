@@ -1,0 +1,235 @@
+["Contoh Input 1"]
+input = """
+4
+MATDIS 1
+3
+73
+DDP1
+4
+78
+PSD
+4
+64
+Agama
+4
+59
+"""
+output = """
+Selamat datang di Kalkulator IPK!
+Masukkan jumlah mata kuliah: 4
+
+Masukkan nama mata kuliah ke-1: MATDIS 1
+Masukkan jumlah SKS MATDIS 1: 3
+Masukkan nilai yang kamu dapatkan: 73
+
+Masukkan nama mata kuliah ke-2: DDP1
+Masukkan jumlah SKS DDP1: 4
+Masukkan nilai yang kamu dapatkan: 78
+
+Masukkan nama mata kuliah ke-3: PSD
+Masukkan jumlah SKS PSD: 4
+Masukkan nilai yang kamu dapatkan: 64
+
+Masukkan nama mata kuliah ke-4: Agama
+Masukkan jumlah SKS Agama: 4
+Masukkan nilai yang kamu dapatkan: 59
+
+Jumlah SKS lulus : 15 / 15
+Jumlah mutu lulus: 39.40 / 39.40
+Total IPK kamu adalah 2.63
+Total IPT kamu adalah 2.63
+"""
+subset = false
+
+["Contoh Input 2"]
+input = """
+2
+ddp
+4
+96
+md2
+3
+49
+"""
+output = """
+Jumlah SKS lulus : 4 / 7
+Jumlah mutu lulus: 16.00 / 19.00
+Total IPK kamu adalah 4.00
+Total IPT kamu adalah 2.71
+"""
+subset = true
+
+["Contoh Input 3"]
+input = """
+7
+DDP1
+4
+89.83
+KALKULUS1
+3
+-95
+-95.1
+92
+KOMBISTEK
+3
+-20
+54.99
+MANBIS
+3
+89.89
+MATDIS1
+3
+80
+AGAMA
+2
+75
+MPK ING
+2
+68
+"""
+output = """
+Jumlah SKS lulus : 17 / 20
+Jumlah mutu lulus: 63.10 / 66.10
+Total IPK kamu adalah 3.71
+Total IPT kamu adalah 3.31
+"""
+subset = true
+
+["Input 1"]
+input = """
+6
+DDP1
+4
+91.60
+Kalkulus 1
+3
+76.23
+Kombistek
+3
+-20.1
+20.1
+MPK Inggris
+3
+100
+PSD
+4
+0
+MPKT B
+5
+0
+"""
+output = """
+Jumlah SKS lulus : 10 / 22
+Jumlah mutu lulus: 37.90 / 37.90
+Total IPK kamu adalah 3.79
+Total IPT kamu adalah 1.72
+"""
+subset = true
+
+["Input 2"]
+input = """
+0
+"""
+output = """
+Tidak ada mata kuliah yang diambil.
+"""
+subset = true
+
+["Input 3"]
+input = """
+5
+DDP1
+4
+60
+MPKT A
+5
+75
+Kalkulus 1
+3
+65
+Manbis
+3
+70
+Aljabar Linear
+3
+85
+"""
+output = """
+Jumlah SKS lulus : 18 / 18
+Jumlah mutu lulus: 54.80 / 54.80
+Total IPK kamu adalah 3.04
+Total IPT kamu adalah 3.04
+"""
+subset = true
+
+["Input 4"]
+input = """
+2
+DPP1
+4
+0
+PSD
+4
+0
+"""
+output = """
+Jumlah SKS lulus : 0 / 8
+Jumlah mutu lulus: 0.00 / 0.00
+Total IPK kamu adalah 0.00
+Total IPT kamu adalah 0.00
+"""
+subset = true
+
+["Input 5"]
+input = """
+2
+DDP0
+4
+53
+MATDIS0
+3
+3
+"""
+output = """
+Jumlah SKS lulus : 0 / 7
+Jumlah mutu lulus: 0.00 / 4.00
+Total IPK kamu adalah 0.00
+Total IPT kamu adalah 0.57
+"""
+subset = true
+
+["Input 6"]
+input = """
+-3
+-1
+7
+DDP0
+4
+49
+MATDIS0
+3
+79.999
+AGAMA
+2
+105
+B. JERMAN
+2
+-8
+74.98
+MANBIS
+3
+98
+KOMBIS
+3
+54.98
+KALKULUS 1
+3
+99
+"""
+output = """
+Jumlah SKS lulus : 13 / 20
+Jumlah mutu lulus: 47.90 / 54.90
+Total IPK kamu adalah 3.68
+Total IPT kamu adalah 2.75
+"""
+subset = true

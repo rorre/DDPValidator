@@ -1,0 +1,74 @@
+["Input 1"]
+input = """
+in1.txt
+out1.txt
+"""
+output = """
+Masukkan nama file input: in1.txt
+Masukkan nama file output: out1.txt
+Output berhasil ditulis pada out1.txt
+Program selesai. Tekan enter untuk keluar...
+"""
+subset = false
+"expected_file" = "expected/out1.txt"
+"output_file" = "out1.txt"
+
+["Empty File"]
+input = """
+in2.txt
+out2.txt
+"""
+output = """
+Masukkan nama file input: in2.txt
+Masukkan nama file output: out2.txt
+File input ada tapi kosong :(
+Program selesai. Tekan enter untuk keluar...
+"""
+subset = false
+"expected_file" = ""
+"output_file" = ""
+
+["Input 3"]
+input = """
+in3.txt
+out3.txt
+"""
+output = """
+Masukkan nama file input: in3.txt
+Masukkan nama file output: out3.txt
+Output berhasil ditulis pada out3.txt
+Program selesai. Tekan enter untuk keluar...
+"""
+subset = false
+"expected_file" = "expected/out3.txt"
+"output_file" = "out3.txt"
+
+["Input 4"]
+input = """
+in4.txt
+out4.txt
+"""
+output = """
+Masukkan nama file input: in4.txt
+Masukkan nama file output: out4.txt
+Output berhasil ditulis pada out4.txt
+Program selesai. Tekan enter untuk keluar...
+"""
+subset = false
+"expected_file" = "expected/out4.txt"
+"output_file" = "out4.txt"
+
+["Nonexistent File"]
+input = """
+in999.txt
+out999.txt
+"""
+output = """
+Masukkan nama file input: in999.txt
+Masukkan nama file output: out999.txt
+File input tidak ada :(
+Program selesai. Tekan enter untuk keluar...
+"""
+subset = false
+"expected_file" = ""
+"output_file" = ""

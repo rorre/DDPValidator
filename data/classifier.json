@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Lab 01",
+        "identifier": "radius lingkaran",
+        "path": "lab01.toml"
+    },
+    {
+        "name": "Lab 02",
+        "identifier": "Kalkulator IPK",
+        "path": "lab02.toml"
+    },
+    {
+        "name": "Lab 03",
+        "identifier": "himpunan A",
+        "path": "lab03.toml"
+    },
+    {
+        "name": "Lab 04",
+        "identifier": "Mention",
+        "path": "lab04.toml"
+    },
+    {
+        "name": "Lab 05",
+        "identifier": "suasana hati",
+        "path": "lab05.toml"
+    },
+    {
+        "name": "Lab 06",
+        "identifier": "SUSUN JADWAL",
+        "path": "lab06.toml"
+    },
+    {
+        "name": "Lab 07",
+        "identifier": "INFO_TUJUAN",
+        "path": "lab07.toml"
+    },
+    {
+        "name": "Lab 08",
+        "identifier": "RANTAI_PENYEBARAN",
+        "path": "lab08.toml"
+    }
+]

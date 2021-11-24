@@ -1,0 +1,59 @@
+["Input 1"]
+input = """
+42
+"""
+output = """
+Masukkan radius lingkaran: 42
+Luas daerah cat merah: 1514.23
+Luas daerah cat kuning: 3777.77
+Luas daerah cat ungu: 1764.00
+"""
+subset = false
+
+["Input 2"]
+input = """
+36
+"""
+output = """
+Masukkan radius lingkaran: 36
+Luas daerah cat merah: 1112.50
+Luas daerah cat kuning: 2775.50
+Luas daerah cat ungu: 1296.00
+"""
+subset = false
+
+["Input 3"]
+input = """
+96.024
+"""
+output = """
+Masukkan radius lingkaran: 96.024
+Luas daerah cat merah: 7915.04
+Luas daerah cat kuning: 19746.79
+Luas daerah cat ungu: 9220.61
+"""
+subset = false
+
+["Input 4"]
+input = """
+0
+"""
+output = """
+Masukkan radius lingkaran: 0
+Luas daerah cat merah: 0.00
+Luas daerah cat kuning: 0.00
+Luas daerah cat ungu: 0.00
+"""
+subset = false
+
+["Input 5"]
+input = """
+10000006.99
+"""
+output = """
+Masukkan radius lingkaran: 10000006.99
+Luas daerah cat merah: 85840854646409.69
+Luas daerah cat kuning: 214159564753736.88
+Luas daerah cat ungu: 100000139800048.86
+"""
+subset = false
