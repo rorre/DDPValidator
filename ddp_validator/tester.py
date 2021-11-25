@@ -1,4 +1,5 @@
 import asyncio
+import difflib
 import sys
 from typing import Dict, List, Optional
 
@@ -23,11 +24,22 @@ def compare_output(
 ):
     subset_exist = has_subset(program_lines, expected_lines)
     subset_exist |= has_subset(expected_lines, program_lines)
+    write_file = not subset
 
     if subset:
         return subset_exist
 
     if len(program_lines) != len(expected_lines):
+        if write_file:
+            differ = difflib.HtmlDiff()
+            html = differ.make_file(
+                expected_lines,
+                program_lines,
+                fromdesc="Expected",
+                todesc="Program Output",
+            )
+            with open("difference.html", "w") as f:
+                f.write(html)
         return False
 
     for i in range(len(program_lines)):
@@ -35,6 +47,7 @@ def compare_output(
 
         # Regex
         if current_expected.startswith("regex|"):
+            write_file = False
             current_expected = current_expected[6:]
             result = re.match(current_expected, program_lines[i])
             if not result:
@@ -42,6 +55,17 @@ def compare_output(
             continue
 
         if program_lines[i] != expected_lines[i]:
+            if write_file:
+                differ = difflib.HtmlDiff()
+                html = differ.make_file(
+                    expected_lines,
+                    program_lines,
+                    fromdesc="Expected",
+                    todesc="Program Output",
+                )
+                with open("difference.html", "w") as f:
+                    f.write(html)
+
             return False
     return True
 
@@ -105,7 +129,7 @@ class InputTester:
         if test_passed:
             print("All checks passed!")
         else:
-            print("Some check failed :(")
+            print("Some checks have failed :(")
 
     @classmethod
     def from_str(cls, program_path: str, inputs: str):
