@@ -1,0 +1,370 @@
+["Input 1"]
+input = """
+1
+4
+SELLER S1
+SELLER S2
+BUYER B1 100000
+BUYER B2 200000
+2
+S1
+1
+azuz 10000 1
+1
+somay 5000 2
+3
+2
+B1
+1
+2
+azuz
+2
+azuz
+1
+3
+4
+3
+"""
+output = """
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 1
+Jumlah akun yang ingin didaftarkan : 4
+Data akun:
+1. SELLER S1
+2. SELLER S2
+3. BUYER B1 100000
+4. BUYER B2 200000
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 2
+user_name : S1
+Anda telah masuk dalam akun S1 sebagai SELLER
+
+Selamat datang S1,
+berikut menu yang bisa Anda lakukan:
+1. TAMBAHKAN_PRODUK
+2. LIHAT_DAFTAR_PRODUK_SAYA
+3. LOG_OUT
+
+Pemasukan anda 0,
+Apa yang ingin Anda lakukan? 1
+Masukkan data produk : azuz 10000 1
+
+Pemasukan anda 0,
+Apa yang ingin Anda lakukan? 1
+Masukkan data produk : somay 5000 2
+
+Pemasukan anda 0,
+Apa yang ingin Anda lakukan? 3
+Anda telah keluar dari akun S1
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 2
+user_name : B1
+Anda telah masuk dalam akun B1 sebagai BUYER
+
+Selamat datang B1,
+berikut menu yang bisa Anda lakukan:
+1. LIHAT_SEMUA_PRODUK
+2. BELI_PRODUK
+3. RIWAYAT_PEMBELIAN_SAYA
+4. LOG_OUT
+
+Saldo anda 100000,
+Apa yang ingin Anda lakukan? 1
+
+Berikut merupakan daftar product di Dekdepedia
+------------------------------------------------
+  Nama Product  |   Harga   | Stock |  Penjual
+------------------------------------------------
+azuz            |10000      |1      |S1
+somay           |5000       |2      |S1
+------------------------------------------------
+
+Saldo anda 100000,
+Apa yang ingin Anda lakukan? 2
+Masukkan barang yang ingin dibeli : azuz
+Berhasil membeli azuz dari S1
+
+Saldo anda 90000,
+Apa yang ingin Anda lakukan? 2
+Masukkan barang yang ingin dibeli : azuz
+Maaf, stok produk telah habis.
+
+Saldo anda 90000,
+Apa yang ingin Anda lakukan? 1
+
+Berikut merupakan daftar product di Dekdepedia
+------------------------------------------------
+  Nama Product  |   Harga   | Stock |  Penjual
+------------------------------------------------
+azuz            |10000      |0      |S1
+somay           |5000       |2      |S1
+------------------------------------------------
+
+Saldo anda 90000,
+Apa yang ingin Anda lakukan? 3
+
+Berikut merupakan barang yang saya beli
+-------------------------------------
+  Nama Product  |   Harga   | Penjual
+-------------------------------------
+azuz            |10000      |S1
+-------------------------------------
+
+Saldo anda 90000,
+Apa yang ingin Anda lakukan? 4
+Anda telah keluar dari akun B1
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 3
+Terima kasih telah menggunakan Dekdepedia!
+"""
+subset = false
+
+["Input 2"]
+input = """
+1
+4
+SELLER A
+SELLER B
+BUYER C
+BUYER C 10000
+2
+A
+1
+oreo 3000 5
+3
+2
+B
+1
+nabati 5000 3
+2
+3
+2
+D
+2
+C
+1
+2
+nabati
+2
+nabati
+2
+oreo
+3
+1
+4
+2
+B
+2
+3
+3
+"""
+output = """
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 1
+Jumlah akun yang ingin didaftarkan : 4   
+Data akun:
+1. SELLER A
+2. SELLER B
+3. BUYER C
+Akun tidak valid.
+4. BUYER C 10000
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 2
+user_name : A
+Anda telah masuk dalam akun A sebagai SELLER
+
+Selamat datang A,
+berikut menu yang bisa Anda lakukan:
+1. TAMBAHKAN_PRODUK
+2. LIHAT_DAFTAR_PRODUK_SAYA
+3. LOG_OUT
+
+Pemasukan anda 0,
+Apa yang ingin Anda lakukan? 1
+Masukkan data produk : oreo 3000 5
+
+Pemasukan anda 0,
+Apa yang ingin Anda lakukan? 3
+Anda telah keluar dari akun A
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 2
+user_name : B
+Anda telah masuk dalam akun B sebagai SELLER
+
+Selamat datang B,
+berikut menu yang bisa Anda lakukan:
+1. TAMBAHKAN_PRODUK
+2. LIHAT_DAFTAR_PRODUK_SAYA
+3. LOG_OUT
+
+Pemasukan anda 0,
+Apa yang ingin Anda lakukan? 1
+Masukkan data produk : nabati 5000 3
+
+Pemasukan anda 0,
+Apa yang ingin Anda lakukan? 2
+
+Berikut merupakan barang jualan saya
+-------------------------------------
+  Nama Product  |   Harga   | Stock
+-------------------------------------
+nabati          |5000       |3
+-------------------------------------
+
+
+Pemasukan anda 0,
+Apa yang ingin Anda lakukan? 3
+Anda telah keluar dari akun B
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 2
+user_name : D
+Akun dengan user_name D tidak ditemukan
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 2
+user_name : C
+Anda telah masuk dalam akun C sebagai BUYER
+
+Selamat datang C,
+berikut menu yang bisa Anda lakukan:
+1. LIHAT_SEMUA_PRODUK
+2. BELI_PRODUK
+3. RIWAYAT_PEMBELIAN_SAYA
+4. LOG_OUT
+
+Saldo anda 10000,
+Apa yang ingin Anda lakukan? 1
+
+Berikut merupakan daftar product di Dekdepedia
+------------------------------------------------
+  Nama Product  |   Harga   | Stock |  Penjual
+------------------------------------------------
+nabati          |5000       |3      |B
+oreo            |3000       |5      |A
+------------------------------------------------
+
+
+Saldo anda 10000,
+Apa yang ingin Anda lakukan? 2
+Masukkan barang yang ingin dibeli : nabati
+Berhasil membeli nabati dari B
+
+Saldo anda 5000,
+Apa yang ingin Anda lakukan? 2
+Masukkan barang yang ingin dibeli : nabati
+Berhasil membeli nabati dari B
+
+Saldo anda 0,
+Apa yang ingin Anda lakukan? 2
+Masukkan barang yang ingin dibeli : oreo
+Maaf, saldo Anda tidak cukup untuk membeli oreo
+
+Saldo anda 0,
+Apa yang ingin Anda lakukan? 3
+
+Berikut merupakan barang yang saya beli
+-------------------------------------
+  Nama Product  |   Harga   | Penjual |
+-------------------------------------
+nabati          |5000       |B
+nabati          |5000       |B
+-------------------------------------
+
+
+Saldo anda 0,
+Apa yang ingin Anda lakukan? 1
+
+Berikut merupakan daftar product di Dekdepedia
+------------------------------------------------
+  Nama Product  |   Harga   | Stock |  Penjual
+------------------------------------------------
+nabati          |5000       |1      |B
+oreo            |3000       |5      |A
+------------------------------------------------
+
+
+Saldo anda 0,
+Apa yang ingin Anda lakukan? 4
+Anda telah keluar dari akun C
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 2
+user_name : B
+Anda telah masuk dalam akun B sebagai SELLER
+
+Selamat datang B,
+berikut menu yang bisa Anda lakukan:
+1. TAMBAHKAN_PRODUK
+2. LIHAT_DAFTAR_PRODUK_SAYA
+3. LOG_OUT
+
+Pemasukan anda 10000,
+Apa yang ingin Anda lakukan? 2
+
+Berikut merupakan barang jualan saya
+-------------------------------------
+  Nama Product  |   Harga   | Stock
+-------------------------------------
+nabati          |5000       |1
+-------------------------------------
+
+
+Pemasukan anda 10000,
+Apa yang ingin Anda lakukan? 3
+Anda telah keluar dari akun B
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 3
+Terima kasih telah menggunakan Dekdepedia!
+"""
+subset = false

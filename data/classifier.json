@@ -33,5 +33,10 @@
         "name": "Lab 08",
         "identifier": "RANTAI_PENYEBARAN",
         "path": "lab08.toml"
+    },
+    {
+        "name": "Lab 09",
+        "identifier": "Dekdepedia",
+        "path": "lab09.toml"
     }
 ]
