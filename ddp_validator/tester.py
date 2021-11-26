@@ -103,7 +103,6 @@ class InputTester:
             condition = compare_output(program_lines, expected_lines, t["subset"])
             if not condition:
                 print("❌")
-                print("--------------------")
                 test_passed = False
                 continue
 
