@@ -19,6 +19,7 @@ class Test(TypedDict):
     subset: bool
     expected_file: Optional[str]
     output_file: Optional[str]
+    has_regex: bool
 
 
 class Classification(TypedDict):
