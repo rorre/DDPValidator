@@ -184,7 +184,7 @@ Silakan memilih salah satu menu di bawah:
 2. Log In
 3. Exit
 Pilihan Anda: 1
-Jumlah akun yang ingin didaftarkan : 4   
+Jumlah akun yang ingin didaftarkan : 4
 Data akun:
 1. SELLER A
 2. SELLER B
@@ -244,7 +244,6 @@ Berikut merupakan barang jualan saya
 nabati          |5000       |3
 -------------------------------------
 
-
 Pemasukan anda 0,
 Apa yang ingin Anda lakukan? 3
 Anda telah keluar dari akun B
@@ -256,7 +255,7 @@ Silakan memilih salah satu menu di bawah:
 3. Exit
 Pilihan Anda: 2
 user_name : D
-Akun dengan user_name D tidak ditemukan
+Akun dengan username D tidak ditemukan
 
 Selamat datang di Dekdepedia!
 Silakan memilih salah satu menu di bawah:
@@ -285,7 +284,6 @@ nabati          |5000       |3      |B
 oreo            |3000       |5      |A
 ------------------------------------------------
 
-
 Saldo anda 10000,
 Apa yang ingin Anda lakukan? 2
 Masukkan barang yang ingin dibeli : nabati
@@ -299,19 +297,18 @@ Berhasil membeli nabati dari B
 Saldo anda 0,
 Apa yang ingin Anda lakukan? 2
 Masukkan barang yang ingin dibeli : oreo
-Maaf, saldo Anda tidak cukup untuk membeli oreo
+Maaf, saldo Anda tidak cukup untuk membeli oreo.
 
 Saldo anda 0,
 Apa yang ingin Anda lakukan? 3
 
 Berikut merupakan barang yang saya beli
 -------------------------------------
-  Nama Product  |   Harga   | Penjual |
+  Nama Product  |   Harga   | Penjual
 -------------------------------------
 nabati          |5000       |B
 nabati          |5000       |B
 -------------------------------------
-
 
 Saldo anda 0,
 Apa yang ingin Anda lakukan? 1
@@ -323,7 +320,6 @@ Berikut merupakan daftar product di Dekdepedia
 nabati          |5000       |1      |B
 oreo            |3000       |5      |A
 ------------------------------------------------
-
 
 Saldo anda 0,
 Apa yang ingin Anda lakukan? 4
@@ -353,7 +349,6 @@ Berikut merupakan barang jualan saya
 -------------------------------------
 nabati          |5000       |1
 -------------------------------------
-
 
 Pemasukan anda 10000,
 Apa yang ingin Anda lakukan? 3
