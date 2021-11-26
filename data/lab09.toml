@@ -1,3 +1,94 @@
+["Sign Up Validation 1"]
+input = """
+1
+3
+BUYER LITHA 10000
+SELLER ABI_DEWA69
+BUYER BINTANG 20000
+3
+"""
+output = """
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 1
+Jumlah akun yang ingin didaftarkan : 3
+Data akun:
+1. BUYER LITHA 10000
+2. SELLER ABI_DEWA69
+3. BUYER BINTANG 20000
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 3
+Terima kasih telah menggunakan Dekdepedia!
+"""
+subset = false
+
+["Sign Up Validation 2"]
+input = """
+1
+12
+BUYYYER LITHA
+SELLER ABI_DEWA69
+BUYER BINTANG 20000
+SELLER AL AL AL
+BUYER MARKUS!
+BUYER ABI_DEWA69 10000
+BUYER ABI_DEWA69
+BUYER LITHA -10
+OAWHEFOWEHFWOEUFHE
+seller SAYA
+BUYER Abi_Dewa69 10000
+BUYER MLW SALDO
+3
+"""
+output = """
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 1
+Jumlah akun yang ingin didaftarkan : 12
+Data akun:
+1. BUYYYER LITHA
+Akun tidak valid.
+2. SELLER ABI_DEWA69
+3. BUYER BINTANG 20000
+4. SELLER AL AL AL
+Akun tidak valid.
+5. BUYER MARKUS!
+Akun tidak valid.
+6. BUYER ABI_DEWA69 10000
+Username sudah terdaftar.
+7. BUYER ABI_DEWA69
+Akun tidak valid.
+8. BUYER LITHA -10
+Akun tidak valid.
+9. OAWHEFOWEHFWOEUFHE
+Akun tidak valid.
+10. seller SAYA
+Akun tidak valid.
+11. BUYER Abi_Dewa69 10000
+12. BUYER MLW SALDO
+Akun tidak valid.
+
+Selamat datang di Dekdepedia!
+Silakan memilih salah satu menu di bawah:
+1. Sign Up
+2. Log In
+3. Exit
+Pilihan Anda: 3
+Terima kasih telah menggunakan Dekdepedia!
+"""
+subset = false
+
 ["Input 1"]
 input = """
 1
