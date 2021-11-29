@@ -144,3 +144,5 @@ TP/TP02/*.html
 *.vtt*
 
 misc/man
+*build
+*dist

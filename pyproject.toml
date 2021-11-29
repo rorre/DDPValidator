@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "DDPValidator"
+name = "DDP-Validator"
 version = "0.1.0"
 description = ""
 authors = ["Rendy Arya Kemal <renrror@gmail.com>"]
