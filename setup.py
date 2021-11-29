@@ -10,7 +10,7 @@ install_requires = ["requests>=2.26.0,<3.0.0", "toml>=0.10.2,<0.11.0"]
 
 setup_kwargs = {
     "name": "ddp-validator",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "",
     "long_description": None,
     "author": "Rendy Arya Kemal",
