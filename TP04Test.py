@@ -20,6 +20,15 @@ except ImportError:
     print("pip install pyautogui requests zxing Pillow reprint")
     exit()
 
+if sys.platform.startswith("win"):
+    for binary in ("gswin32c", "gswin64c", "gs"):
+        if shutil.which(binary) is not None:
+            has_ghostscript = True
+            break
+    else:
+        print("Cannot find ghostscript in PATH, skipping postscript check.")
+        has_ghostscript = False
+
 MAX_TESTS = 10
 BOX_URL = "https://d.rorre.xyz/qSUxyW5wa/python_RuNAEdVJci.png"
 BOX_PATH = "box_check.png"
@@ -157,7 +166,8 @@ def main():
 
                 output_dict["Progress"] = f"{i+1}/{MAX_TESTS}"
                 output_dict["Output (GUI)"] = "..."
-                output_dict["Output (Postscript)"] = "..."
+                if has_ghostscript:
+                    output_dict["Output (Postscript)"] = "..."
                 output_dict["Status"] = "In progress"
                 output_dict["Expected"] = result_code
 
@@ -169,11 +179,12 @@ def main():
                     output_dict["Status"] = "FAILED"
                     break
 
-                result_postscript = check_postscript(fpath, result_code)
-                output_dict["Output (Postscript)"] = result_postscript[1]
-                if result_postscript[0]:
-                    output_dict["Status"] = "FAILED"
-                    break
+                if has_ghostscript:
+                    result_postscript = check_postscript(fpath, result_code)
+                    output_dict["Output (Postscript)"] = result_postscript[1]
+                    if result_postscript[0]:
+                        output_dict["Status"] = "FAILED"
+                        break
             else:
                 output_dict["Status"] = "SUCCESS"
 
