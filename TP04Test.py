@@ -3,9 +3,10 @@ import random
 import string
 import subprocess
 import sys
-import tempfile
 import time
 from typing import Tuple
+from pathlib import Path
+import shutil
 
 try:
     import pyautogui
@@ -113,6 +114,11 @@ def main():
         print("Test box image not found, downloading...")
         download_image(BOX_URL, BOX_PATH)
 
+    cwd = Path(".").resolve()
+    tempdir = Path("tester-tmp")
+    tempdir.mkdir(exist_ok=True)
+    os.chdir(tempdir)
+
     print("Spawning TP process...")
     tp_process = subprocess.Popen(["python", args[1]])
     time.sleep(2)
@@ -127,7 +133,9 @@ def main():
 
     window = windows[0]
     window_region = (window.left, window.top, window.width, window.height)
-    input_boxes = list(pyautogui.locateAllOnScreen(BOX_PATH, region=window_region))
+    input_boxes = list(
+        pyautogui.locateAllOnScreen(str(cwd / BOX_PATH), region=window_region)
+    )
 
     if len(input_boxes) != 2:
         print(f"ERR: Expected to find 2 input boxes, got {len(input_boxes)}.")
@@ -137,48 +145,47 @@ def main():
     saveas_box = input_boxes[0][:2]
     code_box = input_boxes[1][:2]
 
-    success = False
-    with tempfile.TemporaryDirectory() as tempdir:
-        with output(output_type="dict", interval=0.1) as output_dict:
-            try:
-                for i in range(MAX_TESTS):
-                    fname = random_str(8)
-                    fpath = tempdir + "/" + fname
+    with output(output_type="dict", interval=0.1) as output_dict:
+        try:
+            for i in range(MAX_TESTS):
+                fname = random_str(8)
+                fpath = fname
 
-                    code = random.randint(10 ** 11, 10 ** 12 - 1)
-                    check_digit = calc_check_digit(str(code))
-                    result_code = str(code) + check_digit
+                code = random.randint(10 ** 11, 10 ** 12 - 1)
+                check_digit = calc_check_digit(str(code))
+                result_code = str(code) + check_digit
 
-                    output_dict["Progress"] = f"{i+1}/{MAX_TESTS}"
-                    output_dict["Output (GUI)"] = "..."
-                    output_dict["Output (Postscript)"] = "..."
-                    output_dict["Status"] = "In progress"
-                    output_dict["Expected"] = result_code
+                output_dict["Progress"] = f"{i+1}/{MAX_TESTS}"
+                output_dict["Output (GUI)"] = "..."
+                output_dict["Output (Postscript)"] = "..."
+                output_dict["Status"] = "In progress"
+                output_dict["Expected"] = result_code
 
-                    write_inputs(fpath, code, saveas_box, code_box)
+                write_inputs(fpath, code, saveas_box, code_box)
 
-                    result_gui = check_gui(fpath, result_code, window_region)
-                    output_dict["Output (GUI)"] = result_gui[1]
-                    if result_gui[0]:
-                        output_dict["Status"] = "FAILED"
-                        break
+                result_gui = check_gui(fpath, result_code, window_region)
+                output_dict["Output (GUI)"] = result_gui[1]
+                if result_gui[0]:
+                    output_dict["Status"] = "FAILED"
+                    break
 
-                    result_postscript = check_postscript(fpath, result_code)
-                    output_dict["Output (Postscript)"] = result_postscript[1]
-                    if result_postscript[0]:
-                        output_dict["Status"] = "FAILED"
-                        break
-                else:
-                    success = True
-                    output_dict["Status"] = "SUCCESS"
+                result_postscript = check_postscript(fpath, result_code)
+                output_dict["Output (Postscript)"] = result_postscript[1]
+                if result_postscript[0]:
+                    output_dict["Status"] = "FAILED"
+                    break
+            else:
+                output_dict["Status"] = "SUCCESS"
 
-            except pyautogui.FailSafeException:
-                output_dict["Status"] = "ABORTED"
-                output_dict.append("Failsafe detected, ending execution...")
-                pass
+        except pyautogui.FailSafeException:
+            output_dict["Status"] = "ABORTED"
+            output_dict.append("Failsafe detected, ending execution...")
+            pass
 
-    if success:
-        tp_process.kill()
+    tp_process.kill()
+    os.chdir("..")
+    time.sleep(1)
+    shutil.rmtree(tempdir)
 
 
 if __name__ == "__main__":
