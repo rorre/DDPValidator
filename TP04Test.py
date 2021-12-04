@@ -21,7 +21,7 @@ try:
 except ImportError:
     print("Cannot import dependencies. Install them with:")
     print("  pip install pyautogui requests zxing Pillow reprint opencv-python")
-    exit()
+    exit(1)
 
 if sys.platform.startswith("win"):
     for binary in ("gswin32c", "gswin64c", "gs"):
@@ -31,6 +31,9 @@ if sys.platform.startswith("win"):
     else:
         print("Cannot find ghostscript in PATH, skipping postscript check.")
         has_ghostscript = False
+else:
+    print("Sorry, this thing only works in Windows.")
+    exit(1)
 
 MAX_TESTS = 10
 ERR_PATH = "err_check.png"
