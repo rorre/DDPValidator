@@ -1,5 +1,6 @@
 import ctypes
 import os
+import platform
 import random
 import shutil
 import string
@@ -187,6 +188,10 @@ def do_error_check(
 
 
 def main():
+    if not (platform.system() == "Windows" and platform.release() == "10"):
+        print("This script only works in Windows 10.")
+        exit(1)
+
     args = sys.argv
     if len(args) != 2:
         print(f"Usage: {args[0]} path-to-TP04")
