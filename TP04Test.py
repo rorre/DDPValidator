@@ -138,9 +138,10 @@ def find_boxes(window_region: Rect) -> List[Rect]:
             continue
         rect = normalize_square(cv2.boundingRect(sides), window_region)
         rects.append(rect)
+    rects.sort(key=lambda x: x[1])
 
     used_rects = rects[-3:]
-    return sorted(used_rects, key=lambda x: x[1])
+    return used_rects
 
 
 def main():
