@@ -272,7 +272,7 @@ def main():
     print("Barcode box:", barcode_box)
     print("--------------")
 
-    with output(output_type="dict", interval=0.1) as output_dict:
+    with output(output_type="dict") as output_dict:
         try:
             output_dict["Progress"] = "Checking input validations..."
             output_dict["Status"] = "In progress"
