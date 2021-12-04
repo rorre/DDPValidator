@@ -1,14 +1,17 @@
+import ctypes
 import os
 import random
+import shutil
 import string
 import subprocess
 import sys
 import time
-from typing import Tuple
 from pathlib import Path
-import shutil
+from typing import List, Tuple
 
 try:
+    import cv2
+    import numpy as np
     import pyautogui
     import pygetwindow
     import requests
@@ -17,7 +20,7 @@ try:
     from reprint import output
 except ImportError:
     print("Cannot import dependencies. Install them with:")
-    print("pip install pyautogui requests zxing Pillow reprint")
+    print("  pip install pyautogui requests zxing Pillow reprint opencv-python")
     exit()
 
 if sys.platform.startswith("win"):
@@ -30,9 +33,14 @@ if sys.platform.startswith("win"):
         has_ghostscript = False
 
 MAX_TESTS = 10
-BOX_URL = "https://d.rorre.xyz/qSUxyW5wa/python_RuNAEdVJci.png"
-BOX_PATH = "box_check.png"
 ERR_PATH = "err_check.png"
+
+Rect = Tuple[int, int, int, int]
+
+user32 = ctypes.windll.user32
+SM_CYFRAME = 32
+SM_CYCAPTION = 4
+SM_CXPADDEDBORDER = 92
 
 reader = zxing.BarCodeReader()
 
@@ -83,7 +91,7 @@ def write_inputs(
 def check_gui(
     fpath: str,
     expected: str,
-    window_region: Tuple[int, int, int, int],
+    window_region: Rect,
 ) -> Tuple[bool, str]:
     pyautogui.screenshot(fpath + ".png", region=window_region)
     result_gui = reader.decode(fpath + ".png")
@@ -100,6 +108,36 @@ def check_postscript(fpath: str, expected: str) -> Tuple[bool, str]:
         or result_postscript.format != "EAN_13"
         or result_postscript.parsed != expected
     ), result_postscript.parsed
+
+
+def normalize_square(rect: Rect, window_region: Rect) -> Rect:
+    return (
+        rect[0] + window_region[0],
+        rect[1] + window_region[1],
+        rect[2],
+        rect[3],
+    )
+
+
+def find_boxes(window_region: Rect) -> List[Rect]:
+    im = pyautogui.screenshot(region=window_region)
+
+    im_cv2 = cv2.cvtColor(np.array(im), cv2.COLOR_RGB2GRAY)
+    _, thrash = cv2.threshold(im_cv2, 240, 255, cv2.CHAIN_APPROX_NONE)
+    contours, _ = cv2.findContours(thrash, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+
+    rects = []
+    for contour in contours:
+        # Approximate number of sides in contours
+        sides = cv2.approxPolyDP(contour, 0.01 * cv2.arcLength(contour, True), True)
+        # Not a rectangle, so whatever
+        if len(sides) != 4:
+            continue
+        rect = normalize_square(cv2.boundingRect(sides), window_region)
+        rects.append(rect)
+
+    used_rects = rects[-3:]
+    return sorted(used_rects, key=lambda x: x[1])
 
 
 def main():
@@ -119,10 +157,6 @@ def main():
             break
     print()
 
-    if not os.path.exists(BOX_PATH):
-        print("Test box image not found, downloading...")
-        download_image(BOX_URL, BOX_PATH)
-
     cwd = Path(".").resolve()
     tempdir = Path("tester-tmp")
     tempdir.mkdir(exist_ok=True)
@@ -131,7 +165,6 @@ def main():
     print("Spawning TP process...")
     tp_process = subprocess.Popen(["python", args[1]])
     time.sleep(2)
-    print("--------------")
 
     windows = pygetwindow.getWindowsWithTitle("EAN-13")
     if not windows:
@@ -140,19 +173,41 @@ def main():
         tp_process.kill()
         return
 
+    print("Locating input boxes and barcode box...")
     window = windows[0]
-    window_region = (window.left, window.top, window.width, window.height)
-    input_boxes = list(
-        pyautogui.locateAllOnScreen(str(cwd / BOX_PATH), region=window_region)
+    title_height = (
+        user32.GetSystemMetrics(SM_CYFRAME)
+        + user32.GetSystemMetrics(SM_CYCAPTION)
+        + user32.GetSystemMetrics(SM_CXPADDEDBORDER)
     )
+    actual_top = window.top + title_height
+    actual_height = window.height - title_height
 
-    if len(input_boxes) != 2:
-        print(f"ERR: Expected to find 2 input boxes, got {len(input_boxes)}.")
+    window_region = (window.left, actual_top, window.width, actual_height)
+    input_boxes = find_boxes(window_region)
+
+    if len(input_boxes) != 3:
+        print(f"ERR: Expected to find 3 boxes, got {len(input_boxes)}.")
         print("HINT: Test data uses width=15 for Entry widgets.")
         return
 
-    saveas_box = input_boxes[0][:2]
-    code_box = input_boxes[1][:2]
+    saveas_box = input_boxes[0]
+    code_box = input_boxes[1]
+    barcode_box = input_boxes[2]
+
+    saveas_point = (
+        saveas_box[0] + saveas_box[2] // 4,
+        saveas_box[1] + saveas_box[3] // 4,
+    )
+    code_point = (
+        code_box[0] + code_box[2] // 4,
+        code_box[1] + code_box[3] // 4,
+    )
+
+    print("Save as box:", saveas_box)
+    print("Code box:", code_box)
+    print("Barcode box:", barcode_box)
+    print("--------------")
 
     with output(output_type="dict", interval=0.1) as output_dict:
         try:
@@ -171,9 +226,9 @@ def main():
                 output_dict["Status"] = "In progress"
                 output_dict["Expected"] = result_code
 
-                write_inputs(fpath, code, saveas_box, code_box)
+                write_inputs(fpath, code, saveas_point, code_point)
 
-                result_gui = check_gui(fpath, result_code, window_region)
+                result_gui = check_gui(fpath, result_code, barcode_box)
                 output_dict["Output (GUI)"] = result_gui[1]
                 if result_gui[0]:
                     output_dict["Status"] = "FAILED"
@@ -194,7 +249,7 @@ def main():
             pass
 
     tp_process.kill()
-    os.chdir("..")
+    os.chdir(cwd)
     time.sleep(1)
     shutil.rmtree(tempdir)
 
