@@ -31,13 +31,12 @@ if sys.platform.startswith("win"):
     else:
         print("Cannot find ghostscript in PATH, skipping postscript check.")
         has_ghostscript = False
-else:
-    print("Sorry, this thing only works in Windows.")
-    exit(1)
 
 MAX_TESTS = 10
+ERR_URL = "https://d.rorre.xyz/HxifAQKX5/python_iAZcyBZK5C.png"
 ERR_PATH = "err_check.png"
 
+Point = Tuple[int, int]
 Rect = Tuple[int, int, int, int]
 
 user32 = ctypes.windll.user32
@@ -46,6 +45,12 @@ SM_CYCAPTION = 4
 SM_CXPADDEDBORDER = 92
 
 reader = zxing.BarCodeReader()
+cwd = Path(".").resolve()
+box_absolute_path = str(cwd.resolve() / ERR_PATH)
+
+
+class FailedCheck(Exception):
+    pass
 
 
 def download_image(url: str, path: str):
@@ -70,24 +75,22 @@ def random_str(n: int):
     return "".join([random.choice(string.ascii_letters) for _ in range(n)])
 
 
+def write_box(path: Point, text: str):
+    pyautogui.moveTo(*path)
+    pyautogui.click()
+    pyautogui.hotkey("ctrl", "a")
+    pyautogui.press("del")
+    pyautogui.write(text)
+
+
 def write_inputs(
     fpath: str,
     code: int,
-    saveas_box: Tuple[int, int],
-    code_box: Tuple[int, int],
+    saveas_point: Point,
+    code_point: Point,
 ):
-    pyautogui.moveTo(*saveas_box)
-    pyautogui.click()
-    pyautogui.hotkey("ctrl", "a")
-    pyautogui.press("del")
-    pyautogui.write(fpath + ".eps")
-
-    pyautogui.moveTo(*code_box)
-    pyautogui.click()
-    pyautogui.hotkey("ctrl", "a")
-    pyautogui.press("del")
-    pyautogui.write(str(code))
-
+    write_box(saveas_point, fpath)
+    write_box(code_point, str(code))
     pyautogui.press("enter")
 
 
@@ -144,11 +147,53 @@ def find_boxes(window_region: Rect) -> List[Rect]:
     return used_rects
 
 
+def do_error_check(
+    saveas_point: Point,
+    code_point: Point,
+):
+    write_inputs("sample.eps", 1, saveas_point, code_point)
+    err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
+    if not err_location:
+        raise FailedCheck(
+            "Code consisting of non 12-digit characters should raise error."
+        )
+    pyautogui.press("enter")
+
+    write_inputs("sample.eps", 1234567891231, saveas_point, code_point)
+    err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
+    if not err_location:
+        raise FailedCheck(
+            "Code consisting of non 12-digit characters should raise error."
+        )
+    pyautogui.press("enter")
+
+    write_inputs("sample.eps", 12345678912, saveas_point, code_point)
+    err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
+    if not err_location:
+        raise FailedCheck(
+            "Code consisting of non 12-digit characters should raise error."
+        )
+    pyautogui.press("enter")
+
+    write_inputs("sample.eps", 123456789123, saveas_point, code_point)
+    err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
+    if err_location:
+        raise FailedCheck("Unexpected error is detected. Output should be correct.")
+
+    write_inputs("sample.ps", 123456789123, saveas_point, code_point)
+    err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
+    if err_location:
+        raise FailedCheck("Unexpected error is detected. Output should be correct.")
+
+
 def main():
     args = sys.argv
     if len(args) != 2:
         print(f"Usage: {args[0]} path-to-TP04")
         return
+
+    if not os.path.exists(ERR_PATH):
+        download_image(ERR_URL, ERR_PATH)
 
     print("!!!!!!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!!!!!!!!!!")
     print("DO NOT touch your cursor during the process.")
@@ -161,7 +206,6 @@ def main():
             break
     print()
 
-    cwd = Path(".").resolve()
     tempdir = Path("tester-tmp")
     tempdir.mkdir(exist_ok=True)
     os.chdir(tempdir)
@@ -215,6 +259,9 @@ def main():
 
     with output(output_type="dict", interval=0.1) as output_dict:
         try:
+            output_dict["Progress"] = "Checking input validations..."
+            output_dict["Status"] = "In progress"
+            do_error_check(saveas_point, code_point)
             for i in range(MAX_TESTS):
                 fname = random_str(8)
                 fpath = fname
@@ -227,10 +274,9 @@ def main():
                 output_dict["Output (GUI)"] = "..."
                 if has_ghostscript:
                     output_dict["Output (Postscript)"] = "..."
-                output_dict["Status"] = "In progress"
                 output_dict["Expected"] = result_code
 
-                write_inputs(fpath, code, saveas_point, code_point)
+                write_inputs(fpath + ".eps", code, saveas_point, code_point)
 
                 result_gui = check_gui(fpath, result_code, barcode_box)
                 output_dict["Output (GUI)"] = result_gui[1]
@@ -246,7 +292,9 @@ def main():
                         break
             else:
                 output_dict["Status"] = "SUCCESS"
-
+        except FailedCheck as e:
+            output_dict["Status"] = "FAILED"
+            output_dict.append(str(e))
         except pyautogui.FailSafeException:
             output_dict["Status"] = "ABORTED"
             output_dict.append("Failsafe detected, ending execution...")
