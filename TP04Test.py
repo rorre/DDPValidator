@@ -33,7 +33,6 @@ if sys.platform.startswith("win"):
         print("Cannot find ghostscript in PATH, skipping postscript check.")
         has_ghostscript = False
 
-MAX_TESTS = 10
 ERR_URL = "https://d.rorre.xyz/HxifAQKX5/python_iAZcyBZK5C.png"
 ERR_PATH = "err_check.png"
 
@@ -198,9 +197,15 @@ def main():
         exit(1)
 
     args = sys.argv
-    if len(args) != 2:
-        print(f"Usage: {args[0]} path-to-TP04")
+    if not 2 <= len(args) <= 3:
+        print(f"Usage: {args[0]} path-to-TP04 <number-of-tests>")
+        print("number-of-tests defaults to 10.")
         return
+
+    if len(args) == 3:
+        MAX_TESTS = int(args[2])
+    else:
+        MAX_TESTS = 10
 
     if not os.path.exists(ERR_PATH):
         download_image(ERR_URL, ERR_PATH)
