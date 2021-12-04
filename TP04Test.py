@@ -153,6 +153,7 @@ def do_error_check(
     code_point: Point,
 ):
     write_inputs("sample.eps", 1, saveas_point, code_point)
+    time.sleep(0.25)
     err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
     if not err_location:
         raise FailedCheck(
@@ -161,6 +162,7 @@ def do_error_check(
     pyautogui.press("enter")
 
     write_inputs("sample.eps", 1234567891231, saveas_point, code_point)
+    time.sleep(0.25)
     err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
     if not err_location:
         raise FailedCheck(
@@ -169,6 +171,7 @@ def do_error_check(
     pyautogui.press("enter")
 
     write_inputs("sample.eps", 12345678912, saveas_point, code_point)
+    time.sleep(0.25)
     err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
     if not err_location:
         raise FailedCheck(
@@ -177,11 +180,13 @@ def do_error_check(
     pyautogui.press("enter")
 
     write_inputs("sample.eps", 123456789123, saveas_point, code_point)
+    time.sleep(0.25)
     err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
     if err_location:
         raise FailedCheck("Unexpected error is detected. Output should be correct.")
 
     write_inputs("sample.ps", 123456789123, saveas_point, code_point)
+    time.sleep(0.25)
     err_location = pyautogui.locateOnScreen(box_absolute_path, confidence=0.85)
     if err_location:
         raise FailedCheck("Unexpected error is detected. Output should be correct.")
