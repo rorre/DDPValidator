@@ -8,7 +8,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Union
 
 try:
     import cv2
@@ -32,6 +32,17 @@ if sys.platform.startswith("win"):
     else:
         print("Cannot find ghostscript in PATH, skipping postscript check.")
         has_ghostscript = False
+
+# fmt: off
+DISALLOWED_CHARS = [
+    "/", "<", ">", ":", '"', "\\", "|", "?", "*"
+]
+DISALLOWED_NAMES = [
+    'CON', 'PRN', 'AUX', 'NUL',
+    'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9',
+    'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 'LPT7', 'LPT8', 'LPT9'
+]
+# fmt: on
 
 ERR_URL = "https://d.rorre.xyz/HxifAQKX5/python_iAZcyBZK5C.png"
 ERR_PATH = "err_check.png"
@@ -85,7 +96,7 @@ def write_box(path: Point, text: str):
 
 def write_inputs(
     fpath: str,
-    code: int,
+    code: Union[int, str],
     saveas_point: Point,
     code_point: Point,
 ):
@@ -147,48 +158,101 @@ def find_boxes(window_region: Rect) -> List[Rect]:
     return used_rects
 
 
+def check_failed(
+    file_input: str,
+    code_input: Union[int, str],
+    message: str,
+    saveas_point: Point,
+    code_point: Point,
+):
+    write_inputs(file_input, code_input, saveas_point, code_point)
+    time.sleep(0.25)
+    err_location = pyautogui.locateOnScreen(box_absolute_path)
+    if not err_location:
+        raise FailedCheck(message)
+    pyautogui.press("enter")
+
+
+def check_passing(
+    file_input: str,
+    code_input: Union[int, str],
+    saveas_point: Point,
+    code_point: Point,
+):
+    write_inputs(file_input, code_input, saveas_point, code_point)
+    time.sleep(0.25)
+    err_location = pyautogui.locateOnScreen(box_absolute_path)
+    if err_location:
+        raise FailedCheck("Unexpected error is detected. Output should be correct.")
+
+
 def do_error_check(
     saveas_point: Point,
     code_point: Point,
 ):
-    write_inputs("sample.eps", 1, saveas_point, code_point)
-    time.sleep(0.25)
-    err_location = pyautogui.locateOnScreen(box_absolute_path)
-    if not err_location:
-        raise FailedCheck(
-            "Code consisting of non 12-digit characters should raise error."
+    check_failed(
+        "sample.eps",
+        1,
+        "Code consisting of non 12-digit characters should raise error.",
+        saveas_point,
+        code_point,
+    )
+    check_failed(
+        "sample.eps",
+        1234567891231,
+        "Code consisting of non 12-digit characters should raise error.",
+        saveas_point,
+        code_point,
+    )
+    check_failed(
+        "sample.eps",
+        12345678912,
+        "Code consisting of non 12-digit characters should raise error.",
+        saveas_point,
+        code_point,
+    )
+    check_failed(
+        "sample.eps",
+        "",
+        "Empty code should raise error.",
+        saveas_point,
+        code_point,
+    )
+    check_failed(
+        "",
+        123456789123,
+        "Empty save as field should raise error.",
+        saveas_point,
+        code_point,
+    )
+    check_failed(
+        "sample.jpg",
+        123456789123,
+        "Invalid extension should raise error.",
+        saveas_point,
+        code_point,
+    )
+    for char in DISALLOWED_CHARS:
+        check_failed(
+            f"samp{char}le.eps",
+            123456789123,
+            "Banned char should raise error.",
+            saveas_point,
+            code_point,
         )
-    pyautogui.press("enter")
-
-    write_inputs("sample.eps", 1234567891231, saveas_point, code_point)
-    time.sleep(0.25)
-    err_location = pyautogui.locateOnScreen(box_absolute_path)
-    if not err_location:
-        raise FailedCheck(
-            "Code consisting of non 12-digit characters should raise error."
+    for name in DISALLOWED_NAMES:
+        check_failed(
+            f"{name}.sample.eps",
+            123456789123,
+            "Banned name should raise error.",
+            saveas_point,
+            code_point,
         )
-    pyautogui.press("enter")
 
-    write_inputs("sample.eps", 12345678912, saveas_point, code_point)
-    time.sleep(0.25)
-    err_location = pyautogui.locateOnScreen(box_absolute_path)
-    if not err_location:
-        raise FailedCheck(
-            "Code consisting of non 12-digit characters should raise error."
-        )
-    pyautogui.press("enter")
-
-    write_inputs("sample.eps", 123456789123, saveas_point, code_point)
-    time.sleep(0.25)
-    err_location = pyautogui.locateOnScreen(box_absolute_path)
-    if err_location:
-        raise FailedCheck("Unexpected error is detected. Output should be correct.")
-
-    write_inputs("sample.ps", 123456789123, saveas_point, code_point)
-    time.sleep(0.25)
-    err_location = pyautogui.locateOnScreen(box_absolute_path)
-    if err_location:
-        raise FailedCheck("Unexpected error is detected. Output should be correct.")
+    for name in DISALLOWED_NAMES:
+        check_passing(f"sample.{name}.eps", 123456789123, saveas_point, code_point)
+    check_passing("sample.eps", 123456789123, saveas_point, code_point)
+    check_passing("sample.ps", 123456789123, saveas_point, code_point)
 
 
 def main():
