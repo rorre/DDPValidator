@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, cast
 
 import toml
-from rich.progress import track
+from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn
 from asyncio.subprocess import PIPE
 from ddp_validator.types import Test, TestDict
 from ddp_validator.utils import console, run_command
@@ -131,52 +131,66 @@ class InputTester:
             cmd = ("java", Path(self._program).name)
 
         test_passed = True
-        for t in track(self._tests, description="Running tests...", console=console):
-            console.debug("Running test", t["title"])
-            program_lines = self._loop.run_until_complete(
-                run_command(t["stdin"].splitlines(), *cmd)
-            )
-            expected_lines = [
-                s.encode("unicode_escape").decode("utf-8")
-                for s in t["stdout"].splitlines()
-            ]
+        progress = Progress(
+            SpinnerColumn(),
+            *Progress.get_default_columns(),
+            TimeElapsedColumn(),
+            console=console,
+            expand=True,
+            transient=True,
+        )
+        task = progress.add_task("[green]Running tests...", total=len(self._tests))
 
-            console.debug("Program lines:", program_lines)
-            console.debug("Expected lines", expected_lines)
+        with progress:
+            for t in self._tests:
+                console.debug("Running test", t["title"])
+                program_lines = self._loop.run_until_complete(
+                    run_command(t["stdin"].splitlines(), *cmd)
+                )
+                expected_lines = [
+                    s.encode("unicode_escape").decode("utf-8")
+                    for s in t["stdout"].splitlines()
+                ]
 
-            condition = compare_output(program_lines, expected_lines, t["subset"])
-            if not condition:
-                console.debug("Output differs from expected.")
-                console.print(f"{t['title']:<20} : ❌")
+                console.debug("Program lines:", program_lines)
+                console.debug("Expected lines", expected_lines)
 
-                if not (t["has_regex"] or t["subset"]):
-                    target_html = f"difference-{t['title']}.html"
-                    console.debug("Writing HTML difference to", target_html)
+                condition = compare_output(program_lines, expected_lines, t["subset"])
+                if not condition:
+                    console.debug("Output differs from expected.")
+                    console.print(f"{t['title']:<20} : ❌")
 
-                    differ = difflib.HtmlDiff()
-                    html = differ.make_file(
-                        expected_lines,
-                        program_lines,
-                        fromdesc="Expected",
-                        todesc="Program Output",
-                    )
-                    with open(target_html, "w") as f:
-                        f.write(html)
+                    if not (t["has_regex"] or t["subset"]):
+                        target_html = f"difference-{t['title']}.html"
+                        console.debug("Writing HTML difference to", target_html)
 
-                test_passed = False
-                continue
+                        differ = difflib.HtmlDiff()
+                        html = differ.make_file(
+                            expected_lines,
+                            program_lines,
+                            fromdesc="Expected",
+                            todesc="Program Output",
+                        )
+                        with open(target_html, "w") as f:
+                            f.write(html)
 
-            if t["expected_file"] and t["output_file"]:
-                console.debug("Output file is required for check")
-
-                if not check_output_file(t["expected_file"], t["output_file"]):
-                    console.debug("Output file does not match output.")
-                    console.print(f"{t['title']:<20} : ❌ (Output file)")
                     test_passed = False
+                    progress.advance(task)
                     continue
 
-            console.debug("Check passed.")
-            console.print(f"{t['title']:<20} : ✔️")
+                if t["expected_file"] and t["output_file"]:
+                    console.debug("Output file is required for check")
+
+                    if not check_output_file(t["expected_file"], t["output_file"]):
+                        console.debug("Output file does not match output.")
+                        console.print(f"{t['title']:<20} : ❌ (Output file)")
+                        test_passed = False
+                        progress.advance(task)
+                        continue
+
+                console.debug("Check passed.")
+                console.print(f"{t['title']:<20} : ✔️")
+                progress.advance(task)
 
         if test_passed:
             console.print("All checks passed!")
