@@ -57,6 +57,9 @@ async def run_command(test_stdin: List[str], *args) -> List[str]:
     assert process.stdout
     assert process.stderr
 
+    console.debug("Sleeping for 1s to let program boot up")
+    await asyncio.sleep(1)
+
     combined_io = ""
     i = 0
     for submitting_line in test_stdin:
@@ -65,7 +68,7 @@ async def run_command(test_stdin: List[str], *args) -> List[str]:
         # has reached its end for current line.
         while True:
             try:
-                c = await asyncio.wait_for(process.stdout.read(1), 0.1)
+                c = await asyncio.wait_for(process.stdout.read(1), 0.25)
                 combined_io += c.decode()
             except asyncio.TimeoutError:
                 break
@@ -103,11 +106,11 @@ def get_program(dir: Path) -> Path:
     """
     valid_programs: List[Path] = []
     for p in dir.iterdir():
-        if p.suffix == ".py":
+        if p.suffix in [".py", ".java"]:
             valid_programs.append(p)
 
     if len(valid_programs) > 1:
-        console.print("Multiple Python file found, pick one that you want to test:")
+        console.print("Multiple files found, pick one that you want to test:")
         for i, p in enumerate(valid_programs):
             console.print(f"[{i + 1}] {p.name}")
 

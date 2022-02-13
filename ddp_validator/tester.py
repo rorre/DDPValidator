@@ -3,11 +3,11 @@ import difflib
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, cast
 
 import toml
 from rich.progress import track
-
+from asyncio.subprocess import PIPE
 from ddp_validator.types import Test, TestDict
 from ddp_validator.utils import console, run_command
 
@@ -70,11 +70,15 @@ class InputTester:
         self,
         program_path: str,
         tests: List[Test],
+        language: str,
+        compile_command: str,
         workdir: Optional[str] = None,
     ):
         self._tests = tests
         self._program = program_path
         self._workdir = workdir
+        self._language = language
+        self._compile_command = compile_command
 
         if sys.platform == "win32":
             console.debug("Windows, using ProactorEventLoop.")
@@ -85,17 +89,52 @@ class InputTester:
         else:
             self._loop = asyncio.get_event_loop()
 
+    def run_compile(self):
+        if not self._compile_command:
+            return
+
+        cmd = self._compile_command.format_map({"program": self._program})
+        console.debug("Compiling with command", cmd)
+
+        async def run_cmd():
+            process = await asyncio.create_subprocess_exec(
+                cmd.split(" ")[0],
+                *cmd.split(" ")[1:],
+                stdout=PIPE,
+                stderr=PIPE,
+                stdin=PIPE,
+            )
+            await process.wait()
+
+            assert process.returncode is not None
+            assert process.stdout
+            assert process.stderr
+
+            return (
+                process.returncode,
+                await process.stdout.read(),
+                await process.stderr.read(),
+            )
+
+        code, stdout, stderr = self._loop.run_until_complete(run_cmd())
+        if code != 0:
+            raise Exception("Error occured!\r\n\r\n" + stderr.decode())
+
+        console.print(stdout.decode())
+
     def run_tests(self):
+        self.run_compile()
+
+        if self._language == "python":
+            cmd = ("python", self._program)
+        else:
+            cmd = ("java", Path(self._program).name)
+
         test_passed = True
         for t in track(self._tests, description="Running tests...", console=console):
             console.debug("Running test", t["title"])
             program_lines = self._loop.run_until_complete(
-                run_command(
-                    t["stdin"].splitlines(),
-                    # python program-path
-                    "python",
-                    self._program,
-                )
+                run_command(t["stdin"].splitlines(), *cmd)
             )
             expected_lines = [
                 s.encode("unicode_escape").decode("utf-8")
@@ -149,6 +188,9 @@ class InputTester:
         tests: List[Test] = []
         tests_dict: Dict[str, TestDict] = toml.loads(inputs)  # type: ignore
 
+        language = cast(str, tests_dict.pop("language"))
+        compile_command = cast(str, tests_dict.pop("compile", ""))
+
         console.debug("Loading test config")
         console.debug(tests_dict)
 
@@ -169,7 +211,7 @@ class InputTester:
             console.debug(test_data)
             tests.append(test_data)
 
-        return cls(program_path, tests)
+        return cls(program_path, tests, language, compile_command)
 
     @classmethod
     def from_file(cls, program_path: str, fname: str):

@@ -1,0 +1,16 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+input = """
+keren
+1200
+0
+"""
+output = """
+Masukkan Nama Mahasiswa: keren
+Masukkan Nilai Asli: 1200
+Masukkan Durasi: 0
+keren mendapatkan nilai akhir 1440.0
+"""
+subset = false

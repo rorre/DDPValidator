@@ -2,41 +2,51 @@
     {
         "name": "Lab 01",
         "identifier": "radius lingkaran",
-        "path": "lab01.toml"
+        "path": "py/lab01.toml"
     },
     {
         "name": "Lab 02",
         "identifier": "Kalkulator IPK",
-        "path": "lab02.toml"
+        "path": "py/lab02.toml"
     },
     {
         "name": "Lab 03",
         "identifier": "himpunan A",
-        "path": "lab03.toml"
+        "path": "py/lab03.toml"
     },
     {
         "name": "Lab 04",
         "identifier": "Mention",
-        "path": "lab04.toml"
+        "path": "py/lab04.toml"
     },
     {
         "name": "Lab 05",
         "identifier": "suasana hati",
-        "path": "lab05.toml"
+        "path": "py/lab05.toml"
     },
     {
         "name": "Lab 07",
         "identifier": "INFO_TUJUAN",
-        "path": "lab07.toml"
+        "path": "py/lab07.toml"
     },
     {
         "name": "Lab 08",
         "identifier": "RANTAI_PENYEBARAN",
-        "path": "lab08.toml"
+        "path": "py/lab08.toml"
     },
     {
         "name": "Lab 09",
         "identifier": "Dekdepedia",
-        "path": "lab09.toml"
+        "path": "py/lab09.toml"
+    },
+    {
+        "name": "Lab 00 -- Nilai -- DDP2",
+        "identifier": "nilai akhir",
+        "path": "java/lab00-nilai.toml"
+    },
+    {
+        "name": "Lab 00 -- PangkatFaktorial -- DDP2",
+        "identifier": "pemangkatan",
+        "path": "java/lab00-pangkat.toml"
     }
 ]

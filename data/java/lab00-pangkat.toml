@@ -1,0 +1,15 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+input = """
+12
+3
+"""
+output = """
+masukkan bilangan utama (n): 12
+masukkan pemangkatan (m): 3
+n factorial = 479001600
+n pangkat m = 1728
+"""
+subset = false

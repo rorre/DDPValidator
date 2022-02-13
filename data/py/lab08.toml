@@ -1,3 +1,5 @@
+language = "python"
+
 ["Input 1"]
 input = """
 adam budi caca frans
