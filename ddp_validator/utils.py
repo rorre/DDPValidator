@@ -4,7 +4,12 @@ from asyncio.subprocess import PIPE
 from pathlib import Path
 from typing import List, Optional, Tuple
 
+from rich.console import Console
+from rich.prompt import Prompt
+
 from ddp_validator.types import Classification
+
+console = Console()
 
 
 async def run_command(test_stdin: List[str], *args):
@@ -48,12 +53,12 @@ def get_program(dir: Path):
             valid_programs.append(p)
 
     if len(valid_programs) > 1:
-        print("Multiple Python file found, pick one that you want to test:")
+        console.print("Multiple Python file found, pick one that you want to test:")
         for i, p in enumerate(valid_programs):
-            print(f"[{i + 1}] {p.name}")
+            console.print(f"[{i + 1}] {p.name}")
 
         while True:
-            idx = int(input("Pick one: ")) - 1
+            idx = int(Prompt.ask("Pick one: ", console=console)) - 1
             if 0 <= idx < len(valid_programs):
                 break
 

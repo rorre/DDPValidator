@@ -5,7 +5,7 @@ from typing import List, Tuple
 from ddp_validator import __version__
 from ddp_validator.tester import InputTester
 from ddp_validator.types import Classification
-from ddp_validator.utils import get_classifier, get_program, parse_version
+from ddp_validator.utils import get_classifier, get_program, parse_version, console
 import json
 import requests
 import sys
@@ -17,47 +17,71 @@ IS_FROZEN = getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS")
 
 def load_classifiers() -> List[Classification]:
     classifiers: List[Classification]
-    print("[NOTICE] Fetching classifiers...")
-    if IS_FROZEN:
-        try:
-            r = requests.get(BASE_RESOURCES_URL + "/classifier.json")
-            if r.status_code != 200:
-                print("[ERR] GitHub returns non-200 status code.")
+    with console.status("Fetching classifiers..."):
+        if IS_FROZEN:
+            try:
+                r = requests.get(BASE_RESOURCES_URL + "/classifier.json")
+                if r.status_code != 200:
+                    console.print(
+                        "[white on red]ERROR:[/white on red]",
+                        "GitHub returns non-200 status code.",
+                    )
+                    return []
+                classifiers = r.json()
+            except Exception:
+                console.print(
+                    "[white on red]ERROR:[/white on red]",
+                    "Cannot fetch classifiers from GitHub!",
+                )
                 return []
-            classifiers = r.json()
-        except Exception:
-            print("[ERR] Cannot fetch classifiers from GitHub!")
-            return []
-    else:
-        print("[NOTICE] Using local classifiers")
-        with open("data/classifier.json", "r") as f:
-            classifiers = json.load(f)
+        else:
+            console.print(
+                "[white on blue]NOTICE:[/white on blue]",
+                "Using local classifiers",
+            )
+            with open("data/classifier.json", "r") as f:
+                classifiers = json.load(f)
+
     return classifiers
 
 
 def fetch_update():
-    print("[NOTICE] Checking for updates...")
     if not IS_FROZEN:
-        print("[NOTICE] Running in development mode.")
+        console.print(
+            "[white on blue]NOTICE:[/white on blue]", "Running in development mode."
+        )
         return
 
-    try:
-        r = requests.get(GITHUB_URL)
-        if r.status_code != 200:
-            print("[WARN] GitHub returns non-200 status code.")
+    with console.status("Checking for updates..."):
+        try:
+            r = requests.get(GITHUB_URL)
+            if r.status_code != 200:
+                console.print(
+                    "[on yellow]WARN:[/on yellow]",
+                    "GitHub returns non-200 status code.",
+                )
+                return
+            response = r.json()
+        except Exception:
+            console.print(
+                "[on yellow]WARN:[/on yellow]",
+                "An exception has occured during update fetching.",
+            )
             return
-        response = r.json()
-    except Exception:
-        print("[WARN] An exception has occured during update fetching.")
-        return
 
     current_version = parse_version(__version__)
     new_version: Tuple[int, int, int] = parse_version(response["tag_name"])
     if current_version < new_version:
-        print("[NOTICE] New version available. Please download here:")
-        print("[NOTICE]", response["url"])
+        console.print(
+            "[white on blue]NOTICE:[/white on blue]",
+            "New version available. Please download here:",
+        )
+        console.print("[white on blue]NOTICE:[/white on blue]", response["url"])
     else:
-        print("[NOTICE] You're running latest version.")
+        console.print(
+            "[white on blue]NOTICE:[/white on blue]",
+            "You're running latest version.",
+        )
 
 
 def cli():
@@ -79,30 +103,42 @@ def cli():
 
     if IS_FROZEN:
         try:
-            print("[NOTICE] Fetching test data...")
+            console.print(
+                "[white on blue]NOTICE:[/white on blue]", "Fetching test data..."
+            )
             r = requests.get(BASE_RESOURCES_URL + "/" + test_classification["path"])
             if r.status_code != 200:
-                print("[ERR] GitHub returns non-200 status code.")
+                console.print(
+                    "[white on red]ERROR:[/white on red]",
+                    "GitHub returns non-200 status code.",
+                )
                 return
         except Exception:
-            print("[ERR] Cannot fetch test data from GitHub!")
+            console.print(
+                "[white on red]ERROR:[/white on red]",
+                "Cannot fetch test data from GitHub!",
+            )
             return
 
-        print("-----------")
-        print("Task:", test_classification["name"])
+        console.line()
+        console.print("Task:", test_classification["name"])
         tests = InputTester.from_str(
             str(program_path.resolve()),
             r.text,
         )
     else:
-        print("[NOTICE] Develepment mode, using local test data.")
+        console.print(
+            "[white on blue]NOTICE:[/white on blue]",
+            "Develepment mode, using local test data.",
+        )
 
-        print("-----------")
-        print("Task:", test_classification["name"])
+        console.line()
+        console.print("Task:", test_classification["name"])
         tests = InputTester.from_file(
             str(program_path.resolve()),
             str(inputs_path.resolve()),
         )
+
     os.chdir(test_dir)
     tests.run_tests()
     os.chdir(orig_cwd)

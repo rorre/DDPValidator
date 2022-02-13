@@ -8,6 +8,7 @@ authors = ["Rendy Arya Kemal <renrror@gmail.com>"]
 python = ">=3.9,<3.11"
 toml = "^0.10.2"
 requests = "^2.26.0"
+rich = "^11.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

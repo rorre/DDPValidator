@@ -5,8 +5,10 @@ from typing import Dict, List, Optional
 
 import toml
 from ddp_validator.types import Test, TestDict
-from ddp_validator.utils import run_command
+from ddp_validator.utils import run_command, console
 import re
+
+from rich.progress import track
 
 
 def has_subset(first, second):
@@ -68,8 +70,7 @@ class InputTester:
 
     def run_tests(self):
         test_passed = True
-        for t in self._tests:
-            print(f"{t['title']:<20} : ", end="")
+        for t in track(self._tests, description="Running tests...", console=console):
             program_lines = self._loop.run_until_complete(
                 run_command(t["stdin"].splitlines(), "python", self._program)
             )
@@ -80,7 +81,7 @@ class InputTester:
 
             condition = compare_output(program_lines, expected_lines, t["subset"])
             if not condition:
-                print("❌")
+                console.print(f"{t['title']:<20} : ❌")
 
                 if not (t["has_regex"] or t["subset"]):
                     differ = difflib.HtmlDiff()
@@ -110,15 +111,15 @@ class InputTester:
                     ]
 
                     if expected != output:
-                        print("❌ (Output file)")
+                        console.print(f"{t['title']:<20} : ❌ (Output file)")
                         test_passed = False
                         continue
-            print("✔️")
+            console.print(f"{t['title']:<20} : ✔️")
 
         if test_passed:
-            print("All checks passed!")
+            console.print("All checks passed!")
         else:
-            print("Some checks have failed :(")
+            console.print("Some checks have failed :(")
 
     @classmethod
     def from_str(cls, program_path: str, inputs: str):
