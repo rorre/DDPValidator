@@ -1,14 +1,16 @@
 import argparse
+import json
 import os
+import sys
 from pathlib import Path
 from typing import List, Tuple
+
+import requests
+
 from ddp_validator import __version__
 from ddp_validator.tester import InputTester
 from ddp_validator.types import Classification
-from ddp_validator.utils import get_classifier, get_program, parse_version, console
-import json
-import requests
-import sys
+from ddp_validator.utils import console, get_classifier, get_program, parse_version
 
 BASE_RESOURCES_URL = "https://raw.githubusercontent.com/rorre/DDPValidator/main/data"
 GITHUB_URL = "https://api.github.com/repos/rorre/DDPValidator/releases/latest"

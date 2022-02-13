@@ -1,15 +1,15 @@
 import asyncio
 import difflib
-from pathlib import Path
+import re
 import sys
+from pathlib import Path
 from typing import Dict, List, Optional
 
 import toml
-from ddp_validator.types import Test, TestDict
-from ddp_validator.utils import run_command, console
-import re
-
 from rich.progress import track
+
+from ddp_validator.types import Test, TestDict
+from ddp_validator.utils import console, run_command
 
 
 def has_subset(first, second):
