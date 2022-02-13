@@ -261,10 +261,15 @@ def main():
         exit(1)
 
     args = sys.argv
-    if not 2 <= len(args) <= 3:
-        print(f"Usage: {args[0]} path-to-TP04 <number-of-tests>")
+    if not 2 <= len(args) <= 4:
+        print(f"Usage: {args[0]} [--skip-validation] path-to-TP04 <number-of-tests>")
         print("number-of-tests defaults to 10.")
         return
+
+    skip_validation = False
+    if args[1] == "--skip-validation":
+        skip_validation = True
+        args.pop(1)
 
     if len(args) == 3:
         MAX_TESTS = int(args[2])
@@ -338,9 +343,11 @@ def main():
 
     with output(output_type="dict") as output_dict:
         try:
-            output_dict["Progress"] = "Checking input validations..."
-            output_dict["Status"] = "In progress"
-            do_error_check(saveas_point, code_point)
+            if not skip_validation:
+                output_dict["Progress"] = "Checking input validations..."
+                output_dict["Status"] = "In progress"
+                do_error_check(saveas_point, code_point)
+
             for i in range(MAX_TESTS):
                 fname = random_str(8)
                 fpath = fname
