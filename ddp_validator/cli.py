@@ -124,7 +124,7 @@ def cli():
             )
             return
 
-        console.line()
+        console.rule("Test Start")
         console.print("Task:", test_classification["name"])
         tests = InputTester.from_str(
             str(program_path.resolve()),
@@ -136,7 +136,7 @@ def cli():
             "Develepment mode, using local test data.",
         )
 
-        console.line()
+        console.rule("Test Start")
         console.print("Task:", test_classification["name"])
         tests = InputTester.from_file(
             str(program_path.resolve()),
@@ -145,6 +145,8 @@ def cli():
 
     os.chdir(test_dir)
     tests.run_tests()
+    console.rule("Test End")
+
     os.chdir(orig_cwd)
     input("Press enter to exit.")
 

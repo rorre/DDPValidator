@@ -110,6 +110,8 @@ def get_program(dir: Path) -> Path:
             valid_programs.append(p)
 
     if len(valid_programs) > 1:
+        console.rule("NOTICE")
+
         console.print("Multiple files found, pick one that you want to test:")
         for i, p in enumerate(valid_programs):
             console.print(f"[{i + 1}] {p.name}")
@@ -119,6 +121,7 @@ def get_program(dir: Path) -> Path:
             if 0 <= idx < len(valid_programs):
                 break
 
+        console.rule("END NOTICE")
         return valid_programs[idx]
     return valid_programs[0]
 
