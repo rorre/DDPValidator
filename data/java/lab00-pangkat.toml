@@ -13,3 +13,55 @@ n factorial = 479001600
 n pangkat m = 1728
 """
 subset = false
+
+["Input 2"]
+input = """
+99
+123
+"""
+output = """
+masukkan bilangan utama (n): 99
+masukkan pemangkatan (m): 123
+n factorial = 0
+n pangkat m = -1796778661
+"""
+subset = false
+
+["Input 3"]
+input = """
+21
+12
+"""
+output = """
+masukkan bilangan utama (n): 21
+masukkan pemangkatan (m): 12
+n factorial = -1195114496
+n pangkat m = 232284689
+"""
+subset = false
+
+["Input 4"]
+input = """
+11
+12
+"""
+output = """
+masukkan bilangan utama (n): 11
+masukkan pemangkatan (m): 12
+n factorial = 39916800
+n pangkat m = -1192716655
+"""
+subset = false
+
+["Input 5"]
+input = """
+11
+2
+"""
+output = """
+masukkan bilangan utama (n): 11
+masukkan pemangkatan (m): 2
+n factorial = 39916800
+n pangkat m = 121
+"""
+subset = false
