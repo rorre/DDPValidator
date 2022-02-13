@@ -61,6 +61,8 @@ class InputTester:
         self._workdir = workdir
 
         if sys.platform == "win32":
+            console.debug("Windows, using ProactorEventLoop.")
+
             # Windows subprocess pipes fix
             self._loop = asyncio.ProactorEventLoop()
             asyncio.set_event_loop(self._loop)
@@ -70,19 +72,32 @@ class InputTester:
     def run_tests(self):
         test_passed = True
         for t in track(self._tests, description="Running tests...", console=console):
+            console.debug("Running test", t["title"])
             program_lines = self._loop.run_until_complete(
-                run_command(t["stdin"].splitlines(), "python", self._program)
+                run_command(
+                    t["stdin"].splitlines(),
+                    # python program-path
+                    "python",
+                    self._program,
+                )
             )
             expected_lines = [
                 s.encode("unicode_escape").decode("utf-8")
                 for s in t["stdout"].splitlines()
             ]
 
+            console.debug("Program lines:", program_lines)
+            console.debug("Expected lines", expected_lines)
+
             condition = compare_output(program_lines, expected_lines, t["subset"])
             if not condition:
+                console.debug("Output differs from expected.")
                 console.print(f"{t['title']:<20} : ❌")
 
                 if not (t["has_regex"] or t["subset"]):
+                    target_html = f"difference-{t['title']}.html"
+                    console.debug("Writing HTML difference to", target_html)
+
                     differ = difflib.HtmlDiff()
                     html = differ.make_file(
                         expected_lines,
@@ -90,13 +105,15 @@ class InputTester:
                         fromdesc="Expected",
                         todesc="Program Output",
                     )
-                    with open(f"difference-{t['title']}.html", "w") as f:
+                    with open(target_html, "w") as f:
                         f.write(html)
 
                 test_passed = False
                 continue
 
             if t["expected_file"] and t["output_file"]:
+                console.debug("Output file is required for check")
+
                 with open(t["expected_file"]) as f_expected, open(
                     t["output_file"]
                 ) as f_output:
@@ -109,10 +126,16 @@ class InputTester:
                         for s in f_output.readlines()
                     ]
 
+                    console.debug("Expected:", expected)
+                    console.debug("Output:", output)
+
                     if expected != output:
+                        console.debug("Output file does not match output.")
                         console.print(f"{t['title']:<20} : ❌ (Output file)")
                         test_passed = False
                         continue
+
+            console.debug("Check passed.")
             console.print(f"{t['title']:<20} : ✔️")
 
         if test_passed:
@@ -123,27 +146,34 @@ class InputTester:
     @classmethod
     def from_str(cls, program_path: str, inputs: str):
         tests: List[Test] = []
-        tests_dict: Dict[str, TestDict] = toml.loads(inputs)  # type:ignore
+        tests_dict: Dict[str, TestDict] = toml.loads(inputs)  # type: ignore
+
+        console.debug("Loading test config")
+        console.debug(tests_dict)
+
         for k in tests_dict:
+            console.debug("Got new test", k)
+
             t = tests_dict[k]
-            tests.append(
-                {
-                    "title": k,
-                    "stdin": t["input"].strip(),
-                    "stdout": t["output"].strip(),
-                    "subset": t["subset"],
-                    "expected_file": t["expected_file"]
-                    if "expected_file" in t
-                    else None,
-                    "output_file": t["output_file"] if "output_file" in t else None,
-                    "has_regex": "regex|" in t["output"],
-                }
-            )
+            test_data: Test = {
+                "title": k,
+                "stdin": t["input"].strip(),
+                "stdout": t["output"].strip(),
+                "subset": t["subset"],
+                "expected_file": t["expected_file"] if "expected_file" in t else None,
+                "output_file": t["output_file"] if "output_file" in t else None,
+                "has_regex": "regex|" in t["output"],
+            }
+
+            console.debug(test_data)
+            tests.append(test_data)
 
         return cls(program_path, tests)
 
     @classmethod
     def from_file(cls, program_path: str, fname: str):
+        console.debug("Reading", fname)
         with open(fname, "r") as f:
             inputs = f.read()
+
         return cls.from_str(program_path, inputs)

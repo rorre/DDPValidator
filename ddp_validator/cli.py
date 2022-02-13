@@ -88,8 +88,10 @@ def cli():
     fetch_update()
     parser = argparse.ArgumentParser(description="Lab Tester.")
     parser.add_argument("code", help="Lab codename")
+    parser.add_argument("--debug", action=argparse.BooleanOptionalAction)
     args = parser.parse_args()
 
+    console.set_debug(args.debug)
     orig_cwd = os.getcwd()
     test_dir = Path(args.code)
     program_path = get_program(test_dir).absolute()

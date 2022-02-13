@@ -2,17 +2,46 @@ import asyncio
 
 from asyncio.subprocess import PIPE
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import Any, Callable, Generic, List, Optional, Tuple, TypeVar
 
 from rich.console import Console
 from rich.prompt import Prompt
 
 from ddp_validator.types import Classification
 
-console = Console()
+F = TypeVar("F", bound=Callable[..., Any])
+
+
+class copy_signature(Generic[F]):
+    def __init__(self, target: F) -> None:
+        ...
+
+    def __call__(self, wrapped: Callable[..., Any]) -> F:
+        return wrapped  # type: ignore
+
+
+class DebuggableConsole(Console):
+    @copy_signature(Console.__init__)
+    def __init__(self, *args, **kwargs):
+        self._debug = False
+        super().__init__(*args, **kwargs)
+
+    def set_debug(self, value: bool):
+        self._debug = value
+
+    @copy_signature(Console.log)
+    def debug(self, *args, **kwargs):
+        if self._debug:
+            return self.log(*args, **kwargs)
+
+
+console = DebuggableConsole()
 
 
 async def run_command(test_stdin: List[str], *args):
+    console.debug("Running command:", " ".join(args))
+    console.debug("stdin:", test_stdin)
+
     process = await asyncio.create_subprocess_exec(
         *args, stdout=PIPE, stderr=PIPE, stdin=PIPE
     )
@@ -30,14 +59,18 @@ async def run_command(test_stdin: List[str], *args):
             except asyncio.TimeoutError:
                 break
 
+        console.debug("Writing line:", submitting_line)
         process.stdin.write(submitting_line.encode() + b"\r\n")
         await process.stdin.drain()
+
         combined_io += submitting_line + "\n"
         i += 1
 
     stderr = (await process.stderr.read()).decode()
     if stderr:
         raise Exception("Program errored!\r\n\r\n" + stderr)
+
+    console.debug("Program finishes, exiting")
     combined_io += (await process.stdout.read()).decode()
     process.kill()
     return [
