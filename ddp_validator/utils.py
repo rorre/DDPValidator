@@ -38,7 +38,16 @@ class DebuggableConsole(Console):
 console = DebuggableConsole()
 
 
-async def run_command(test_stdin: List[str], *args):
+async def run_command(test_stdin: List[str], *args) -> List[str]:
+    """Runs command based on args with given stdin
+
+    Args:
+        test_stdin (List[str]): List of string to send as stdin.
+        *args (List[str]): Command to execute, splitted by space.
+
+    Returns:
+        List[str]: Combined stdout and stdin of program.
+    """
     console.debug("Running command:", " ".join(args))
     console.debug("stdin:", test_stdin)
 
@@ -52,6 +61,9 @@ async def run_command(test_stdin: List[str], *args):
     combined_io = ""
     i = 0
     for submitting_line in test_stdin:
+        # Essentially, what we are doing here is to get each character
+        # every time, and if a timeout occurs, that means that the program
+        # has reached its end for current line.
         while True:
             try:
                 c = await asyncio.wait_for(process.stdout.read(1), 0.1)
@@ -59,6 +71,7 @@ async def run_command(test_stdin: List[str], *args):
             except asyncio.TimeoutError:
                 break
 
+        # All of stdout is done, we can send what we sent to stdin now.
         console.debug("Writing line:", submitting_line)
         process.stdin.write(submitting_line.encode() + b"\r\n")
         await process.stdin.drain()
@@ -79,7 +92,16 @@ async def run_command(test_stdin: List[str], *args):
     ]
 
 
-def get_program(dir: Path):
+def get_program(dir: Path) -> Path:
+    """Get program from directory, if there are multiple programs,
+    then ask user for one and return it.
+
+    Args:
+        dir (Path): Directory to programs.
+
+    Returns:
+        Path: Selected program.
+    """
     valid_programs: List[Path] = []
     for p in dir.iterdir():
         if p.suffix == ".py":
@@ -102,6 +124,15 @@ def get_program(dir: Path):
 def get_classifier(
     program_path: Path, classifiers: List[Classification]
 ) -> Optional[Classification]:
+    """Get classifier/test data based on program's content
+
+    Args:
+        program_path (Path): Path to program
+        classifiers (List[Classification]): Classifier list to check from
+
+    Returns:
+        Optional[Classification]: Classifier/test data that matches.
+    """
     with open(program_path, "r") as f:
         program_content = f.read()
 

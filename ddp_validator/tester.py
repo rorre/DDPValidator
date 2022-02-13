@@ -1,5 +1,6 @@
 import asyncio
 import difflib
+from pathlib import Path
 import sys
 from typing import Dict, List, Optional
 
@@ -47,6 +48,21 @@ def compare_output(
             return False
 
     return True
+
+
+def check_output_file(expected_path: Path, output_path: Path):
+    with open(expected_path) as f_expected, open(output_path) as f_output:
+        expected = [
+            s.encode("unicode_escape").decode("utf-8") for s in f_expected.readlines()
+        ]
+        output = [
+            s.encode("unicode_escape").decode("utf-8") for s in f_output.readlines()
+        ]
+
+        console.debug("Expected:", expected)
+        console.debug("Output:", output)
+
+        return expected == output
 
 
 class InputTester:
@@ -114,26 +130,11 @@ class InputTester:
             if t["expected_file"] and t["output_file"]:
                 console.debug("Output file is required for check")
 
-                with open(t["expected_file"]) as f_expected, open(
-                    t["output_file"]
-                ) as f_output:
-                    expected = [
-                        s.encode("unicode_escape").decode("utf-8")
-                        for s in f_expected.readlines()
-                    ]
-                    output = [
-                        s.encode("unicode_escape").decode("utf-8")
-                        for s in f_output.readlines()
-                    ]
-
-                    console.debug("Expected:", expected)
-                    console.debug("Output:", output)
-
-                    if expected != output:
-                        console.debug("Output file does not match output.")
-                        console.print(f"{t['title']:<20} : ❌ (Output file)")
-                        test_passed = False
-                        continue
+                if not check_output_file(t["expected_file"], t["output_file"]):
+                    console.debug("Output file does not match output.")
+                    console.print(f"{t['title']:<20} : ❌ (Output file)")
+                    test_passed = False
+                    continue
 
             console.debug("Check passed.")
             console.print(f"{t['title']:<20} : ✔️")
