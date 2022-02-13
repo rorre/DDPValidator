@@ -24,10 +24,9 @@ def compare_output(
     expected_lines: List[str],
     subset: bool = False,
 ):
-    subset_exist = has_subset(program_lines, expected_lines)
-    subset_exist |= has_subset(expected_lines, program_lines)
-
     if subset:
+        subset_exist = has_subset(program_lines, expected_lines)
+        subset_exist |= has_subset(expected_lines, program_lines)
         return subset_exist
 
     if len(program_lines) != len(expected_lines):
