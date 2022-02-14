@@ -146,3 +146,4 @@ TP/TP02/*.html
 misc/man
 *build
 *dist
+.pdm.toml
