@@ -1,35 +1,25 @@
-[tool.pdm]
-includes = []
-[tool.pdm.dev-dependencies]
-dev = [
-    "pytest<6.0,>=5.2",
-    "types-toml<1.0.0,>=0.10.1",
-    "mypy<1.0,>=0.910",
-    "flake8<5.0.0,>=4.0.1",
-    "black<22.0,>=21.11b1",
-    "isort<6.0.0,>=5.10.1",
-    "pyinstaller<5.0,>=4.7",
-    "types-requests<3.0.0,>=2.26.0",
-]
-[build-system]
-requires = ["pdm-pep517"]
-build-backend = "pdm.pep517.api"
-
-
-[project]
-# PEP 621 project metadata
-# See https://www.python.org/dev/peps/pep-0621/
-authors = [
-    {name = "Rendy Arya Kemal", email = "renrror@gmail.com"},
-]
-requires-python = ">=3.9,<3.11"
-dependencies = [
-    "toml<1.0.0,>=0.10.2",
-    "requests<3.0.0,>=2.26.0",
-    "rich<12.0.0,>=11.2.0",
-]
+[tool.poetry]
 name = "DDP-Validator"
 version = "0.2.0"
 description = ""
+authors = ["Rendy Arya Kemal <renrror@gmail.com>"]
 
-[project.urls]
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+toml = "^0.10.2"
+requests = "^2.26.0"
+rich = "^11.2.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+types-toml = "^0.10.1"
+mypy = "^0.910"
+flake8 = "^4.0.1"
+black = "^21.11b1"
+isort = "^5.10.1"
+pyinstaller = "^4.7"
+types-requests = "^2.26.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
