@@ -48,5 +48,10 @@
         "name": "Lab 00 -- PangkatFaktorial -- DDP2",
         "identifier": "pemangkatan",
         "path": "java/lab00-pangkat.toml"
+    },
+    {
+        "name": "Lab 01 -- DDP2",
+        "identifier": "kalkulator BMI",
+        "path": "java/lab01.toml"
     }
 ]

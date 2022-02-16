@@ -1,0 +1,110 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+input = """
+3
+METRIK
+61
+169
+IMPERIAL
+125
+55
+METRIK
+100
+170
+"""
+output = """
+Selamat datang di program kalkulator BMI!
+--------------------------------------------------------
+Masukkan jumlah mahasiswa yang akan dihitung datanya: 3
+--------------------DATA MAHASISWA 1--------------------
+Standar pengukuran apakah yang digunakan? METRIK
+Masukkan massa tubuh mahasiswa (kilogram): 61
+Masukkan tinggi tubuh mahasiswa (sentimeter): 169
+--------------------DATA MAHASISWA 2--------------------
+Standar pengukuran apakah yang digunakan? IMPERIAL
+Masukkan massa tubuh mahasiswa (pon): 125
+Masukkan tinggi tubuh mahasiswa (inci): 55
+--------------------DATA MAHASISWA 3--------------------
+Standar pengukuran apakah yang digunakan? METRIK
+Masukkan massa tubuh mahasiswa (kilogram): 100
+Masukkan tinggi tubuh mahasiswa (sentimeter): 170
+---------------------RINGKASAN DATA---------------------
+Berikut merupakan ringkasan hasil pengukuran BMI dari 3 mahasiswa.
+Jumlah mahasiswa dengan berat badan di bawah normal: 0
+Jumlah mahasiswa dengan berat badan normal: 1
+Jumlah mahasiswa dengan berat badan di atas normal: 1
+Jumlah mahasiswa obesitas: 1
+--------------------------------------------------------
+Terima kasih telah menggunakan program kalkulator BMI!
+"""
+subset = false
+
+["Input 2"]
+input = """
+7
+IMPERIAL
+123.45
+78.9
+METRIK
+61.3
+168.75
+METRIK
+53.3
+145
+METRIK
+63.6
+121
+IMPERIAL
+253.53
+70.86
+IMPERIAL
+116.84
+64.56
+METRIK
+50.2
+175
+"""
+output = """
+Selamat datang di program kalkulator BMI!
+--------------------------------------------------------
+Masukkan jumlah mahasiswa yang akan dihitung datanya: 7
+--------------------DATA MAHASISWA 1--------------------
+Standar pengukuran apakah yang digunakan? IMPERIAL
+Masukkan massa tubuh mahasiswa (pon): 123.45
+Masukkan tinggi tubuh mahasiswa (inci): 78.9
+--------------------DATA MAHASISWA 2--------------------
+Standar pengukuran apakah yang digunakan? METRIK
+Masukkan massa tubuh mahasiswa (kilogram): 61.3
+Masukkan tinggi tubuh mahasiswa (sentimeter): 168.75
+--------------------DATA MAHASISWA 3--------------------
+Standar pengukuran apakah yang digunakan? METRIK
+Masukkan massa tubuh mahasiswa (kilogram): 53.3
+Masukkan tinggi tubuh mahasiswa (sentimeter): 145
+--------------------DATA MAHASISWA 4--------------------
+Standar pengukuran apakah yang digunakan? METRIK
+Masukkan massa tubuh mahasiswa (kilogram): 63.6
+Masukkan tinggi tubuh mahasiswa (sentimeter): 121
+--------------------DATA MAHASISWA 5--------------------
+Standar pengukuran apakah yang digunakan? IMPERIAL
+Masukkan massa tubuh mahasiswa (pon): 253.53
+Masukkan tinggi tubuh mahasiswa (inci): 70.86
+--------------------DATA MAHASISWA 6--------------------
+Standar pengukuran apakah yang digunakan? IMPERIAL
+Masukkan massa tubuh mahasiswa (pon): 116.84
+Masukkan tinggi tubuh mahasiswa (inci): 64.56
+--------------------DATA MAHASISWA 7--------------------
+Standar pengukuran apakah yang digunakan? METRIK
+Masukkan massa tubuh mahasiswa (kilogram): 50.2
+Masukkan tinggi tubuh mahasiswa (sentimeter): 175
+---------------------RINGKASAN DATA---------------------
+Berikut merupakan ringkasan hasil pengukuran BMI dari 7 mahasiswa.
+Jumlah mahasiswa dengan berat badan di bawah normal: 2
+Jumlah mahasiswa dengan berat badan normal: 2
+Jumlah mahasiswa dengan berat badan di atas normal: 1
+Jumlah mahasiswa obesitas: 2
+--------------------------------------------------------
+Terima kasih telah menggunakan program kalkulator BMI!
+"""
+subset = false
