@@ -13,3 +13,13 @@ I'm lazy to reinput all inputs every time I have I make changes, and checking th
 3. Drag and drop the folder where your task is on
 4. ???
 5. Profit!
+
+## Screenies
+
+### Usage
+
+![](https://d.rorre.xyz/vLnlzCbjh/explorer_f32UTOiKCR.gif)
+
+### Error Diff
+
+![](https://d.rorre.xyz/3j3CeWkkp/tByuSMkEiF.gif)
