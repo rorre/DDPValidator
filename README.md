@@ -1,6 +1,6 @@
 # DDP Validator
 
-DDP 1 answer validator, just to ensure if everything is 1:1 with spec or not. I decided to open source this because I feel like this is pretty neat. **Lab 6 test case is not available yet.**
+DDP answer validator, just to ensure if everything is 1:1 with spec or not. I decided to open source this because I feel like this is pretty neat.
 
 ## Why
 
