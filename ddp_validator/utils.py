@@ -58,7 +58,7 @@ async def run_command(test_stdin: List[str], *args) -> List[str]:
     assert process.stderr
 
     console.debug("Sleeping for 1s to let program boot up")
-    await asyncio.sleep(1)
+    await asyncio.sleep(2.5)
 
     combined_io = ""
     i = 0
