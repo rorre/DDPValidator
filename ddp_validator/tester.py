@@ -11,6 +11,13 @@ from asyncio.subprocess import PIPE
 from ddp_validator.types import Test, TestDict
 from ddp_validator.utils import console, run_command
 
+if console.color_system == "windows":
+    failed = "[red]FAILED[/red]"
+    success = "[green]SUCCESS[/green]"
+else:
+    failed = "❌"
+    success = "✔️"
+
 
 def has_subset(first, second):
     for line in first:
@@ -158,7 +165,7 @@ class InputTester:
                 condition = compare_output(program_lines, expected_lines, t["subset"])
                 if not condition:
                     console.debug("Output differs from expected.")
-                    console.print(f"{t['title']:<20} : ❌")
+                    console.print(f"{t['title']:<20} : {failed}")
 
                     if not (t["has_regex"] or t["subset"]):
                         target_html = f"difference-{t['title']}.html"
@@ -183,13 +190,13 @@ class InputTester:
 
                     if not check_output_file(t["expected_file"], t["output_file"]):
                         console.debug("Output file does not match output.")
-                        console.print(f"{t['title']:<20} : ❌ (Output file)")
+                        console.print(f"{t['title']:<20} : {failed} (Output file)")
                         test_passed = False
                         progress.advance(task)
                         continue
 
                 console.debug("Check passed.")
-                console.print(f"{t['title']:<20} : ✔️")
+                console.print(f"{t['title']:<20} : {success}")
                 progress.advance(task)
 
         if test_passed:

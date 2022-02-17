@@ -1,92 +1,33 @@
 import argparse
-import json
 import os
-import sys
 from pathlib import Path
-from typing import List, Tuple
-
 import requests
 
-from ddp_validator import __version__
+from ddp_validator.constants import BASE_RESOURCES_URL, IS_FROZEN
+from ddp_validator.online import fetch_update, load_classifiers
 from ddp_validator.tester import InputTester
-from ddp_validator.types import Classification
-from ddp_validator.utils import console, get_classifier, get_program, parse_version
-
-BASE_RESOURCES_URL = "https://raw.githubusercontent.com/rorre/DDPValidator/main/data"
-GITHUB_URL = "https://api.github.com/repos/rorre/DDPValidator/releases/latest"
-IS_FROZEN = getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS")
-
-
-def load_classifiers() -> List[Classification]:
-    classifiers: List[Classification]
-    with console.status("Fetching classifiers..."):
-        if IS_FROZEN:
-            try:
-                r = requests.get(BASE_RESOURCES_URL + "/classifier.json")
-                if r.status_code != 200:
-                    console.print(
-                        "[white on red]ERROR:[/white on red]",
-                        "GitHub returns non-200 status code.",
-                    )
-                    return []
-                classifiers = r.json()
-            except Exception:
-                console.print(
-                    "[white on red]ERROR:[/white on red]",
-                    "Cannot fetch classifiers from GitHub!",
-                )
-                return []
-        else:
-            console.print(
-                "[white on blue]NOTICE:[/white on blue]",
-                "Using local classifiers",
-            )
-            with open("data/classifier.json", "r") as f:
-                classifiers = json.load(f)
-
-    return classifiers
-
-
-def fetch_update():
-    if not IS_FROZEN:
-        console.print(
-            "[white on blue]NOTICE:[/white on blue]", "Running in development mode."
-        )
-        return
-
-    with console.status("Checking for updates..."):
-        try:
-            r = requests.get(GITHUB_URL)
-            if r.status_code != 200:
-                console.print(
-                    "[on yellow]WARN:[/on yellow]",
-                    "GitHub returns non-200 status code.",
-                )
-                return
-            response = r.json()
-        except Exception:
-            console.print(
-                "[on yellow]WARN:[/on yellow]",
-                "An exception has occured during update fetching.",
-            )
-            return
-
-    current_version = parse_version(__version__)
-    new_version: Tuple[int, int, int] = parse_version(response["tag_name"])
-    if current_version < new_version:
-        console.print(
-            "[white on blue]NOTICE:[/white on blue]",
-            "New version available. Please download here:",
-        )
-        console.print("[white on blue]NOTICE:[/white on blue]", response["url"])
-    else:
-        console.print(
-            "[white on blue]NOTICE:[/white on blue]",
-            "You're running latest version.",
-        )
+from ddp_validator.utils import console, get_classifier, get_program
+from rich.panel import Panel
+from rich.text import Text
 
 
 def cli():
+    if console.color_system == "windows":
+        text = Text()
+        text.append(
+            "You are using Command Prompt/Powershell (conhost). ",
+            style="bold",
+        )
+        text.append("Terminal output could be buggy.")
+        text.append("\nIf you'd like to get the best out of this, ")
+        text.append("please use the following terminals:")
+        text.append("\n")
+        text.append("\n\tAlacritty: https://alacritty.org/")
+        text.append("\n\tHyper: https://hyper.is/")
+        text.append("\n\tConEmu: https://conemu.github.io/")
+
+        console.print(Panel(text, title="Notice"))
+
     fetch_update()
     parser = argparse.ArgumentParser(description="Lab Tester.")
     parser.add_argument("code", help="Lab codename")
