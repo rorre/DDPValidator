@@ -100,6 +100,7 @@ class InputTester:
         if not self._compile_command:
             return
 
+        console.print("Compiling program...")
         cmd = self._compile_command.format_map({"program": self._program})
         console.debug("Compiling with command", cmd)
 
@@ -127,7 +128,13 @@ class InputTester:
         if code != 0:
             raise Exception("Error occured!\r\n\r\n" + stderr.decode())
 
-        console.print(stdout.decode())
+        stdout_data = stdout.decode()
+        console.print("Compiled.", end="")
+        if stdout_data:
+            console.print("stdout:")
+            console.print(stdout_data)
+        else:
+            console.print()
 
     def run_tests(self):
         self.run_compile()
