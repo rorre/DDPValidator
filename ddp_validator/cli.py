@@ -1,6 +1,7 @@
 import argparse
 import os
 from pathlib import Path
+import traceback
 import requests
 
 from ddp_validator.constants import BASE_RESOURCES_URL, IS_FROZEN
@@ -84,9 +85,14 @@ def cli():
             str(inputs_path.resolve()),
         )
 
-    os.chdir(test_dir)
-    tests.run_tests()
-    console.rule("Test End")
+    try:
+        os.chdir(test_dir)
+        tests.run_tests()
+        console.rule("Test End")
+    except KeyboardInterrupt:
+        pass
+    except BaseException:
+        traceback.print_exc()
 
     os.chdir(orig_cwd)
     input("Press enter to exit.")
