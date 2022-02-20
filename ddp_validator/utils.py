@@ -69,9 +69,18 @@ async def run_command(test_stdin: List[str], *args) -> List[str]:
         while True:
             try:
                 c = await asyncio.wait_for(process.stdout.read(1), 0.25)
+                if c == b"":
+                    current_stderr = await asyncio.wait_for(process.stderr.read(), 0.25)
+                    if current_stderr:
+                        raise Exception(
+                            "Error occured!\r\n\r\n" + current_stderr.decode()
+                        )
+
                 combined_io += c.decode()
             except asyncio.TimeoutError:
                 break
+            except BaseException as e:
+                raise e
 
         # All of stdout is done, we can send what we sent to stdin now.
         console.debug("Writing line:", submitting_line)
