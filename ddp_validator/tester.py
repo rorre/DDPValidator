@@ -10,6 +10,7 @@ from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn
 from asyncio.subprocess import PIPE
 from ddp_validator.types import Test, TestDict
 from ddp_validator.utils import console, run_command
+import shlex
 
 if console.color_system == "windows":
     failed = "[red]FAILED[/red]"
@@ -101,13 +102,15 @@ class InputTester:
             return
 
         console.print("Compiling program...")
-        cmd = self._compile_command.format_map({"program": self._program})
+        cmd = self._compile_command.format_map({"program": f'"{self._program}"'})
         console.debug("Compiling with command", cmd)
 
         async def run_cmd():
+            safe_split = shlex.split(cmd)
+
             process = await asyncio.create_subprocess_exec(
-                cmd.split(" ")[0],
-                *cmd.split(" ")[1:],
+                safe_split[0],
+                *safe_split[1:],
                 stdout=PIPE,
                 stderr=PIPE,
                 stdin=PIPE,
@@ -140,9 +143,9 @@ class InputTester:
         self.run_compile()
 
         if self._language == "python":
-            cmd = ("python", self._program)
+            cmd = ("python", f'"{self._program}"')
         else:
-            cmd = ("java", Path(self._program).name)
+            cmd = ("java", Path(self._program).stem)
 
         test_passed = True
         progress = Progress(
