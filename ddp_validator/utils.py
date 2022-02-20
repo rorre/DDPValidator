@@ -87,7 +87,11 @@ async def run_command(test_stdin: List[str], *args) -> List[str]:
 
     console.debug("Program finishes, exiting")
     combined_io += (await process.stdout.read()).decode()
-    process.kill()
+    # Workaround for ProcessLookupError
+    # https://stackoverflow.com/questions/64342460/calling-terminate-on-asyncio-subprocess-raises-processlookuperror
+    if process.returncode is None:
+        process.kill()
+
     return [
         s.encode("unicode_escape").decode("utf-8")
         for s in combined_io.strip().splitlines()
