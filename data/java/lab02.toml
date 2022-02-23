@@ -1,0 +1,19 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+input = """
+4
+21234567891
+21234567861
+1892132123
+53219218279
+"""
+output = """
+NO
+YES
+NO
+NO
+
+"""
+subset = false

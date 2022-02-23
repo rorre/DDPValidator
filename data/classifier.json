@@ -53,5 +53,10 @@
         "name": "Lab 01 -- DDP2",
         "identifier": "kalkulator BMI",
         "path": "java/lab01.toml"
+    },
+    {
+        "name": "Lab 02 -- DDP2",
+        "identifier": "YES",
+        "path": "java/lab02.toml"
     }
 ]
