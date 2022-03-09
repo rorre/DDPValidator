@@ -1,6 +1,7 @@
 import asyncio
 from asyncio.subprocess import PIPE
 from pathlib import Path
+import time
 from typing import Any, Callable, Generic, List, Optional, Tuple, TypeVar
 
 from rich.console import Console
@@ -63,6 +64,7 @@ async def run_command(test_stdin: List[str], *args) -> List[str]:
     combined_io = ""
     i = 0
     for submitting_line in test_stdin:
+        start = time.time()
         # Essentially, what we are doing here is to get each character
         # every time, and if a timeout occurs, that means that the program
         # has reached its end for current line.
@@ -70,6 +72,11 @@ async def run_command(test_stdin: List[str], *args) -> List[str]:
             try:
                 c = await asyncio.wait_for(process.stdout.read(1), 0.25)
                 if c == b"":
+                    curr = time.time()
+                    if curr - start > 5:
+                        console.debug("Giving up due to inactivity.")
+                        raise Exception("Program lagged for a long time, exiting...")
+
                     current_stderr = await asyncio.wait_for(process.stderr.read(), 0.25)
                     if current_stderr:
                         raise Exception(
