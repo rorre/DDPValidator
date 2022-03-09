@@ -1,0 +1,240 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+input = """
+10c
+Sharou
+Sharou
+2020
+1
+Heart of Gold
+Neil Young
+Harvest
+1972
+0
+5
+5
+2
+High tides
+Moona Hoshinova
+Meh
+2022
+5
+5
+1
+1
+1
+4
+0
+"""
+output = """
+Selamat Datang di Pacilfy!
+Silahkan masukkan lagu Anda
+Judul : 10c
+Artist: Sharou
+Album : Sharou
+Tahun : 2020
+Lanjut menambahkan lagu?
+[1] Lanjut
+[0] Berhenti
+Perintah: 1
+Silahkan masukkan lagu Anda
+Judul : Heart of Gold
+Artist: Neil Young
+Album : Harvest
+Tahun : 1972
+Lanjut menambahkan lagu?
+[1] Lanjut
+[0] Berhenti
+Perintah: 0
+Pacilfy siap dimulai
+
+SELAMAT DATANG DI
+
+ /$$$$$$$                     /$$ /$$  /$$$$$$
+| $$__  $$                   |__/| $$ /$$__  $$
+| $$  \\ $$ /$$$$$$   /$$$$$$$ /$$| $$| $$  \\__//$$   /$$
+| $$$$$$$/|____  $$ /$$_____/| $$| $$| $$$$   | $$  | $$
+| $$____/  /$$$$$$$| $$      | $$| $$| $$_/   | $$  | $$
+| $$      /$$__  $$| $$      | $$| $$| $$     | $$  | $$
+| $$     |  $$$$$$$|  $$$$$$$| $$| $$| $$     |  $$$$$$$
+|__/      \\_______/ \\_______/|__/|__/|__/      \\____  $$
+                                               /$$  | $$
+                                              |  $$$$$$/
+                                               \\______/
+
+Currently Playing
+==================================================================
+=                          Sharou - 10c                          =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 5
+
+Currently Playing
+==================================================================
+=                   Neil Young - Heart of Gold                   =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 5
+
+Currently Playing
+==================================================================
+=                          Sharou - 10c                          =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 2
+Silahkan masukkan lagu Anda
+Judul : High tides
+Artist: Moona Hoshinova
+Album : Meh
+Tahun : 2022
+
+Currently Playing
+==================================================================
+=                          Sharou - 10c                          =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 5
+
+Currently Playing
+==================================================================
+=                   Neil Young - Heart of Gold                   =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 5
+
+Currently Playing
+==================================================================
+=                  Moona Hoshinova - High tides                  =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 1
+
+Currently Playing
+==================================================================
+=                   Neil Young - Heart of Gold                   =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 1
+
+Currently Playing
+==================================================================
+=                          Sharou - 10c                          =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 1
+
+Currently Playing
+==================================================================
+=                  Moona Hoshinova - High tides                  =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 4
+
+Currently Playing
+==================================================================
+=                          Sharou - 10c                          =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 0
+Terima kasih sudah menggunakan Pacilfy!
+"""
+subset = false
+
+["Additional"]
+input = """
+Fine
+Taeyeon
+My Voice
+2017
+0
+3
+fINe
+3
+Fone
+1
+5
+4
+0
+"""
+output = """
+Selamat Datang di Pacilfy!
+Silahkan masukkan lagu Anda
+Judul : Fine
+Artist: Taeyeon
+Album : My Voice
+Tahun : 2017
+Lanjut menambahkan lagu?
+[1] Lanjut
+[0] Berhenti
+Perintah: 0
+Pacilfy siap dimulai
+
+SELAMAT DATANG DI
+
+ /$$$$$$$                     /$$ /$$  /$$$$$$
+| $$__  $$                   |__/| $$ /$$__  $$
+| $$  \\ $$ /$$$$$$   /$$$$$$$ /$$| $$| $$  \\__//$$   /$$
+| $$$$$$$/|____  $$ /$$_____/| $$| $$| $$$$   | $$  | $$
+| $$____/  /$$$$$$$| $$      | $$| $$| $$_/   | $$  | $$
+| $$      /$$__  $$| $$      | $$| $$| $$     | $$  | $$
+| $$     |  $$$$$$$|  $$$$$$$| $$| $$| $$     |  $$$$$$$
+|__/      \\_______/ \\_______/|__/|__/|__/      \\____  $$
+                                               /$$  | $$
+                                              |  $$$$$$/
+                                               \\______/
+
+Currently Playing
+==================================================================
+=                         Taeyeon - Fine                         =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 3
+Judul yang ingin dicari: fINe
+Data lagu:
+Judul : Fine
+Artist: Taeyeon
+Album : My Voice
+Tahun : 2017
+
+Currently Playing
+==================================================================
+=                         Taeyeon - Fine                         =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 3
+Judul yang ingin dicari: Fone
+Lagu tidak ditemukan
+
+Currently Playing
+==================================================================
+=                         Taeyeon - Fine                         =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 1
+
+Currently Playing
+==================================================================
+=                         Taeyeon - Fine                         =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 5
+
+Currently Playing
+==================================================================
+=                         Taeyeon - Fine                         =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 4
+Minimal ada satu musik dalam sistem
+
+Currently Playing
+==================================================================
+=                         Taeyeon - Fine                         =
+==================================================================
+|[1] prev |[2] add music |[3] details |[4] delete music |[5] next|
+Command (0 untuk exit) : 0
+Terima kasih sudah menggunakan Pacilfy!
+"""
+subset = false

@@ -58,5 +58,10 @@
         "name": "Lab 02 -- DDP2",
         "identifier": "YES",
         "path": "java/lab02.toml"
+    },
+	{
+        "name": "Lab 03 -- DDP2",
+        "identifier": "Pacilfy",
+        "path": "java/lab03.toml"
     }
 ]
