@@ -93,6 +93,10 @@ def cli():
         pass
     except BaseException:
         traceback.print_exc()
+        console.print(
+            "[white on blue]TIP:[/white on blue]",
+            "Use --debug to see what is going on.",
+        )
 
     os.chdir(orig_cwd)
     input("Press enter to exit.")
