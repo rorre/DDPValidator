@@ -1,0 +1,127 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+input = """
+3
+Akua 3000 100 4
+Indiemie 3500 250 5
+Minyak 15000 1000 10
+2
+Udin 50000 
+Bambang 20000
+9
+ADD Udin Akua 3 
+ADD Udin Minyak 5
+TOTAL_HARGA Udin
+ADD Bambang Akua 2
+ADD Bambang Akua 1
+ADD Bambang Indiemie 5
+TOTAL_HARGA Bambang
+ADD Bambang Minyak 5
+ADD Bambang Indiemie 5
+"""
+output = """
+3
+Akua 3000 100 4
+Indiemie 3500 250 5
+Minyak 15000 1000 10
+2
+Udin 50000 
+Bambang 20000
+9
+ADD Udin Akua 3 
+ADD Udin Minyak 5
+TOTAL_HARGA Udin
+ADD Bambang Akua 2
+ADD Bambang Akua 1
+ADD Bambang Indiemie 5
+TOTAL_HARGA Bambang
+ADD Bambang Minyak 5
+ADD Bambang Indiemie 5
+Udin berhasil menambahkan 3 Akua
+Maaf 5 Minyak terlalu berat, tetapi 4 Minyak berhasil ditambahkan
+Total harga belanjaan Udin adalah 69000
+Stock Akua kurang
+Bambang berhasil menambahkan 1 Akua
+Bambang berhasil menambahkan 5 Indiemie
+Total harga belanjaan Bambang adalah 20500
+Maaf 5 Minyak terlalu berat, tetapi 3 Minyak berhasil ditambahkan
+Stock Indiemie kurang
+"""
+subset = false
+
+["Input 2"]
+input = """
+4
+Akua 3000 100 4
+Indiemie 3500 250 5
+Minyak 15000 1000 10
+Gula 10000 500 4
+2
+Udin 90000 
+Bambang 30000
+14
+ADD Udin Akua 3 
+ADD Udin Minyak 3
+ADD Udin Gula 5
+TOTAL_HARGA Udin
+KASIR Udin 
+KASIR Udin
+TOTAL_HARGA Udin
+ADD Bambang Akua 1
+ADD Bambang Indiemie 5
+KASIR Bambang
+ADD Bambang Minyak 1
+KASIR Bambang
+CEK_UANG Bambang
+TOTAL_HARGA Bambang
+"""
+output = """
+4
+Akua 3000 100 4
+Indiemie 3500 250 5
+Minyak 15000 1000 10
+Gula 10000 500 4
+2
+Udin 90000 
+Bambang 30000
+14
+ADD Udin Akua 3 
+ADD Udin Minyak 3
+ADD Udin Gula 5
+TOTAL_HARGA Udin
+KASIR Udin 
+KASIR Udin
+TOTAL_HARGA Udin
+ADD Bambang Akua 1
+ADD Bambang Indiemie 5
+KASIR Bambang
+ADD Bambang Minyak 1
+KASIR Bambang
+CEK_UANG Bambang
+TOTAL_HARGA Bambang
+Udin berhasil menambahkan 3 Akua
+Udin berhasil menambahkan 3 Minyak
+Stock Gula kurang
+Total harga belanjaan Udin adalah 54000
+Pembelian Udin berhasil:
+* Akua 3 = 9000
+* Minyak 3 = 45000
+* Total Belanjaan = 54000
+* Sisa Uang = 36000
+Maaf tidak ada barang di keranjang Udin
+Total harga belanjaan Udin adalah 0
+Bambang berhasil menambahkan 1 Akua
+Bambang berhasil menambahkan 5 Indiemie
+Pembelian Bambang berhasil:
+* Akua 1 = 3000
+* Indiemie 5 = 17500
+* Total Belanjaan = 20500
+* Sisa Uang = 9500
+Bambang berhasil menambahkan 1 Minyak
+Maaf Bambang tidak memiliki cukup uang
+Uang Bambang sekarang 9500
+Total harga belanjaan Bambang adalah 15000
+"""
+subset = false

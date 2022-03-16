@@ -63,5 +63,10 @@
         "name": "Lab 03 -- DDP2",
         "identifier": "Pacilfy",
         "path": "java/lab03.toml"
+    },
+    {
+        "name": "Lab 04 -- DDP2",
+        "identifier": "static void kasir",
+        "path": "java/lab04.toml"
     }
 ]
