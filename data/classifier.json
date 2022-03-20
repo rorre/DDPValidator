@@ -68,5 +68,10 @@
         "name": "Lab 04 -- DDP2",
         "identifier": "static void kasir",
         "path": "java/lab04.toml"
+    },
+    {
+        "name": "TP 02 -- DDP2",
+        "identifier": "assignment2",
+        "path": "java/tp02.toml"
     }
 ]
