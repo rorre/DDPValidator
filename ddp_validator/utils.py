@@ -39,16 +39,40 @@ class DebuggableConsole(Console):
 console = DebuggableConsole()
 
 
-async def run_command(test_stdin: List[str], *args) -> List[str]:
+async def run_command_stdout(test_stdin: List[str], *args) -> List[str]:
+    console.debug("Running command:", " ".join(args))
+    console.debug("stdin:", test_stdin)
+
+    process = await asyncio.create_subprocess_exec(
+        *args, stdout=PIPE, stderr=PIPE, stdin=PIPE
+    )
+    stdout, stderr = await process.communicate("\n".join(test_stdin).encode())
+
+    if stderr:
+        raise Exception("Program errored!\r\n\r\n" + stderr.decode())
+
+    return [
+        s.encode("unicode_escape").decode("utf-8")
+        for s in stdout.decode("utf-8").strip().splitlines()
+    ]
+
+
+async def run_command(
+    test_stdin: List[str], *args, only_stdout: bool = False
+) -> List[str]:
     """Runs command based on args with given stdin
 
     Args:
         test_stdin (List[str]): List of string to send as stdin.
         *args (List[str]): Command to execute, splitted by space.
+        only_stdout (boolean): Whether to only look at stdout or combine stdin.
 
     Returns:
         List[str]: Combined stdout and stdin of program.
     """
+    if only_stdout:
+        return await run_command_stdout(test_stdin, *args)
+
     console.debug("Running command:", " ".join(args))
     console.debug("stdin:", test_stdin)
 

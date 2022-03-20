@@ -94,6 +94,7 @@ class InputTester:
         compile_command: str,
         workdir: Optional[str] = None,
         cmd_args: List[str] = None,
+        only_stdout: bool = False,
     ):
         self._tests = tests
         self._program = program_path
@@ -101,6 +102,7 @@ class InputTester:
         self._language = language
         self._compile_command = compile_command
         self._cmd_args = cmd_args
+        self._only_stdout = only_stdout
 
         if sys.platform == "win32":
             console.debug("Windows, using ProactorEventLoop.")
@@ -178,7 +180,11 @@ class InputTester:
             for t in self._tests:
                 console.debug("Running test", t["title"])
                 program_lines = self._loop.run_until_complete(
-                    run_command(t["stdin"].splitlines(), *cmd)
+                    run_command(
+                        t["stdin"].splitlines(),
+                        *cmd,
+                        only_stdout=self._only_stdout,
+                    )
                 )
                 expected_lines = [
                     s.encode("unicode_escape").decode("utf-8")
@@ -241,6 +247,7 @@ class InputTester:
         language = cast(str, tests_dict.pop("language"))
         compile_command = cast(str, tests_dict.pop("compile", ""))
         cmd_args = cast(List[str], tests_dict.pop("cmd_args", []))
+        only_stdout = cast(bool, tests_dict.pop("only_stdout", False))
 
         console.debug("Loading test config")
         console.debug(tests_dict)
@@ -268,6 +275,7 @@ class InputTester:
             language,
             compile_command,
             cmd_args=cmd_args,
+            only_stdout=only_stdout,
         )
 
     @classmethod
