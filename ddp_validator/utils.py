@@ -1,6 +1,7 @@
 import asyncio
 from asyncio.subprocess import PIPE
 from pathlib import Path
+import sys
 import time
 from typing import Any, Callable, Generic, List, Optional, Tuple, TypeVar
 
@@ -124,8 +125,13 @@ def get_program(dir: Path) -> Path:
     Returns:
         Path: Selected program.
     """
+    is_gradle = False
     valid_programs: List[Path] = []
     for p in dir.iterdir():
+        if p.suffix == ".gradle":
+            is_gradle = True
+            break
+
         if p.suffix in [".py", ".java"]:
             valid_programs.append(p)
 
@@ -143,6 +149,10 @@ def get_program(dir: Path) -> Path:
 
         console.rule("END NOTICE")
         return valid_programs[idx]
+
+    if is_gradle:
+        return dir
+
     return valid_programs[0]
 
 
@@ -158,8 +168,12 @@ def get_classifier(
     Returns:
         Optional[Classification]: Classifier/test data that matches.
     """
-    with open(program_path, "r") as f:
-        program_content = f.read()
+    if program_path.is_dir():
+        # Gradle
+        program_content = program_path.name
+    else:
+        with open(program_path, "r") as f:
+            program_content = f.read()
 
     for c in classifiers:
         if c["identifier"] in program_content:
@@ -169,3 +183,16 @@ def get_classifier(
 
 def parse_version(ver: str) -> Tuple[int, ...]:
     return tuple(map(int, ver.split(".")))
+
+
+def find_gradlew(dir: Path):
+    gradle_fname = "gradlew.bat" if sys.platform == "win32" else "gradlew"
+
+    for _ in range(5):
+        gradlew_path = dir / gradle_fname
+        if gradlew_path.exists():
+            return gradlew_path
+        else:
+            dir = dir.parent
+
+    raise Exception("Cannot find gradlew.")

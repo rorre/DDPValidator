@@ -9,8 +9,20 @@ import toml
 from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn
 from asyncio.subprocess import PIPE
 from ddp_validator.types import Test, TestDict
-from ddp_validator.utils import console, run_command
+from ddp_validator.utils import console, find_gradlew, run_command
 import shlex
+
+DISALLOWED_CHARS = [
+    "/",
+    "<",
+    ">",
+    ":",
+    '"',
+    "\\",
+    "|",
+    "?",
+    "*",
+]
 
 if console.color_system == "windows":
     failed = "[red]FAILED[/red]"
@@ -81,12 +93,14 @@ class InputTester:
         language: str,
         compile_command: str,
         workdir: Optional[str] = None,
+        cmd_args: List[str] = None,
     ):
         self._tests = tests
         self._program = program_path
         self._workdir = workdir
         self._language = language
         self._compile_command = compile_command
+        self._cmd_args = cmd_args
 
         if sys.platform == "win32":
             console.debug("Windows, using ProactorEventLoop.")
@@ -144,8 +158,10 @@ class InputTester:
 
         if self._language == "python":
             cmd = ("python", f'"{self._program}"')
-        else:
+        elif self._language == "java":
             cmd = ("java", Path(self._program).stem)
+        elif self._language == "gradle":
+            cmd = (str(find_gradlew(Path(self._program)).absolute()), *self._cmd_args)
 
         test_passed = True
         progress = Progress(
@@ -179,6 +195,9 @@ class InputTester:
 
                     if not (t["has_regex"] or t["subset"]):
                         target_html = f"difference-{t['title']}.html"
+                        for c in DISALLOWED_CHARS:
+                            target_html = target_html.replace(c, "")
+
                         console.debug("Writing HTML difference to", target_html)
 
                         differ = difflib.HtmlDiff()
@@ -221,6 +240,7 @@ class InputTester:
 
         language = cast(str, tests_dict.pop("language"))
         compile_command = cast(str, tests_dict.pop("compile", ""))
+        cmd_args = cast(List[str], tests_dict.pop("cmd_args", []))
 
         console.debug("Loading test config")
         console.debug(tests_dict)
@@ -242,7 +262,13 @@ class InputTester:
             console.debug(test_data)
             tests.append(test_data)
 
-        return cls(program_path, tests, language, compile_command)
+        return cls(
+            program_path,
+            tests,
+            language,
+            compile_command,
+            cmd_args=cmd_args,
+        )
 
     @classmethod
     def from_file(cls, program_path: str, fname: str):
