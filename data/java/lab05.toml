@@ -1,0 +1,335 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+input = """
+3
+SHM SAHAM 10 2500 0.25 0.05
+OBLADI OBLIGASI 100 3500 0.03 3
+OBLADA OBLIGASI 200 4500 0.05 5
+1
+2
+3
+2
+1
+3
+1
+2
+4
+"""
+output = """
+Silakan masukkan banyak aset yang tersedia: 3
+Aset 1: SHM SAHAM 10 2500 0.25 0.05
+Aset 2: OBLADI OBLIGASI 100 3500 0.03 3
+Aset 3: OBLADA OBLIGASI 200 4500 0.05 5
+Selamat datang di...
+
+ /$$$$$$$                     /$$ /$$
+| $$__  $$                   |__/| $$
+| $$  \\ $$ /$$$$$$   /$$$$$$$ /$$| $$ /$$$$$$$   /$$$$$$  /$$$$$$/$$$$   /$$$$$$
+| $$$$$$$/|____  $$ /$$_____/| $$| $$| $$__  $$ /$$__  $$| $$_  $$_  $$ /$$__  $$
+| $$____/  /$$$$$$$| $$      | $$| $$| $$  \\ $$| $$  \\ $$| $$ \\ $$ \\ $$| $$  \\ $$
+| $$      /$$__  $$| $$      | $$| $$| $$  | $$| $$  | $$| $$ | $$ | $$| $$  | $$
+| $$     |  $$$$$$$|  $$$$$$$| $$| $$| $$  | $$|  $$$$$$/| $$ | $$ | $$|  $$$$$$/
+|__/      \\_______/ \\_______/|__/|__/|__/  |__/ \\______/ |__/ |__/ |__/ \\______/
+
+
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 1
+================================================================
+Kamu memiliki 3 total aset:
+- SHM
+Tipe: Saham
+Harga: 2500.00
+Jumlah: 10
+Dividen: 0.05
+Pertumbuhan: 0.25
+- OBLADI
+Tipe: Obligasi
+Harga: 3500.00
+Jumlah: 100
+Bunga: 0.03
+Jatuh Tempo: false
+- OBLADA
+Tipe: Obligasi
+Harga: 4500.00
+Jumlah: 200
+Bunga: 0.05
+Jatuh Tempo: false
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 2
+================================================================
+Info Portofolio
+Jumlah Jenis Saham: 1
+Jumlah Jenis Obligasi: 2
+Total Nilai Portofolio: 1275000.00
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 3
+Setahun telah berlalu...
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 2
+================================================================
+Info Portofolio
+Jumlah Jenis Saham: 1
+Jumlah Jenis Obligasi: 2
+Total Nilai Portofolio: 1325187.50
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 1
+================================================================
+Kamu memiliki 3 total aset:
+- SHM
+Tipe: Saham
+Harga: 1875.00
+Jumlah: 10
+Dividen: 0.05
+Pertumbuhan: -0.25
+- OBLADI
+Tipe: Obligasi
+Harga: 3500.00
+Jumlah: 100
+Bunga: 0.03
+Jatuh Tempo: false
+- OBLADA
+Tipe: Obligasi
+Harga: 4500.00
+Jumlah: 200
+Bunga: 0.05
+Jatuh Tempo: false
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 3
+Setahun telah berlalu...
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 1
+================================================================
+Kamu memiliki 3 total aset:
+- SHM
+Tipe: Saham
+Harga: 2343.75
+Jumlah: 10
+Dividen: 0.05
+Pertumbuhan: 0.25
+- OBLADI
+Tipe: Obligasi
+Harga: 3500.00
+Jumlah: 100
+Bunga: 0.03
+Jatuh Tempo: false
+- OBLADA
+Tipe: Obligasi
+Harga: 4500.00
+Jumlah: 200
+Bunga: 0.05
+Jatuh Tempo: false
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 2
+================================================================
+Info Portofolio
+Jumlah Jenis Saham: 1
+Jumlah Jenis Obligasi: 2
+Total Nilai Portofolio: 1386546.88
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 4
+Terima kasih telah menggunakan layanan Pacilnomo ~ !
+"""
+subset = false
+
+["Input 2"]
+input = """
+1
+OBELIX OBLIGASI 500 1000 0.05 2
+3
+3
+2
+1
+3
+1
+2
+3
+2
+4
+"""
+output = """
+Silakan masukkan banyak aset yang tersedia: 1
+Aset 1: OBELIX OBLIGASI 500 1000 0.05 2
+Selamat datang di...
+
+ /$$$$$$$                     /$$ /$$
+| $$__  $$                   |__/| $$
+| $$  \\ $$ /$$$$$$   /$$$$$$$ /$$| $$ /$$$$$$$   /$$$$$$  /$$$$$$/$$$$   /$$$$$$
+| $$$$$$$/|____  $$ /$$_____/| $$| $$| $$__  $$ /$$__  $$| $$_  $$_  $$ /$$__  $$
+| $$____/  /$$$$$$$| $$      | $$| $$| $$  \\ $$| $$  \\ $$| $$ \\ $$ \\ $$| $$  \\ $$
+| $$      /$$__  $$| $$      | $$| $$| $$  | $$| $$  | $$| $$ | $$ | $$| $$  | $$
+| $$     |  $$$$$$$|  $$$$$$$| $$| $$| $$  | $$|  $$$$$$/| $$ | $$ | $$|  $$$$$$/
+|__/      \\_______/ \\_______/|__/|__/|__/  |__/ \\______/ |__/ |__/ |__/ \\______/
+
+
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 3
+Setahun telah berlalu...
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 3
+Setahun telah berlalu...
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 2
+================================================================
+Info Portofolio
+Jumlah Jenis Saham: 0
+Jumlah Jenis Obligasi: 1
+Total Nilai Portofolio: 550000.00
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 1
+================================================================
+Kamu memiliki 1 total aset:
+- OBELIX
+Tipe: Obligasi
+Harga: 1000.00
+Jumlah: 500
+Bunga: 0.05
+Jatuh Tempo: false
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 3
+Setahun telah berlalu...
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 1
+================================================================
+Kamu memiliki 1 total aset:
+- OBELIX
+Tipe: Obligasi
+Harga: 1000.00
+Jumlah: 500
+Bunga: 0.05
+Jatuh Tempo: true
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 2
+================================================================
+Info Portofolio
+Jumlah Jenis Saham: 0
+Jumlah Jenis Obligasi: 1
+Total Nilai Portofolio: 575000.00
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 3
+Setahun telah berlalu...
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 2
+================================================================
+Info Portofolio
+Jumlah Jenis Saham: 0
+Jumlah Jenis Obligasi: 1
+Total Nilai Portofolio: 575000.00
+================================================================
+Silakan pilih salah satu opsi berikut:
+[1] Daftar aset
+[2] Info portofolio
+[3] Lanjut ke tahun berikutnya
+[*] Keluar
+================================================================
+Input: 4
+Terima kasih telah menggunakan layanan Pacilnomo ~ !
+"""
+subset = false

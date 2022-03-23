@@ -73,5 +73,10 @@
         "name": "TP 02 -- DDP2",
         "identifier": "assignment2",
         "path": "java/tp02.toml"
+    },
+    {
+        "name": "Lab 05 -- DDP2",
+        "identifier": "Pacilnomo",
+        "path": "java/lab05.toml"
     }
 ]
