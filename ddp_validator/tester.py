@@ -155,6 +155,22 @@ class InputTester:
         else:
             console.print()
 
+    def cleanup(self):
+        if self._language != "java":
+            console.debug("Not a java project, cleanup not needed.")
+
+        console.print("Cleaning up...")
+
+        project_dir = Path(self._program).parent
+        console.debug("Project directory:", str(project_dir))
+
+        compiled_files = project_dir.glob("*.class")
+        for f in compiled_files:
+            console.debug("Cleaning:", str(f))
+            f.unlink(missing_ok=True)
+
+        console.print("Done.")
+
     def run_tests(self):
         self.run_compile()
 
@@ -238,6 +254,8 @@ class InputTester:
             console.print("All checks passed!")
         else:
             console.print("Some checks have failed :(")
+
+        self.cleanup()
 
     @classmethod
     def from_str(cls, program_path: str, inputs: str):
