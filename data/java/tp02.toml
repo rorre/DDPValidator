@@ -547,3 +547,2476 @@ Terima kasih telah menggunakan SistakaNG!
 """
 subset = false
 
+["Ren: Input 1"]
+subset = false
+input = """
+1
+A
+SSI
+2021
+02/02/2002
+2
+B
+50
+1
+B
+MIK
+2021
+02/02/2002
+8
+1
+AA
+SIK
+2021
+02/02/2002
+8
+3
+K
+L
+P
+B
+99
+4
+MIK21020202VN
+k
+l
+02/02/2020
+7
+MIK21020202VN
+5
+MIK21020202VN
+k
+l
+12/02/2020
+8
+6
+SIK21020202PH
+10000
+6
+MIK21020202VN
+1000
+6
+MIK21020202VN
+100000
+7
+MIK21020202VN
+99
+"""
+output = """
+Selamat Datang di Sistem Perpustakaan SistakaNG!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member A berhasil ditambahkan dengan data:
+ID Anggota: SSI21020202Z9
+Nama Anggota: A
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori B dengan 50 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member B berhasil ditambahkan dengan data:
+ID Anggota: MIK21020202VN
+Nama Anggota: B
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peringkat Anggota ----------
+----------------- 1 -----------------
+ID Anggota: SSI21020202Z9
+Nama Anggota: A
+Total Point: 0
+Denda: 0
+----------------- 2 -----------------
+ID Anggota: MIK21020202VN
+Nama Anggota: B
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member AA berhasil ditambahkan dengan data:
+ID Anggota: SIK21020202PH
+Nama Anggota: AA
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peringkat Anggota ----------
+----------------- 1 -----------------
+ID Anggota: SSI21020202Z9
+Nama Anggota: A
+Total Point: 0
+Denda: 0
+----------------- 2 -----------------
+ID Anggota: SIK21020202PH
+Nama Anggota: AA
+Total Point: 0
+Denda: 0
+----------------- 3 -----------------
+ID Anggota: MIK21020202VN
+Nama Anggota: B
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku K oleh L berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: B berhasil meminjam Buku K!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: MIK21020202VN
+Nama Anggota: B
+Total Point: 0
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: K
+Penulis Buku: L
+Penerbit Buku: P
+Kategori: B
+Point: 50
+Tanggal Peminjaman: 02/02/2020
+Tanggal Pengembalian: -
+Denda: Rp 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku K berhasil dikembalikan oleh B dengan denda Rp 9000!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peringkat Anggota ----------
+----------------- 1 -----------------
+ID Anggota: MIK21020202VN
+Nama Anggota: B
+Total Point: 50
+Denda: 9000
+----------------- 2 -----------------
+ID Anggota: SSI21020202Z9
+Nama Anggota: A
+Total Point: 0
+Denda: 0
+----------------- 3 -----------------
+ID Anggota: SIK21020202PH
+Nama Anggota: AA
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: AA tidak memiliki denda
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: B berhasil membayar denda sebesar Rp 1000
+Sisa denda saat ini: Rp 8000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: B berhasil membayar lunas denda
+Jumlah kembalian: Rp 92000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: MIK21020202VN
+Nama Anggota: B
+Total Point: 50
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: K
+Penulis Buku: L
+Penerbit Buku: P
+Kategori: B
+Point: 50
+Tanggal Peminjaman: 02/02/2020
+Tanggal Pengembalian: 12/02/2020
+Denda: Rp 9000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+Terima kasih telah menggunakan SistakaNG!
+"""
+
+["Ren: Input 2"]
+subset = false
+input = """
+1
+Dek Depe
+SSI
+2021
+17/08/2003
+2
+Non Fiksi
+20
+3
+asd
+a
+b
+Non Fiksi
+10
+3
+a
+a
+b
+Non Fiksi
+10
+3
+b
+a
+b
+Non Fiksi
+10
+3
+c
+a
+b
+Non Fiksi
+10
+3
+d
+a
+b
+Non Fiksi
+10
+4
+SSI21170803DE
+asd
+a
+08/03/2022
+4
+SSI21170803DE
+a
+a
+08/03/2022
+4
+SSI21170803DE
+b
+a
+08/03/2022
+7
+SSI21170803DE
+4
+SSI21170803DE
+c
+a
+08/03/2022
+7
+SSI21170803DE
+5
+SSI21170803DE
+asd
+a
+09/03/2022
+4
+SSI21170803DE
+c
+a
+08/03/2022
+7
+SSI21170803DE
+99
+"""
+output = """
+Selamat Datang di Sistem Perpustakaan SistakaNG!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member Dek Depe berhasil ditambahkan dengan data:
+ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori Non Fiksi dengan 20 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku asd oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku a oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku b oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku c oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku d oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dek Depe berhasil meminjam Buku asd!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dek Depe berhasil meminjam Buku a!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dek Depe berhasil meminjam Buku b!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 0
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: asd
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 2 -----------------
+Judul Buku: a
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 3 -----------------
+Judul Buku: b
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Jumlah buku yang sedang dipinjam sudah mencapai batas maksimal
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 0
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: asd
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 2 -----------------
+Judul Buku: a
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 3 -----------------
+Judul Buku: b
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku asd berhasil dikembalikan oleh Dek Depe dengan denda Rp 0!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dek Depe berhasil meminjam Buku c!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 20
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: asd
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 09/03/2022
+Denda: Rp 0
+----------------- 2 -----------------
+Judul Buku: a
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 3 -----------------
+Judul Buku: b
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 4 -----------------
+Judul Buku: c
+Penulis Buku: a
+Penerbit Buku: b
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+Terima kasih telah menggunakan SistakaNG!
+"""
+
+["Yudi: Input 1"]
+subset = false
+input = """
+1
+Dek Depe
+SSI
+2021
+17/08/2003
+2
+Non Fiksi
+20
+2
+Kartun
+20
+2
+Anime
+40
+3
+Belajar Pemrograman Dasar
+Kak Depe
+Airlangga, Co.
+Non Fiksi
+10
+4
+SSI21170803DE
+Belajar Pemrograman Dasar
+Kak Depe
+08/03/2022
+5
+SSI21170803DE
+Belajar Pemrograman Dasar
+Kak Depe
+18/03/2022
+6
+SSI21170803DE
+1000
+7
+SSI21170803DE
+1
+Dadu
+SSI
+2021
+03/07/2003
+4
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kak Depe
+08/03/2022
+5
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kak Depe
+18/03/2022
+6
+SSI21030703KM
+10000
+7
+SSI21030703KM
+8
+4
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kak Depe
+08/03/2022
+5
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kak Depe
+18/03/2022
+8
+3
+Belajar Pemrograman Dasar
+Kakaak
+Airlangga, Co.
+Non Fiksi
+10
+4
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kakaak
+08/03/2022
+5
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kakaak
+18/03/2022
+6
+SSI21030703KM
+100000
+4
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kakaak
+08/03/2022
+7
+SSI21030703KM
+99
+"""
+output = """
+Selamat Datang di Sistem Perpustakaan SistakaNG!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member Dek Depe berhasil ditambahkan dengan data:
+ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori Non Fiksi dengan 20 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori Kartun dengan 20 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori Anime dengan 40 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku Belajar Pemrograman Dasar oleh Kak Depe berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dek Depe berhasil meminjam Buku Belajar Pemrograman Dasar!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku Belajar Pemrograman Dasar berhasil dikembalikan oleh Dek Depe dengan denda Rp 9000!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: Dek Depe berhasil membayar denda sebesar Rp 1000
+Sisa denda saat ini: Rp 8000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 20
+Denda: 8000
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member Dadu berhasil ditambahkan dengan data:
+ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dadu berhasil meminjam Buku Belajar Pemrograman Dasar!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku Belajar Pemrograman Dasar berhasil dikembalikan oleh Dadu dengan denda Rp 9000!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: Dadu berhasil membayar lunas denda
+Jumlah kembalian: Rp 1000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 20
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peringkat Anggota ----------
+----------------- 1 -----------------
+ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 20
+Denda: 0
+----------------- 2 -----------------
+ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 20
+Denda: 8000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dadu berhasil meminjam Buku Belajar Pemrograman Dasar!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku Belajar Pemrograman Dasar berhasil dikembalikan oleh Dadu dengan denda Rp 9000!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peringkat Anggota ----------
+----------------- 1 -----------------
+ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 40
+Denda: 9000
+----------------- 2 -----------------
+ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 20
+Denda: 8000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku Belajar Pemrograman Dasar oleh Kakaak berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Denda lebih dari Rp 5000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku Belajar Pemrograman Dasar tidak sedang dipinjam
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: Dadu berhasil membayar lunas denda
+Jumlah kembalian: Rp 91000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dadu berhasil meminjam Buku Belajar Pemrograman Dasar!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 40
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+----------------- 2 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+----------------- 3 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kakaak
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+Terima kasih telah menggunakan SistakaNG!
+"""
+
+["Yudi: Input 2"]
+subset = false
+input = """
+1
+Dek Depe
+SSI
+2021
+17/08/2003
+1
+Yudi
+SSI
+2021
+17/07/2003
+1
+Andi
+SSI
+2021
+17/03/2003
+2
+a
+30
+3
+a
+a
+a
+a
+5
+4
+SSI21170803DE
+a
+a
+03/07/2003
+5
+SSI21170803DE
+a
+a
+04/07/2003
+4
+SSI21170703A7
+a
+a
+03/07/2003
+5
+SSI21170703A7
+a
+a
+04/07/2003
+4
+SSI21170303YF
+a
+a
+03/07/2003
+5
+SSI21170303YF
+a
+a
+04/07/2003
+4
+SSI21170703A7
+a
+a
+03/07/2003
+5
+SSI21170703A7
+a
+a
+04/07/2003
+99
+"""
+output = """
+Selamat Datang di Sistem Perpustakaan SistakaNG!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member Dek Depe berhasil ditambahkan dengan data:
+ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member Yudi berhasil ditambahkan dengan data:
+ID Anggota: SSI21170703A7
+Nama Anggota: Yudi
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member Andi berhasil ditambahkan dengan data:
+ID Anggota: SSI21170303YF
+Nama Anggota: Andi
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori a dengan 30 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku a oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dek Depe berhasil meminjam Buku a!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku a berhasil dikembalikan oleh Dek Depe dengan denda Rp 0!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Yudi berhasil meminjam Buku a!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku a berhasil dikembalikan oleh Yudi dengan denda Rp 0!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Andi berhasil meminjam Buku a!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku a berhasil dikembalikan oleh Andi dengan denda Rp 0!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Yudi berhasil meminjam Buku a!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku a berhasil dikembalikan oleh Yudi dengan denda Rp 0!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+Terima kasih telah menggunakan SistakaNG!
+"""
+
+["Yudi: Input 3"]
+subset = false
+input = """
+1
+Dek Depe
+SSI
+2021
+17/08/2003
+2
+Non Fiksi
+20
+2
+Kartun
+20
+2
+Anime
+40
+3
+Belajar Pemrograman Dasar
+Kak Depe
+Airlangga, Co.
+Non Fiksi
+10
+4
+SSI21170803DE
+Belajar Pemrograman Dasar
+Kak Depe
+08/03/2022
+5
+SSI21170803DE
+Belajar Pemrograman Dasar
+Kak Depe
+18/03/2022
+6
+SSI21170803DE
+1000
+7
+SSI21170803DE
+1
+Dadu
+SSI
+2021
+03/07/2003
+4
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kak Depe
+08/03/2022
+5
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kak Depe
+18/03/2022
+6
+SSI21030703KM
+10000
+7
+SSI21030703KM
+8
+4
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kak Depe
+08/03/2022
+5
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kak Depe
+18/03/2022
+8
+3
+Belajar Pemrograman Dasar
+Kakaak
+Airlangga, Co.
+Non Fiksi
+10
+4
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kakaak
+08/03/2022
+5
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kakaak
+18/03/2022
+6
+SSI21030703KM
+100000
+4
+SSI21030703KM
+Belajar Pemrograman Dasar
+Kakaak
+08/03/2022
+7
+SSI21030703KM
+3
+a
+a
+a
+non fiksi
+1
+3
+aa
+a
+a
+non fiksi
+1
+4
+SSI21030703KM
+a
+a
+03/07/2003
+4
+SSI21030703KM
+aa
+a
+03/07/2003
+7
+SSI21030703KM
+3
+aaa
+a
+a
+non fiksi
+1
+4
+SSI21030703KM
+aaa
+a
+03/07/2003
+7
+SSI21030703KM
+99
+"""
+output = """
+Selamat Datang di Sistem Perpustakaan SistakaNG!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member Dek Depe berhasil ditambahkan dengan data:
+ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori Non Fiksi dengan 20 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori Kartun dengan 20 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Kategori ----------
+Nama Kategori: Point: Kategori Anime dengan 40 point berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku Belajar Pemrograman Dasar oleh Kak Depe berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dek Depe berhasil meminjam Buku Belajar Pemrograman Dasar!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku Belajar Pemrograman Dasar berhasil dikembalikan oleh Dek Depe dengan denda Rp 9000!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: Dek Depe berhasil membayar denda sebesar Rp 1000
+Sisa denda saat ini: Rp 8000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 20
+Denda: 8000
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Anggota ----------
+Nama: Program Studi (SIK/SSI/MIK/MTI/DIK): Angkatan: Tanggal Lahir (dd/mm/yyyy): Member Dadu berhasil ditambahkan dengan data:
+ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 0
+Denda: 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dadu berhasil meminjam Buku Belajar Pemrograman Dasar!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku Belajar Pemrograman Dasar berhasil dikembalikan oleh Dadu dengan denda Rp 9000!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: Dadu berhasil membayar lunas denda
+Jumlah kembalian: Rp 1000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 20
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peringkat Anggota ----------
+----------------- 1 -----------------
+ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 20
+Denda: 0
+----------------- 2 -----------------
+ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 20
+Denda: 8000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dadu berhasil meminjam Buku Belajar Pemrograman Dasar!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku Belajar Pemrograman Dasar berhasil dikembalikan oleh Dadu dengan denda Rp 9000!
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peringkat Anggota ----------
+----------------- 1 -----------------
+ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 40
+Denda: 9000
+----------------- 2 -----------------
+ID Anggota: SSI21170803DE
+Nama Anggota: Dek Depe
+Total Point: 20
+Denda: 8000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku Belajar Pemrograman Dasar oleh Kakaak berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Denda lebih dari Rp 5000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pengembalian Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Pengembalian: Buku Belajar Pemrograman Dasar tidak sedang dipinjam
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Pembayaran Denda ----------
+ID Anggota: Jumlah: Dadu berhasil membayar lunas denda
+Jumlah kembalian: Rp 91000
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dadu berhasil meminjam Buku Belajar Pemrograman Dasar!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 40
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+----------------- 2 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+----------------- 3 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kakaak
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku a oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku aa oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dadu berhasil meminjam Buku a!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Dadu berhasil meminjam Buku aa!
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 40
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+----------------- 2 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+----------------- 3 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kakaak
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 4 -----------------
+Judul Buku: a
+Penulis Buku: a
+Penerbit Buku: a
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 03/07/2003
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 5 -----------------
+Judul Buku: aa
+Penulis Buku: a
+Penerbit Buku: a
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 03/07/2003
+Tanggal Pengembalian: -
+Denda: Rp 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Tambah Buku ----------
+Judul: Penulis: Penerbit: Kategori: Stok: Buku aaa oleh a berhasil ditambahkan
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Peminjaman Buku ----------
+ID Anggota: Judul Buku: Penulis Buku: Tanggal Peminjaman: Jumlah buku yang sedang dipinjam sudah mencapai batas maksimal
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+---------- Detail Anggota ----------
+ID Anggota: ID Anggota: SSI21030703KM
+Nama Anggota: Dadu
+Total Point: 40
+Denda: 0
+Riwayat Peminjaman Buku :
+----------------- 1 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+----------------- 2 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kak Depe
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: 18/03/2022
+Denda: Rp 9000
+----------------- 3 -----------------
+Judul Buku: Belajar Pemrograman Dasar
+Penulis Buku: Kakaak
+Penerbit Buku: Airlangga, Co.
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 08/03/2022
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 4 -----------------
+Judul Buku: a
+Penulis Buku: a
+Penerbit Buku: a
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 03/07/2003
+Tanggal Pengembalian: -
+Denda: Rp 0
+----------------- 5 -----------------
+Judul Buku: aa
+Penulis Buku: a
+Penerbit Buku: a
+Kategori: Non Fiksi
+Point: 20
+Tanggal Peminjaman: 03/07/2003
+Tanggal Pengembalian: -
+Denda: Rp 0
+
+================ Menu Utama ================
+
+1. Tambah Anggota
+2. Tambah Kategori
+3. Tambah Buku
+4. Peminjaman
+5. Pengembalian
+6. Pembayaran Denda
+7. Detail Anggota
+8. 3 Peringkat Pertama
+99. Keluar
+Masukkan pilihan menu: 
+Terima kasih telah menggunakan SistakaNG!
+"""
