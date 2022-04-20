@@ -1,0 +1,128 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+subset = false
+input = """
+3
+BWM Terbang BBM Avtur
+Apanza Truk BBM Premium
+Tezla Air Listrik Surya
+11
+BWM GAS
+BWM SIMULASI
+BWM STOP
+BWM ISI
+Apanza START
+Apanza ISI
+Apanza SIMULASI
+Tezla SIMULASI
+Tezla STOP
+Tezla GAS
+Tezla ISI
+"""
+output = """
+3
+BWM Terbang BBM Avtur
+Apanza Truk BBM Premium
+Tezla Air Listrik Surya
+11
+BWM GAS
+BWM SIMULASI
+BWM STOP
+BWM ISI
+Apanza START
+Apanza ISI
+Apanza SIMULASI
+Tezla SIMULASI
+Tezla STOP
+Tezla GAS
+Tezla ISI
+Nyalakan mobil dulu!
+BWM menyalakan mesin, NGENG!
+BWM digas dengan cepat di Langit! Bahan bakar mobil Avtur sekarang 75%.
+BWM digas dengan cepat di Langit! Bahan bakar mobil Avtur sekarang 50%.
+BWM mesin mati, mobil istirahat dulu.
+Avtur sekarang sudah penuh, mobil dapat terbang kembali!
+BWM mesin mati, mobil istirahat dulu.
+Avtur sekarang sudah penuh, mobil dapat terbang kembali!
+Apanza menyalakan mesin, NGENG!
+Mobil masih menyala, matikan terlebih dahulu agar tidak meledak.
+Apanza menyalakan mesin, NGENG!
+Apanza digas dengan cepat di Jalan Raya! Bahan bakar mobil Premium sekarang 75%.
+Apanza digas dengan cepat di Jalan Raya! Bahan bakar mobil Premium sekarang 50%.
+Apanza digas dengan cepat di Jalan Raya! Bahan bakar mobil Premium sekarang 25%.
+Apanza digas dengan cepat di Jalan Raya! Bahan bakar mobil Premium sekarang 0%.
+Apanza mesin mati, mobil istirahat dulu.
+Premium sekarang sudah penuh, mobil dapat digaskeun kembali!
+Tezla menyalakan listrik, SIAP DIGAS!
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 80%.
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 60%.
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 40%.
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 20%.
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 0%.
+Tezla listrik dimatikan, mobil telah berhenti.
+Surya sekarang sudah penuh, mobil dapat digunakan kembali!
+Tezla listrik dimatikan, mobil telah berhenti.
+Nyalakan mobil dulu!
+Surya sekarang sudah penuh, mobil dapat digunakan kembali!
+"""
+
+["Input 2"]
+subset = false
+input = """
+3
+BWM Terbang Listrik Avtur
+Apanza Truk Listrik Premium
+Tezla Air BBM Surya
+8
+BWM GAS
+BWM SIMULASI
+BWM STOP
+BWM ISI
+Apanza START
+Apanza ISI
+Apanza SIMULASI
+Tezla SIMULASI
+"""
+output = """
+3
+BWM Terbang Listrik Avtur
+Apanza Truk Listrik Premium
+Tezla Air BBM Surya
+8
+BWM GAS
+BWM SIMULASI
+BWM STOP
+BWM ISI
+Apanza START
+Apanza ISI
+Apanza SIMULASI
+Tezla SIMULASI
+Nyalakan mobil dulu!
+BWM menyalakan listrik, SIAP DIGAS!
+BWM digas dengan cepat di Langit! Bahan bakar mobil Avtur sekarang 80%.
+BWM digas dengan cepat di Langit! Bahan bakar mobil Avtur sekarang 60%.
+BWM listrik dimatikan, mobil telah berhenti.
+Avtur sekarang sudah penuh, mobil dapat terbang kembali!
+BWM listrik dimatikan, mobil telah berhenti.
+Avtur sekarang sudah penuh, mobil dapat terbang kembali!
+Apanza menyalakan listrik, SIAP DIGAS!
+Mobil masih menyala, matikan terlebih dahulu agar tidak meledak.
+Apanza menyalakan listrik, SIAP DIGAS!
+Apanza digas dengan cepat di Jalan Raya! Bahan bakar mobil Premium sekarang 80%.
+Apanza digas dengan cepat di Jalan Raya! Bahan bakar mobil Premium sekarang 60%.
+Apanza digas dengan cepat di Jalan Raya! Bahan bakar mobil Premium sekarang 40%.
+Apanza digas dengan cepat di Jalan Raya! Bahan bakar mobil Premium sekarang 20%.
+Apanza listrik dimatikan, mobil telah berhenti.
+Premium sekarang sudah penuh, mobil dapat digaskeun kembali!
+Tezla menyalakan mesin, NGENG!
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 75%.
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 50%.
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 25%.
+Tezla digas dengan cepat di Laut! Bahan bakar mobil Surya sekarang 0%.
+Bensin habis!
+Tezla mesin mati, mobil istirahat dulu.
+Surya sekarang sudah penuh, mobil dapat digunakan kembali!
+"""
+

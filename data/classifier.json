@@ -78,5 +78,10 @@
         "name": "Lab 05 -- DDP2",
         "identifier": "Pacilnomo",
         "path": "java/lab05.toml"
+    },
+    {
+        "name": "Lab 07 -- DDP2",
+        "identifier": "EngineBehaviour",
+        "path": "java/lab07.toml"
     }
 ]
