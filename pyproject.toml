@@ -17,8 +17,8 @@ mypy = "^0.910"
 flake8 = "^4.0.1"
 black = "^21.11b1"
 isort = "^5.10.1"
-pyinstaller = { git = "https://github.com/pyinstaller/pyinstaller.git", tag = "v4.9" }
 types-requests = "^2.26.0"
+pyinstaller = "^5.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
