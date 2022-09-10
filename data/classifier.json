@@ -83,5 +83,10 @@
         "name": "Lab 07 -- DDP2",
         "identifier": "EngineBehaviour",
         "path": "java/lab07.toml"
+    },
+    {
+        "name": "Lab 01 -- DDP1 2022",
+        "identifier": "nametag",
+        "path": "py-22/lab01.toml"
     }
 ]

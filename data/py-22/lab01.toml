@@ -1,0 +1,107 @@
+language = "python"
+
+["Input 1"]
+input = """
+Dek Depe
+10.5
+15
+5
+"""
+output = """
+Nama: Dek Depe
+Panjang persegi nametag (cm): 10.5 
+Panjang trapesium nametag (cm): 15
+Banyak nametag: 5
+
+Halo, Dek Depe! Berikut informasi terkait nametag kamu:
+
+Luas 1 nametag: 342.55 cm^2
+Luas total nametag: 1712.73 cm^2
+Uang yang diperlukan: Rp1000
+"""
+subset = false
+
+["Input 2"]
+input = """
+Dek Depe
+7
+16.2
+3
+"""
+output = """
+Nama: Dek Depe
+Panjang persegi nametag (cm): 7 
+Panjang trapesium nametag (cm): 16.2
+Banyak nametag: 3
+
+Halo, Dek Depe! Berikut informasi terkait nametag kamu:
+
+Luas 1 nametag: 173.94 cm^2
+Luas total nametag: 521.83 cm^2
+Uang yang diperlukan: Rp1000
+"""
+subset = false
+
+["Input 3"]
+input = """
+Dek Depe
+30.4
+50.25
+6
+"""
+output = """
+Nama: Dek Depe
+Panjang persegi nametag (cm): 30.4 
+Panjang trapesium nametag (cm): 50.25
+Banyak nametag: 6
+
+Halo, Dek Depe! Berikut informasi terkait nametag kamu:
+
+Luas 1 nametag: 2975.04 cm^2
+Luas total nametag: 17850.22 cm^2
+Uang yang diperlukan: Rp8000
+"""
+subset = false
+
+["Input 4"]
+input = """
+Dek Depe
+25
+40.7
+100
+"""
+output = """
+Nama: Dek Depe
+Panjang persegi nametag (cm): 25
+Panjang trapesium nametag (cm): 40.7
+Banyak nametag: 100
+
+Halo, Dek Depe! Berikut informasi terkait nametag kamu: 
+
+Luas 1 nametag: 2004.19 cm^2
+Luas total nametag: 200418.69 cm^2
+Uang yang diperlukan: Rp81000
+"""
+subset = false
+
+["Input 5"]
+input = """
+Dek Depe
+0.9
+3.49
+2390
+"""
+output = """
+Nama: Dek Depe
+Panjang persegi nametag (cm): 0.9
+Panjang trapesium nametag (cm): 3.49
+Banyak nametag: 2390
+
+Halo, Dek Depe! Berikut informasi terkait nametag kamu: 
+
+Luas 1 nametag: 3.51 cm^2
+Luas total nametag: 8385.52 cm^2
+Uang yang diperlukan: Rp4000
+
+"""
+subset = false
