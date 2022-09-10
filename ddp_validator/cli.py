@@ -33,6 +33,7 @@ def cli():
     parser = argparse.ArgumentParser(description="Lab Tester.")
     parser.add_argument("code", help="Lab codename")
     parser.add_argument("--debug", action=argparse.BooleanOptionalAction)
+    parser.add_argument("--ignore-error", "-i", action=argparse.BooleanOptionalAction)
     args = parser.parse_args()
 
     console.set_debug(args.debug)
@@ -71,6 +72,7 @@ def cli():
         tests = InputTester.from_str(
             str(program_path.resolve()),
             r.text,
+            args.ignore_error,
         )
     else:
         console.print(
@@ -83,6 +85,7 @@ def cli():
         tests = InputTester.from_file(
             str(program_path.resolve()),
             str(inputs_path.resolve()),
+            args.ignore_error,
         )
 
     try:

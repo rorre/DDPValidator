@@ -95,6 +95,7 @@ class InputTester:
         workdir: Optional[str] = None,
         cmd_args: List[str] = None,
         only_stdout: bool = False,
+        ignore_error: bool = False,
     ):
         self._tests = tests
         self._program = program_path
@@ -103,6 +104,7 @@ class InputTester:
         self._compile_command = compile_command
         self._cmd_args = cmd_args
         self._only_stdout = only_stdout
+        self._ignore_error = ignore_error
 
         if sys.platform == "win32":
             console.debug("Windows, using ProactorEventLoop.")
@@ -195,13 +197,21 @@ class InputTester:
         with progress:
             for t in self._tests:
                 console.debug("Running test", t["title"])
-                program_lines = self._loop.run_until_complete(
-                    run_command(
-                        t["stdin"].splitlines(),
-                        *cmd,
-                        only_stdout=self._only_stdout,
+                try:
+                    program_lines = self._loop.run_until_complete(
+                        run_command(
+                            t["stdin"].splitlines(),
+                            *cmd,
+                            only_stdout=self._only_stdout,
+                        )
                     )
-                )
+                except BaseException as e:
+                    if not self._ignore_error:
+                        raise e
+
+                    console.print(f"{t['title']:<20} : {failed} (Error) {e}")
+                    continue
+
                 expected_lines = [
                     s.encode("unicode_escape").decode("utf-8")
                     for s in t["stdout"].splitlines()
@@ -222,7 +232,10 @@ class InputTester:
 
                         console.debug("Writing HTML difference to", target_html)
 
-                        differ = difflib.HtmlDiff()
+                        differ = difflib.HtmlDiff(
+                            linejunk=difflib.IS_LINE_JUNK,
+                            charjunk=difflib.IS_CHARACTER_JUNK,
+                        )
                         html = differ.make_file(
                             expected_lines,
                             program_lines,
@@ -258,7 +271,7 @@ class InputTester:
         self.cleanup()
 
     @classmethod
-    def from_str(cls, program_path: str, inputs: str):
+    def from_str(cls, program_path: str, inputs: str, ignore_error: bool = False):
         tests: List[Test] = []
         tests_dict: Dict[str, TestDict] = toml.loads(inputs)  # type: ignore
 
@@ -294,12 +307,13 @@ class InputTester:
             compile_command,
             cmd_args=cmd_args,
             only_stdout=only_stdout,
+            ignore_error=ignore_error,
         )
 
     @classmethod
-    def from_file(cls, program_path: str, fname: str):
+    def from_file(cls, program_path: str, fname: str, ignore_error: bool = False):
         console.debug("Reading", fname)
         with open(fname, "r") as f:
             inputs = f.read()
 
-        return cls.from_str(program_path, inputs)
+        return cls.from_str(program_path, inputs, ignore_error=ignore_error)
