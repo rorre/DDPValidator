@@ -175,7 +175,7 @@ class InputTester:
         self.run_compile()
 
         if self._language == "python":
-            cmd = ("python", f'"{self._program}"')
+            cmd = ("python", Path(self._program).name)
         elif self._language == "java":
             cmd = ("java", Path(self._program).stem)
         elif self._language == "gradle":
