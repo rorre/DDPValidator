@@ -9,7 +9,7 @@ Dek Depe
 """
 output = """
 Nama: Dek Depe
-Panjang persegi nametag (cm): 10.5 
+Panjang persegi nametag (cm): 10.5
 Panjang trapesium nametag (cm): 15
 Banyak nametag: 5
 
@@ -30,7 +30,7 @@ Dek Depe
 """
 output = """
 Nama: Dek Depe
-Panjang persegi nametag (cm): 7 
+Panjang persegi nametag (cm): 7
 Panjang trapesium nametag (cm): 16.2
 Banyak nametag: 3
 
@@ -51,7 +51,7 @@ Dek Depe
 """
 output = """
 Nama: Dek Depe
-Panjang persegi nametag (cm): 30.4 
+Panjang persegi nametag (cm): 30.4
 Panjang trapesium nametag (cm): 50.25
 Banyak nametag: 6
 
