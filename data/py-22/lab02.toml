@@ -1,0 +1,248 @@
+language = "python"
+
+["Input 1"]
+input = """
+7
+Bali
+10
+Ancol
+8
+Labuan Bajo
+9
+Danau Toba
+7
+Kota Tua 
+4
+Margo City
+4
+Bromo
+6
+"""
+output = """
+Selamat datang ke Dek Depe Holiday Tracker!
+
+Masukkan banyak tempat wisata yang kamu kunjungi: 7
+
+Perjalanan 1: Bali
+Rating perjalanan kamu ke Bali (indeks 1-10): 10
+
+Perjalanan 2: Ancol
+Rating perjalanan kamu ke Ancol (indeks 1-10): 8
+
+Perjalanan 3: Labuan Bajo
+Rating perjalanan kamu ke Labuan Bajo (indeks 1-10): 9
+
+Perjalanan 4: Danau Toba
+Rating perjalanan kamu ke Danau Toba (indeks 1-10): 7
+
+Perjalanan 5: Kota Tua
+Rating perjalanan kamu ke Kota Tua  (indeks 1-10): 4
+
+Perjalanan 6: Margo City
+Rating perjalanan kamu ke Margo City (indeks 1-10): 4
+
+Perjalanan 7: Bromo
+Rating perjalanan kamu ke Bromo (indeks 1-10): 6
+
+---Summary---
+Perjalanan paling mengesankan adalah ketika pergi ke Bali.
+Skala kebahagiaan Dek Depe adalah 6.86
+Dek Depe senang karena pengalamannya cukup baik.
+
+Terimakasih telah menggunakan Dek Depe Holiday Tracker!
+"""
+subset = false
+
+
+
+
+
+["Input 2"]
+input = """
+-1
+0
+11
+Z
+9
+Y
+3
+X
+2
+W
+1
+V
+4
+U
+7
+T
+9
+S
+4
+R
+3
+Q
+9
+P
+2
+"""
+output = """
+Selamat datang ke Dek Depe Holiday Tracker!
+
+Masukkan banyak tempat wisata yang kamu kunjungi: -1
+
+Input tidak valid. Silahkan masukkan input kembali!
+Masukkan banyak tempat wisata kamu yang kamu kunjungi: 0
+
+Input tidak valid. Silahkan masukkan input kembali!
+Masukkan banyak tempat wisata kamu yang kamu kunjungi: 11
+
+Perjalanan 1: Z
+Rating perjalanan kamu ke Z (indeks 1-10): 9
+
+Perjalanan 2: Y
+Rating perjalanan kamu ke Y (indeks 1-10): 3
+
+Perjalanan 3: X
+Rating perjalanan kamu ke X (indeks 1-10): 2
+
+Perjalanan 4: W
+Rating perjalanan kamu ke W (indeks 1-10): 1
+
+Perjalanan 5: V
+Rating perjalanan kamu ke V (indeks 1-10): 4
+
+Perjalanan 6: U
+Rating perjalanan kamu ke U (indeks 1-10): 7
+
+Perjalanan 7: T
+Rating perjalanan kamu ke T (indeks 1-10): 9
+
+Perjalanan 8: S
+Rating perjalanan kamu ke S (indeks 1-10): 4
+
+Perjalanan 9: R
+Rating perjalanan kamu ke R (indeks 1-10): 3
+
+Perjalanan 10: Q
+Rating perjalanan kamu ke Q (indeks 1-10): 9
+
+Perjalanan 11: P
+Rating perjalanan kamu ke P (indeks 1-10): 2
+
+---Summary---
+Perjalanan paling mengesankan adalah ketika pergi ke Q.
+Skala kebahagiaan Dek Depe adalah 4.82
+Dek Depe sedih karena pengalamannya buruk.
+
+Terimakasih telah menggunakan Dek Depe Holiday Tracker!
+"""
+subset = false
+
+
+
+["Input 3"]
+input = """
+3
+A
+8
+B
+4
+C
+8
+"""
+output = """
+Selamat datang ke Dek Depe Holiday Tracker!
+
+Masukkan banyak tempat wisata yang kamu kunjungi: 3
+
+Perjalanan 1: A
+Rating perjalanan kamu ke A (indeks 1-10): 8
+
+Perjalanan 2: B
+Rating perjalanan kamu ke B (indeks 1-10): 4
+
+Perjalanan 3: C
+Rating perjalanan kamu ke C (indeks 1-10): 8
+
+---Summary---
+Perjalanan paling mengesankan adalah ketika pergi ke C.
+Skala kebahagiaan Dek Depe adalah 6.67
+Dek Depe senang karena pengalamannya cukup baik.
+
+Terimakasih telah menggunakan Dek Depe Holiday Tracker!
+"""
+subset = false
+
+
+["Input 4"]
+input = """
+5
+Ragunan
+2
+Ancol
+4
+Dufan
+6
+Disneyland
+4
+Monas
+7
+"""
+output = """
+Selamat datang ke Dek Depe Holiday Tracker!
+
+Masukkan banyak tempat wisata yang kamu kunjungi: 5
+
+Perjalanan 1: Ragunan
+Rating perjalanan kamu ke Ragunan (indeks 1-10): 2
+
+Perjalanan 2: Ancol
+Rating perjalanan kamu ke Ancol (indeks 1-10): 4
+
+Perjalanan 3: Dufan
+Rating perjalanan kamu ke Dufan (indeks 1-10): 6
+
+Perjalanan 4: Disneyland
+Rating perjalanan kamu ke Disneyland (indeks 1-10): 4
+
+Perjalanan 5: Monas
+Rating perjalanan kamu ke Monas (indeks 1-10): 7
+
+---Summary---
+Perjalanan paling mengesankan adalah ketika pergi ke Monas.
+Skala kebahagiaan Dek Depe adalah 4.60
+Dek Depe sedih karena pengalamannya buruk.
+
+Terimakasih telah menggunakan Dek Depe Holiday Tracker!
+"""
+subset = false
+
+
+
+["Input 5"]
+input = """
+2
+Balairung
+9
+Klinik Satelit Makara
+8
+"""
+output = """
+Selamat datang ke Dek Depe Holiday Tracker!
+
+Masukkan banyak tempat wisata yang kamu kunjungi: 2
+
+Perjalanan 1: Balairung
+Rating perjalanan kamu ke Balairung (indeks 1-10): 9
+
+Perjalanan 2: Klinik Satelit Makara
+Rating perjalanan kamu ke Klinik Satelit Makara (indeks 1-10): 8
+
+---Summary---
+Perjalanan paling mengesankan adalah ketika pergi ke Balairung.
+Skala kebahagiaan Dek Depe adalah 8.50
+Dek Depe bahagia karena pengalamannya menyenangkan.
+
+Terimakasih telah menggunakan Dek Depe Holiday Tracker!
+"""
+subset = false
