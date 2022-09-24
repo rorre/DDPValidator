@@ -93,5 +93,10 @@
         "name": "Lab 02 -- DDP1 2022",
         "identifier": "perjalanan",
         "path": "py-22/lab02.toml"
+    },
+    {
+        "name": "Lab 03 -- DDP1 2022",
+        "identifier": "bunker",
+        "path": "py-22/lab03.toml"
     }
 ]

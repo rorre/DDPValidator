@@ -1,0 +1,219 @@
+language = "python"
+
+["Contoh Input 1"]
+input = """
+2
+40
+30
+"""
+output = """
+Selamat Datang di Bunker Hacker!
+
+Masukkan berapa kali konversi yang ingin dilakukan: 2
+
+Masukkan angka ke-1 yang ingin dikonversikan (dalam desimal): 40
+Hasil konversi desimal ke basis 8 : 50
+
+Masukkan angka ke-2 yang ingin dikonversikan (dalam desimal): 30
+Hasil konversi desimal ke basis 8 : 36
+
+Terima kasih telah menggunakan Bunker Hacker!
+"""
+subset = false
+
+
+
+["Contoh Input 2"]
+input = """
+1
+101
+"""
+output = """
+Selamat Datang di Bunker Hacker!
+
+Masukkan berapa kali konversi yang ingin dilakukan: 1
+
+Masukkan angka ke-1 yang ingin dikonversikan(dalam desimal): 101
+Hasil konversi desimal ke basis 8 : 145
+
+Terima kasih telah menggunakan Bunker Hacker!
+"""
+subset = false
+
+
+
+
+["Contoh Input 3"]
+input = """
+2
+33288
+3143
+"""
+output = """
+Selamat Datang di Bunker Hacker!
+
+Masukkan berapa kali konversi yang ingin dilakukan: 2
+
+Masukkan angka ke-1 yang ingin dikonversikan (dalam desimal): 33288
+Hasil konversi desimal ke basis 8 : 101010
+
+Masukkan angka ke-2 yang ingin dikonversikan (dalam desimal): 3143
+Hasil konversi desimal ke basis 8 : 6107
+
+Terima kasih telah menggunakan Bunker Hacker!
+"""
+subset = false
+
+
+["TC1"]
+input = """
+2
+8
+10
+"""
+output = """
+Selamat Datang di Bunker Hacker!
+
+Masukkan berapa kali konversi yang ingin dilakukan: 2
+
+Masukkan angka ke-1 yang ingin dikonversikan (dalam desimal): 8
+Hasil konversi desimal ke basis 8 : 10
+
+Masukkan angka ke-2 yang ingin dikonversikan (dalam desimal): 10
+Hasil konversi desimal ke basis 8 : 12
+
+Terima kasih telah menggunakan Bunker Hacker!
+"""
+subset = false
+
+
+["TC2"]
+input = """
+3
+90
+57
+123
+"""
+output = """
+Selamat Datang di Bunker Hacker!
+
+Masukkan berapa kali konversi yang ingin dilakukan: 3
+
+Masukkan angka ke-1 yang ingin dikonversikan (dalam desimal): 90
+Hasil konversi desimal ke basis 8 : 132
+
+Masukkan angka ke-2 yang ingin dikonversikan (dalam desimal): 57
+Hasil konversi desimal ke basis 8 : 71
+
+Masukkan angka ke-3 yang ingin dikonversikan (dalam desimal): 123
+Hasil konversi desimal ke basis 8 : 173
+
+Terima kasih telah menggunakan Bunker Hacker!
+"""
+subset = false
+
+
+["TC3"]
+input = """
+10
+5
+11
+15 
+20
+36
+64
+128
+200
+450
+612 
+"""
+output = """
+Selamat Datang di Bunker Hacker!
+
+Masukkan berapa kali konversi yang ingin dilakukan: 10
+
+Masukkan angka ke-1 yang ingin dikonversikan (dalam desimal): 5
+Hasil konversi desimal ke basis 8 : 5
+
+Masukkan angka ke-2 yang ingin dikonversikan (dalam desimal): 11
+Hasil konversi desimal ke basis 8 : 13
+
+Masukkan angka ke-3 yang ingin dikonversikan (dalam desimal): 15
+Hasil konversi desimal ke basis 8 : 17
+
+Masukkan angka ke-4 yang ingin dikonversikan (dalam desimal): 20
+Hasil konversi desimal ke basis 8 : 24
+
+Masukkan angka ke-5 yang ingin dikonversikan (dalam desimal): 36
+Hasil konversi desimal ke basis 8 : 44
+
+Masukkan angka ke-6 yang ingin dikonversikan (dalam desimal): 64
+Hasil konversi desimal ke basis 8 : 100
+
+Masukkan angka ke-7 yang ingin dikonversikan (dalam desimal): 128
+Hasil konversi desimal ke basis 8 : 200
+
+Masukkan angka ke-8 yang ingin dikonversikan (dalam desimal): 200
+Hasil konversi desimal ke basis 8 : 310
+
+Masukkan angka ke-9 yang ingin dikonversikan (dalam desimal): 450
+Hasil konversi desimal ke basis 8 : 702
+
+Masukkan angka ke-10 yang ingin dikonversikan (dalam desimal): 612
+Hasil konversi desimal ke basis 8 : 1144
+
+Terima kasih telah menggunakan Bunker Hacker!
+"""
+subset = false
+
+
+["TC4"]
+input = """
+5
+123
+234
+345
+456
+567
+"""
+output = """
+Selamat Datang di Bunker Hacker!
+
+Masukkan berapa kali konversi yang ingin dilakukan: 5
+
+Masukkan angka ke-1 yang ingin dikonversikan (dalam desimal): 123
+Hasil konversi desimal ke basis 8 : 173
+
+Masukkan angka ke-2 yang ingin dikonversikan (dalam desimal): 234
+Hasil konversi desimal ke basis 8 : 352
+
+Masukkan angka ke-3 yang ingin dikonversikan (dalam desimal): 345
+Hasil konversi desimal ke basis 8 : 531
+
+Masukkan angka ke-4 yang ingin dikonversikan (dalam desimal): 456
+Hasil konversi desimal ke basis 8 : 710
+
+Masukkan angka ke-5 yang ingin dikonversikan (dalam desimal): 567
+Hasil konversi desimal ke basis 8 : 1067
+
+Terima kasih telah menggunakan Bunker Hacker!
+"""
+subset = false
+
+
+["TC5"]
+input = """
+1
+20000022
+"""
+output = """
+Selamat Datang di Bunker Hacker!
+
+Masukkan berapa kali konversi yang ingin dilakukan: 1
+
+Masukkan angka ke-1 yang ingin dikonversikan (dalam desimal): 20000022
+Hasil konversi desimal ke basis 8 : 114226426
+
+Terima kasih telah menggunakan Bunker Hacker!
+"""
+subset = false
