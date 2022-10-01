@@ -127,7 +127,7 @@ async def run_command(
         raise Exception("Program errored!\r\n\r\n" + stderr)
 
     console.debug("Program finishes, exiting")
-    combined_io += (await process.stdout.read()).decode()
+    combined_io += (await process.stdout.read()).decode(errors="ignore")
     # Workaround for ProcessLookupError
     # https://stackoverflow.com/questions/64342460/calling-terminate-on-asyncio-subprocess-raises-processlookuperror
     if process.returncode is None:
