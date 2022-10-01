@@ -1,0 +1,96 @@
+language = "python"
+
+["Input 1"]
+input = """
+text1.txt
+"""
+output = """
+Selamat datang di Pacil Mart!
+
+Masukkan nama file input: text1.txt
+
+Berikut adalah daftar belanjaanmu:
+
+Nama Barang |  Jumlah| Kembalian
+—-------------------------------
+Dompet      |       1|     30000
+
+Terima kasih sudah belanja di Pacil Mart!
+"""
+subset = false
+
+
+["Input 2"]
+input = """
+text2.txt
+"""
+output = """
+Selamat datang di Pacil Mart!
+
+Masukkan nama file input: text2.txt
+
+File input ada tapi kosong
+"""
+subset = false
+
+
+["Input 3"]
+input = """
+text3.txt
+"""
+output = """
+Selamat datang di Pacil Mart!
+
+Masukkan nama file input: text3.txt
+
+File tidak tersedia
+"""
+subset = false
+
+
+["Input 4"]
+input = """
+text4.txt
+"""
+output = """
+Selamat datang di Pacil Mart!
+
+Masukkan nama file input: text4.txt
+
+Berikut adalah daftar belanjaanmu:
+
+Nama Barang |  Jumlah| Kembalian
+—-------------------------------
+Pensil      |       2|      1000
+Pulpen      |       1|      2000
+Tipe-X      |       2|         0
+Buku        |       4|     10000
+
+Terima kasih sudah belanja di Pacil Mart!
+"""
+subset = false
+
+
+
+["Input 5"]
+input = """
+text5.txt
+"""
+output = """
+Berikut adalah daftar belanjaanmu:
+
+Nama Barang |  Jumlah| Kembalian
+—-------------------------------
+Payung      |       0|     90000
+Earphone    |       1|     20000
+Laptop      |       1|   2000000
+Sepatu      |       4|    100000
+BotolMinum  |       3|     10000
+BajuBatik   |       0|    200000
+Alarm       |       1|      1000
+BangunPagi  |       0|      9999
+
+Terima kasih sudah belanja di Pacil Mart!
+"""
+subset = false
+
