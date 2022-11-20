@@ -103,5 +103,10 @@
         "name": "Lab 04 -- DDP1 2022",
         "identifier": "belanjaan",
         "path": "py-22/lab04.toml"
+    },
+    {
+        "name": "SDA E -- TP04",
+        "identifier": "IS_AUTHENTICATED",
+        "path": "sda-e/tp04.toml"
     }
 ]
