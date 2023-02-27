@@ -1,0 +1,462 @@
+language = "java"
+compile = "javac {program}"
+
+["Input 1"]
+input = """
+1
+A
+1
+B
+1
+C
+1
+D
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: A
+Kode kupon adalah: AAA
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: B
+Kode kupon adalah: BBC
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: C
+Kode kupon adalah: CCE
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: D
+Kode kupon adalah: DDG
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 2"]
+input = """
+1
+ASDF
+1
+ASDLKJ
+1
+A
+1
+ZCZC
+1
+ZZZZ
+1
+NNNN
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: ASDF
+Kode kupon adalah: ASDFAA
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: ASDLKJ
+Kode kupon adalah: ASDLKJZY
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: A
+Kode kupon adalah: AAA
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: ZCZC
+Kode kupon adalah: ZCZCCE
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: ZZZZ
+Kode kupon adalah: ZZZZWS
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: NNNN
+Kode kupon adalah: NNNNAA
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 3"]
+input = """
+1
+ZCZCOS
+1
+OSZCZC
+1
+T
+1
+Q
+1
+VLSMORG
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: ZCZCOS
+Kode kupon adalah: ZCZCOSIQ
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: OSZCZC
+Kode kupon adalah: OSZCZCIQ
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: T
+Kode kupon adalah: TTM
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: Q
+Kode kupon adalah: QQG
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: VLSMORG
+Kode kupon adalah: VLSMORGVQ
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 4"]
+input = """
+1
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+Kode kupon adalah: ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZJS
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 5"]
+input = """
+1
+ASICGJZCXBZHGXCZGXCKDGHFYUAGHFDGIUHCGVXZVBGJHKSDVBGAFJHSDBGAIGWE
+1
+ASDHKJXCHIUZXCHJZCHUIQEHFKJBIYGDAJKFQEAFUI
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: ASICGJZCXBZHGXCZGXCKDGHFYUAGHFDGIUHCGVXZVBGJHKSDVBGAFJHSDBGAIGWE
+Kode kupon adalah: ASICGJZCXBZHGXCZGXCKDGHFYUAGHFDGIUHCGVXZVBGJHKSDVBGAFJHSDBGAIGWEVQ
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 1
+Nama kupon: ASDHKJXCHIUZXCHJZCHUIQEHFKJBIYGDAJKFQEAFUI
+Kode kupon adalah: ASDHKJXCHIUZXCHJZCHUIQEHFKJBIYGDAJKFQEAFUIPE
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 6"]
+input = """
+2
+ASDLKJASDLKJASDTM
+2
+ASDLKJASDLKJASDAAA
+2
+QQQQQQQQQQQQQQQG
+2
+AAAB
+2
+AAAA
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: ASDLKJASDLKJASDTM
+Kupon yang diberikan valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: ASDLKJASDLKJASDAAA
+Kupon yang diberikan tidak valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: QQQQQQQQQQQQQQQG
+Kupon yang diberikan valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: AAAB
+Kupon yang diberikan tidak valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: AAAA
+Kupon yang diberikan valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 7"]
+input = """
+2
+AAA
+2
+BBB
+2
+BBC
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: AAA
+Kupon yang diberikan valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: BBB
+Kupon yang diberikan tidak valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: BBC
+Kupon yang diberikan valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 8"]
+input = """
+2
+QWERTYYW
+2
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: QWERTYYW
+Kupon yang diberikan valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+Kupon yang diberikan tidak valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 9"]
+input = """
+2
+ZCZCCE
+2
+ZCZCZCZCZCZCZCZCZCZCZCZCZC
+2
+YYYYYYYYYYYYYYY
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: ZCZCCE
+Kupon yang diberikan valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: ZCZCZCZCZCZCZCZCZCZCZCZCZC
+Kupon yang diberikan tidak valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: YYYYYYYYYYYYYYY
+Kupon yang diberikan tidak valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false
+
+["Input 10"]
+input = """
+2
+PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+2
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+3
+"""
+output = """
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+Kupon yang diberikan tidak valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 2
+Kupon: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Kupon yang diberikan valid
+
+Halo! Apa yang ingin kamu lakukan?
+[1] Buat kupon
+[2] Validasi kupon
+[3] Keluar
+Pilihan: 3
+"""
+subset = false

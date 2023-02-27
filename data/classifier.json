@@ -1,4 +1,10 @@
 [
+
+    {
+        "name": "DDP2 -- Lab 2",
+        "identifier": "kupon",
+        "path": "java/ddp2-lab02.toml"
+    },
     {
         "name": "Lab 01",
         "identifier": "radius lingkaran",
