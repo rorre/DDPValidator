@@ -1,5 +1,9 @@
 [
-
+    {
+        "name": "DDP2 -- Lab 3",
+        "identifier": "BeJayNG",
+        "path": "java/ddp2-lab03.toml"
+    },
     {
         "name": "DDP2 -- Lab 2",
         "identifier": "kupon",

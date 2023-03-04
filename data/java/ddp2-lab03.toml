@@ -1,0 +1,1365 @@
+language = "java"
+compile = "javac {program}"
+only_stdout = true
+
+["Input 1"]
+input = """
+2
+mpkt
+mppi
+1
+dia
+77
+76
+1
+kamu
+88
+68
+1
+mereka
+88
+20
+2
+mereka
+3
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai mpkt: Masukkan nilai mppi: Nilai mahasiswa bernama dia berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai mpkt: Masukkan nilai mppi: Nilai mahasiswa bernama kamu berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai mpkt: Masukkan nilai mppi: Nilai mahasiswa bernama mereka berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama mereka telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama                    mpkt                    mppi
+dia                     77                      76
+kamu                    88                      68
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 2"]
+input = """
+2
+ddp 2
+matdis 2
+1
+Bambang
+65
+80
+1
+Tono
+88
+95
+1
+Udin
+68
+70
+2
+Udin
+1
+Jono
+30
+10
+3
+2
+Bambang
+3
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai ddp 2: Masukkan nilai matdis 2: Nilai mahasiswa bernama Bambang berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai ddp 2: Masukkan nilai matdis 2: Nilai mahasiswa bernama Tono berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai ddp 2: Masukkan nilai matdis 2: Nilai mahasiswa bernama Udin berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama Udin telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai ddp 2: Masukkan nilai matdis 2: Nilai mahasiswa bernama Jono berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			ddp 2			matdis 2			
+Bambang			65			80			
+Tono			88			95			
+Jono			30			10			
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama Bambang telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			ddp 2			matdis 2			
+Tono			88			95			
+Jono			30			10			
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 3"]
+input = """
+3
+pok
+psd
+os
+1
+anna
+73
+75
+80
+2
+anna
+1
+heni
+55
+48
+49
+1
+anna
+77
+78
+90
+1
+mawar
+90
+90
+90
+1
+siti
+0
+0
+0
+2
+anna
+3
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai pok: Masukkan nilai psd: Masukkan nilai os: Nilai mahasiswa bernama anna berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama anna telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai pok: Masukkan nilai psd: Masukkan nilai os: Nilai mahasiswa bernama heni berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai pok: Masukkan nilai psd: Masukkan nilai os: Nilai mahasiswa bernama anna berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai pok: Masukkan nilai psd: Masukkan nilai os: Nilai mahasiswa bernama mawar berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai pok: Masukkan nilai psd: Masukkan nilai os: Nilai mahasiswa bernama siti berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama anna telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			pok	psd	os	
+heni			55	48	49	
+mawar			90	90	90	
+siti			0	0	0	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 4"]
+input = """
+5
+satu
+dua
+tiga
+empat
+lima
+1
+one
+100
+100
+100
+100
+100
+1
+two
+90
+90
+90
+90
+90
+1
+three
+80
+80
+80
+80
+80
+1
+four
+70
+70
+70
+70
+70
+1
+five
+60
+60
+60
+60
+60
+2
+two
+2
+three
+2
+five
+2
+four
+3
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai satu: Masukkan nilai dua: Masukkan nilai tiga: Masukkan nilai empat: Masukkan nilai lima: Nilai mahasiswa bernama one berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai satu: Masukkan nilai dua: Masukkan nilai tiga: Masukkan nilai empat: Masukkan nilai lima: Nilai mahasiswa bernama two berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai satu: Masukkan nilai dua: Masukkan nilai tiga: Masukkan nilai empat: Masukkan nilai lima: Nilai mahasiswa bernama three berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai satu: Masukkan nilai dua: Masukkan nilai tiga: Masukkan nilai empat: Masukkan nilai lima: Nilai mahasiswa bernama four berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai satu: Masukkan nilai dua: Masukkan nilai tiga: Masukkan nilai empat: Masukkan nilai lima: Nilai mahasiswa bernama five berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama two telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama three telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama five telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama four telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama                    satu                    dua                     tiga                    empat                   lima
+one                     100                     100                     100                     100                     100		
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 5"]
+input = """
+6
+psd
+pok
+ddp1
+ddp2
+md1
+kalku1
+1
+Tono
+89
+98
+46
+76
+86
+78
+1
+Jono
+84
+95
+76
+84
+86
+85
+3
+1
+Budi
+78
+95
+86
+87
+76
+87
+3
+2
+Jono
+3
+87
+96
+77
+86
+75
+86
+3
+2
+Budi
+3
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai psd: Masukkan nilai pok: Masukkan nilai ddp1: Masukkan nilai ddp2: Masukkan nilai md1: Masukkan nilai kalku1: Nilai mahasiswa bernama Tono berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai psd: Masukkan nilai pok: Masukkan nilai ddp1: Masukkan nilai ddp2: Masukkan nilai md1: Masukkan nilai kalku1: Nilai mahasiswa bernama Jono berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			psd	pok	ddp1	ddp2	md1	kalku1	
+Tono			89	98	46	76	86	78	
+Jono			84	95	76	84	86	85	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai psd: Masukkan nilai pok: Masukkan nilai ddp1: Masukkan nilai ddp2: Masukkan nilai md1: Masukkan nilai kalku1: Nilai mahasiswa bernama Budi berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			psd	pok	ddp1	ddp2	md1	kalku1	
+Tono			89	98	46	76	86	78	
+Jono			84	95	76	84	86	85	
+Budi			78	95	86	87	76	87	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama Jono telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			psd	pok	ddp1	ddp2	md1	kalku1	
+Tono			89	98	46	76	86	78	
+Budi			78	95	86	87	76	87	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Pilihan tidak valid!
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Pilihan tidak valid!
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Pilihan tidak valid!
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Pilihan tidak valid!
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Pilihan tidak valid!
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Pilihan tidak valid!
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			psd	pok	ddp1	ddp2	md1	kalku1	
+Tono			89	98	46	76	86	78	
+Budi			78	95	86	87	76	87	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama Budi telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			psd	pok	ddp1	ddp2	md1	kalku1	
+Tono			89	98	46	76	86	78	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 6"]
+input = """
+2
+aaa
+bbb
+1
+do
+60
+77
+1
+re
+78
+90
+3
+4
+do
+aaa
+4
+re
+aaa
+4
+re
+bbb
+4
+do
+bbb
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai aaa: Masukkan nilai bbb: Nilai mahasiswa bernama do berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai aaa: Masukkan nilai bbb: Nilai mahasiswa bernama re berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			aaa			bbb			
+do			    60			77			
+re			    78			90			
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai do di mata kuliah aaa adalah 60
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai re di mata kuliah aaa adalah 78
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai re di mata kuliah bbb adalah 90
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai do di mata kuliah bbb adalah 77
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 7"]
+input = """
+2
+pok
+md1
+1
+yanto
+80
+78
+4
+yanto
+md1
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai pok: Masukkan nilai md1: Nilai mahasiswa bernama yanto berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai yanto di mata kuliah md1 adalah 78
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 8"]
+input = """
+4
+A
+B
+C
+D
+1
+Si A
+100
+80
+70
+60
+1
+Si B
+92
+93
+94
+95
+3
+4
+Si A
+A
+4
+Si A
+D
+4
+Si B
+C
+1
+Si C
+40
+48
+68
+80
+1
+Si D
+85
+82
+66
+70
+3
+2
+Si D
+3
+4
+Si C
+B
+4
+Si B
+A
+4
+Si A
+C
+2
+Si C
+3
+1
+Si C
+88
+79
+76
+60
+3
+4
+Si A
+A
+1
+Si D
+37
+40
+63
+0
+3
+4
+Si D
+D
+4
+Si D
+A
+4
+Si C
+B
+1
+Si E
+0
+0
+0
+0
+4
+Si E
+B
+3
+4
+Si B
+D
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai A: Masukkan nilai B: Masukkan nilai C: Masukkan nilai D: Nilai mahasiswa bernama Si A berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai A: Masukkan nilai B: Masukkan nilai C: Masukkan nilai D: Nilai mahasiswa bernama Si B berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			A	B	C	D	
+Si A			100	80	70	60	
+Si B			92	93	94	95	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si A di mata kuliah A adalah 100
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si A di mata kuliah D adalah 60
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si B di mata kuliah C adalah 94
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai A: Masukkan nilai B: Masukkan nilai C: Masukkan nilai D: Nilai mahasiswa bernama Si C berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai A: Masukkan nilai B: Masukkan nilai C: Masukkan nilai D: Nilai mahasiswa bernama Si D berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			A	B	C	D	
+Si A			100	80	70	60	
+Si B			92	93	94	95	
+Si C			40	48	68	80	
+Si D			85	82	66	70	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama Si D telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			A	B	C	D	
+Si A			100	80	70	60	
+Si B			92	93	94	95	
+Si C			40	48	68	80	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si C di mata kuliah B adalah 48
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si B di mata kuliah A adalah 92
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si A di mata kuliah C adalah 70
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama Si C telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			A	B	C	D	
+Si A			100	80	70	60	
+Si B			92	93	94	95	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai A: Masukkan nilai B: Masukkan nilai C: Masukkan nilai D: Nilai mahasiswa bernama Si C berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			A	B	C	D	
+Si A			100	80	70	60	
+Si B			92	93	94	95	
+Si C			88	79	76	60	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si A di mata kuliah A adalah 100
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai A: Masukkan nilai B: Masukkan nilai C: Masukkan nilai D: Nilai mahasiswa bernama Si D berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			A	B	C	D	
+Si A			100	80	70	60	
+Si B			92	93	94	95	
+Si C			88	79	76	60	
+Si D			37	40	63	0	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si D di mata kuliah D adalah 0
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si D di mata kuliah A adalah 37
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si C di mata kuliah B adalah 79
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai A: Masukkan nilai B: Masukkan nilai C: Masukkan nilai D: Nilai mahasiswa bernama Si E berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si E di mata kuliah B adalah 0
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			A	B	C	D	
+Si A			100	80	70	60	
+Si B			92	93	94	95	
+Si C			88	79	76	60	
+Si D			37	40	63	0	
+Si E			0	0	0	0	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Si B di mata kuliah D adalah 95
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 9"]
+input = """
+2
+kalku1
+ddp1
+1
+yanto
+67
+87
+1
+budi
+78
+89
+3
+4
+yanto
+ddp1
+4
+budi
+kalku1
+2
+yanto
+3
+4
+budi
+kalku1
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai kalku1: Masukkan nilai ddp1: Nilai mahasiswa bernama yanto berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai kalku1: Masukkan nilai ddp1: Nilai mahasiswa bernama budi berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			kalku1	ddp1	
+yanto			67	87	
+budi			78	89	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai yanto di mata kuliah ddp1 adalah 87
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai budi di mata kuliah kalku1 adalah 78
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menghapus Mahasiswa==============
+Masukkan nama mahasiswa: Mahasiswa bernama yanto telah dihapus dari BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			kalku1	ddp1	
+budi			78	89	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai budi di mata kuliah kalku1 adalah 78
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+
+
+["Input 10"]
+input = """
+5
+psd
+mpkt
+pok
+ddp1
+md1
+1
+Tuti
+89
+75
+98
+75
+68
+3
+1
+Jono
+87
+76
+94
+57
+84
+3
+4
+Tuti
+md1
+4
+Jono
+mpkt
+0
+"""
+output = """
+Selamat datang di BeJayNG!
+==============Initial Input==============
+Masukkan jumlah mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: Masukkan nama mata kuliah: ==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai psd: Masukkan nilai mpkt: Masukkan nilai pok: Masukkan nilai ddp1: Masukkan nilai md1: Nilai mahasiswa bernama Tuti berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			psd	mpkt	pok	ddp1	md1	
+Tuti			89	75	98	75	68	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Menambah Mahasiswa==============
+Masukkan nama mahasiswa: Masukkan nilai psd: Masukkan nilai mpkt: Masukkan nilai pok: Masukkan nilai ddp1: Masukkan nilai md1: Nilai mahasiswa bernama Jono berhasil diinput ke BeJayNG
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Tabel==============
+Nama			psd	mpkt	pok	ddp1	md1	
+Tuti			89	75	98	75	68	
+Jono			87	76	94	57	84	
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Tuti di mata kuliah md1 adalah 68
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: ==============Mencetak Nilai==============
+Masukkan nama mahasiswa: Masukkan nama mata kuliah: Nilai Jono di mata kuliah mpkt adalah 76
+==============Menu==============
+[1] Menambah Mahasiswa
+[2] Menghapus Mahasiswa
+[3] Mencetak Tabel
+[4] Mencetak Nilai
+[0] Keluar
+Masukkan pilihan: Terima kasih telah menggunakan BeJayNG!
+"""
+subset = false
+

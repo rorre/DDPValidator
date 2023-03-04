@@ -200,14 +200,14 @@ class InputTester:
                 try:
                     program_lines = self._loop.run_until_complete(
                         run_command(
-                            t["stdin"].splitlines(),
+                            t["stdin"].splitlines() + [""],
                             *cmd,
                             only_stdout=self._only_stdout,
                         )
                     )
                 except BaseException as e:
-                    if not self._ignore_error:
-                        raise e
+                    # if not self._ignore_error:
+                    # raise e
 
                     console.print(f"{t['title']:<20} : {failed} (Error) {e}")
                     continue
